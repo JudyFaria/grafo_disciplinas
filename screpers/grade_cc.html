@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>PUC-Rio - Graduação - Ciência da Computação</title>
+    
+    <!-- Javascript e elementos diversos para todo o site PUC -->
+    
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- SIMBOLOS -->
+<link rel="stylesheet" href="./PUC-Rio - Graduação - Ciência da Computação_files/css2">
+<link rel="stylesheet" href="./PUC-Rio - Graduação - Ciência da Computação_files/css2(1)">
+<link rel="stylesheet" href="./PUC-Rio - Graduação - Ciência da Computação_files/css2(2)">
+
+<!-- Ícone -->
+<link rel="shortcut icon" href="https://www.puc-rio.br/imagens/puc_brasao_icone_browser.png" type="image/x-icon">
+
+
+<!-- CSS PUC -->
+<link href="./PUC-Rio - Graduação - Ciência da Computação_files/puc_interna.css" rel="stylesheet" type="text/css">
+
+
+<!-- EFEITO : JQUERY -->
+<script type="text/javascript" async="" src="./PUC-Rio - Graduação - Ciência da Computação_files/analytics.js.download"></script><script type="text/javascript" async="" src="./PUC-Rio - Graduação - Ciência da Computação_files/js"></script><script type="text/javascript" async="" src="./PUC-Rio - Graduação - Ciência da Computação_files/js(1)"></script><script src="./PUC-Rio - Graduação - Ciência da Computação_files/jquery-3.1.1.min.js.download"></script>
+
+
+<!-- EFEITO : POP-UP LIGHTBOX PARA ELEMENTOS DIVERSOS -->
+<link href="./PUC-Rio - Graduação - Ciência da Computação_files/lity.css" rel="stylesheet">
+<script src="./PUC-Rio - Graduação - Ciência da Computação_files/lity.js.download"></script>
+
+
+<!-- EFEITO : APARECER E SUMIR -->
+<script src="./PUC-Rio - Graduação - Ciência da Computação_files/puc_efeito_aparecer_sumir.js.download"></script>
+
+
+<!-- EFEITO : LUPA DA GALERIA DE IMAGENS -->
+<script src="./PUC-Rio - Graduação - Ciência da Computação_files/puc_efeito_vermaior.js.download"></script>
+
+
+<!-- EFEITO : COPIA PARA MOBILE -->
+<script src="./PUC-Rio - Graduação - Ciência da Computação_files/puc_copia_mobile.js.download"></script>
+
+
+<!-- EFEITO : SLIDESHOW RESPONSIVO -->
+<script src="./PUC-Rio - Graduação - Ciência da Computação_files/puc_efeito_slideshow_responsivo.js.download"></script>
+
+
+<!-- EFEITO : PLAYER VIMEO -->
+<script src="./PUC-Rio - Graduação - Ciência da Computação_files/puc_efeito_vimeo.js.download"></script>
+<script src="./PUC-Rio - Graduação - Ciência da Computação_files/player.js.download"></script>
+
+
+<!-- EFEITO : SLIDESHOW JSSOR -->
+<!-- #region Jssor Slider Begin -->
+<!-- Generator: Jssor Slider Maker -->
+<!-- Source: http://www.jssor.com -->
+<!-- This code works with jquery library. -->
+<script src="./PUC-Rio - Graduação - Ciência da Computação_files/jssor.slider-21.1.6.mini.js.download"></script>
+
+
+
+<!-- EFEITO : BACKGROUND POSITION P/ CARDS -->
+<script>
+
+window.addEventListener("load", bkggrafismo);
+window.addEventListener("resize", bkggrafismo);
+
+function bkggrafismo() {
+
+	var card = document.getElementsByClassName('card');
+	var cardquant = card.length;
+
+	for (var i=0; i<=cardquant; i++) {
+
+	// card[i].style.backgroundPosition = "0 " + card[i].offsetHeight * 0.6666 + "px" ;
+	card[i].style.backgroundPosition = "0 " + card[i].offsetHeight * 0.5 + "px" ;
+
+	}
+
+}
+
+
+</script>
+
+
+
+
+<script>
+
+jQuery(document).ready(function ($) {
+
+	var jssor_1_SlideoTransitions = [
+	  [{b:-1,d:1,o:-1},{b:0,d:1000,o:1}],
+	  [{b:1900,d:2000,x:-379,e:{x:7}}],
+	  [{b:1900,d:2000,x:-379,e:{x:7}}],
+	  [{b:-1,d:1,o:-1,r:288,sX:9,sY:9},{b:1000,d:900,x:-1400,y:-660,o:1,r:-288,sX:-9,sY:-9,e:{r:6}},{b:1900,d:1600,x:-200,o:-1,e:{x:16}}]
+	];
+
+	var jssor_1_options = {
+	  $AutoPlay: true,
+	  $SlideDuration: 1000,
+	  $SlideEasing: $Jease$.$OutQuint,
+	  $CaptionSliderOptions: {
+		$Class: $JssorCaptionSlideo$,
+		$Transitions: jssor_1_SlideoTransitions
+	  },
+	  $ArrowNavigatorOptions: {
+		$Class: $JssorArrowNavigator$
+	  },
+	  $BulletNavigatorOptions: {
+		$Class: $JssorBulletNavigator$
+	  }
+	};
+
+	var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+	/*responsive code begin*/
+	/*you can remove responsive code if you don't want the slider scales while window resizing*/
+	function ScaleSlider() {
+		var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+		if (refSize) {
+			refSize = Math.min(refSize, 3000);
+			jssor_1_slider.$ScaleWidth(refSize);
+		}
+		else {
+			window.setTimeout(ScaleSlider, 30);
+		}
+	}
+	ScaleSlider();
+	$(window).bind("load", ScaleSlider);
+	$(window).bind("resize", ScaleSlider);
+	$(window).bind("orientationchange", ScaleSlider);
+	/*responsive code end*/
+});
+</script>
+
+
+
+
+
+
+
+<!-- ============================== PUC-Rio - GTAG GLOBAL ==============================-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./PUC-Rio - Graduação - Ciência da Computação_files/js(2)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtagGlobalPUC(){dataLayer.push(arguments);}
+  gtagGlobalPUC('js', new Date());
+
+  gtagGlobalPUC('config', 'G-205JBFW571');
+</script>
+
+
+<script>
+var getArrayFromTag = function(tagname) {
+     //get the NodeList and transform it into an array
+     return Array.prototype.slice.call(document.getElementsByTagName(tagname));
+}
+
+setTimeout(function(){ 
+var links = getArrayFromTag("a");
+var buttons = getArrayFromTag("button");
+links = links.concat(buttons);
+
+for(var i=0, max=links.length; i<max; i++) {
+    var linkHref = links[i].href;
+    var linkText = links[i].innerText;
+    if (linkText === '' || linkText == null){
+       var linkImg = links[i].getElementsByTagName('img')[0];
+       if (linkImg == null)
+          continue;
+       var imgAlt = linkImg.getAttribute("alt");
+       if (imgAlt !== '' && imgAlt != null)
+           linkText = imgAlt;       
+       else{
+           var imgTitle = linkImg.getAttribute("title");
+           if (imgTitle !== '' && imgTitle != null)
+               linkText = imgTitle;
+           else
+               continue;
+       }
+    }
+    var currentPage = removeIndexFromUrl(window.location.href);
+    linkHref = removeIndexFromUrl(linkHref);
+
+    var gtagContent = "gtagGlobalPUC( \'event\', \'clique\', { \'event_category\':\'" + currentPage + "\', \'event_label\': \'" + linkText + "\', \'origin_url\':\'" + currentPage + "\', \'href\':\'" + linkHref + "\'});";
+    var defaultOnMouseDown = links[i].getAttribute("onmousedown");
+    if (defaultOnMouseDown != null)
+        var gtagContent = gtagContent + defaultOnMouseDown;
+    links[i].setAttribute("onmousedown", gtagContent);
+}
+}, 2000);
+
+function removeIndexFromUrl(url){
+    if (url == "undefined")
+        return url;
+
+    if (url.endsWith("/index.html"))
+    {
+        url = url.replace("/index.html","/");    
+    }
+    else if (url.endsWith("/#"))
+    {
+        url = url.replace("/#","/");    
+    }
+
+    return url;
+}
+</script>
+
+
+
+<!-- / SLIDESHOW -->
+
+
+<!-- PLUGIN DE ACESSIBILIDADE FREE -->
+<script src="./PUC-Rio - Graduação - Ciência da Computação_files/acessibilidade_acctoolbar.min.js.download"></script>
+<script>
+  window.onload = function() {
+    window.micAccessTool = new MicAccessTool({
+      link: 'http://your-awesome-website.com/your-accessibility-declaration.pdf',
+      contact: 'mailto:webrdc@puc-rio.br',
+      buttonPosition: 'right', // default is 'left'
+       forceLang: 'pt-br' // default is 'en' may be 'he-IL', 'ru-RU', or 'fr_FR'
+    });
+  }
+</script>
+
+
+
+
+        
+    <!-- CSS específico do Manual -->
+    <link href="./PUC-Rio - Graduação - Ciência da Computação_files/estilos_ccg.css" rel="stylesheet" type="text/css">
+    
+    <!-- LINKS DAS EMENTAS -->
+	<!-- PARA TODOS OS LINKS: <a href="#" title="ver ementa">CÓD</a> -->
+	<script src="./PUC-Rio - Graduação - Ciência da Computação_files/puc_ementas_link.js.download"></script>
+
+<style>#mic-init-access-tool button{border:none;outline:0;-webkit-box-shadow:none;box-shadow:none;background:0 0;border-radius:0;color:#333}#mic-init-access-tool img{display:inline-block!important}#mic-init-access-tool a{outline:0;display:inline-block;color:#333;width:100%;line-height:1}#mic-init-access-tool a:focus,#mic-init-access-tool a:hover{color:#000000;border-color:#007fa4;background-color:#F5BD11}#mic-init-access-tool a:focus span,#mic-init-access-tool a:hover span{color:#007fa4}#mic-init-access-tool .atb-hide-if-empty{display:none!important}#mic-init-access-tool span.mic-toolbox-images-titles{display:none!important}#mic-init-access-tool *{font-size:14px!important;font-family:Open Sans,Helvetica,sans-serif!important;text-decoration:none!important;-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;line-height:1!important;-webkit-transition:none!important;transition:none!important}#mic-init-access-tool .mic-access-tool-general-button{position:fixed!important;z-index:99999!important;display:block!important;bottom:calc(100% - 378px);left:7px;background-color:#1E3145;cursor:pointer;border:solid 2px #ffffff5e;border-radius:4px 4px 20px 4px;color:#fff;padding:0}#mic-init-access-tool .mic-access-tool-general-button>div{font-size:0!important;position:relative;text-align:center;padding:5px!important}#mic-init-access-tool .mic-access-tool-general-button>div span{display:block;margin-bottom:4px;line-height:1;font-weight:700;font-size:11px!important;font-family:Arial,Helvetica,sans-serif!important}#mic-init-access-tool .mic-access-tool-general-button>div img{display:inline-block;max-width:32px}#mic-init-access-tool .mic-access-tool-general-button.mic-access-tool-general-button-right{left:auto;right:0;border-radius:5px 0 0 5px;}#mic-init-access-tool .mic-access-tool-general-button:focus,#mic-init-access-tool .mic-access-tool-general-button:hover{color:#000000;border-color:#007fa4;background-color:#F5BD11}#mic-init-access-tool .mic-access-tool-general-button:focus span,#mic-init-access-tool .mic-access-tool-general-button:hover span{color:#007fa4}#mic-init-access-tool .mic-access-tool-box{color:#333;overflow-y:auto;-webkit-box-shadow:1px 0 4px 0 #777;box-shadow:1px 0 4px 0 #777;position:fixed;height:auto;max-height:100%;width:320px;top:20px;left:0;background-color:#1E3145;padding: 10px;z-index:9999999;visibility:hidden;opacity:0;-webkit-transition:opacity .4s!important;transition:opacity .4s!important;border-radius: 5px 0 0 5px;}#mic-init-access-tool .mic-access-tool-box>div:not(.mic-access-tool-box-header):not(.mic-toolbox-all-credits){position:relative;background-color:#f8f8f8;max-width:96%;margin:0 auto 0;text-align:center}#mic-init-access-tool .mic-access-tool-box>div:not(.mic-access-tool-box-header):not(.mic-toolbox-all-credits) .mic-subtitle-span{font-size:20px!important;display:block;padding:12px 0;text-align:center;color:#007fa4;/*font-variant:small-caps*/font-weight: 600;}#mic-init-access-tool .mic-access-tool-box.opened-mic-access-tool{visibility:visible;opacity:1}#mic-init-access-tool .mic-access-tool-box.mic-access-tool-box-right{left:auto;right:0}#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header{position:relative;text-align:left;text-transform:uppercase;line-height:1.2;font-size:16px!important;font-weight:500;padding:10px;color:#fff}#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button{position:absolute;display:inline-block;cursor:pointer;color:#fff;font-weight:600;line-height:1.1;font-size:15px!important;right:6px;top:0;padding:8px 5px 8px}#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button *{font-size:18px!important}#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:focus,#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:hover{color:#000000;background-color:#F5BD11}#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:focus span,#mic-init-access-tool .mic-access-tool-box .mic-access-tool-box-header button:hover span{color:#007fa4}#mic-init-access-tool .mic-access-tool-box .link-access-page{background-color:#fff;position:relative;height:auto;text-align:center;max-width:96%;margin-top:10px!important;margin-bottom:20px!important}#mic-init-access-tool .mic-access-tool-box .link-access-page a{padding:10px 0;border-bottom:1px solid #777}#mic-init-access-tool .mic-access-tool-box .link-access-page *{font-size:18px!important}#mic-init-access-tool .mic-access-tool-box .link-access-page #mic-toolbox-disable-buttons-reset-all{text-align:center;font-weight:700}#mic-init-access-tool .mic-access-tool-box .link-access-page button,#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button{position:relative;padding:12px 5px;border-bottom:1px solid #777;display:block;width:100%;font-size:18px!important}#mic-init-access-tool .mic-access-tool-box .link-access-page button img,#mic-init-access-tool .mic-access-tool-box .link-access-page button span,#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button img,#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button span{display:inline-block;vertical-align:middle;font-size:18px!important;color:#333}#mic-init-access-tool .mic-access-tool-box .link-access-page button:focus,#mic-init-access-tool .mic-access-tool-box .link-access-page button:hover,#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button:focus,#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button:hover{color:#000000;border-color:#007fa4;background-color:#F5BD11!important;cursor:pointer}#mic-init-access-tool .mic-access-tool-box .link-access-page button:focus span,#mic-init-access-tool .mic-access-tool-box .link-access-page button:hover span,#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button:focus span,#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button:hover span{color:#007fa4}#mic-init-access-tool .mic-access-tool-box .link-access-page button.vi-enabled,#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button.vi-enabled{border:dashed 1px #007fa4;background-color:#fffff3}#mic-init-access-tool .mic-access-tool-box .link-access-page button.vi-enabled span,#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button.vi-enabled span{color:#007fa4!important;font-weight:700}#mic-init-access-tool .mic-access-tool-box .link-access-page button.vi-enabled::before,#mic-init-access-tool .mic-access-tool-box .mic-disable-buttons button.vi-enabled::before{content:"\2713";position:absolute;top:2px;right:2px;color:#00e800;font-weight:700!important;line-height:1!important;font-size:14px!important}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block{padding-bottom:10px}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button span,#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button span{display:block;position:absolute;color:#333;width:100%;right:0}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button span:nth-child(1),#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button span:nth-child(1){top:14px}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button span:nth-child(2),#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button span:nth-child(2){bottom:8px}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button span:nth-child(3),#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button span:nth-child(3){top:2px!important;right:2px!important;color:#000!important;display:inline-block!important;width:auto!important;font-size:14px!important;direction:ltr!important;line-height:1!important;font-family:monospace!important}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button.vi-font-enabled,#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button.vi-font-enabled{border:dashed 1px #007fa4;background-color:#fffff3}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-contrast-block button.vi-font-enabled span,#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-fonts-block button.vi-font-enabled span{color:#007fa4}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block.mic-cursors-block button span:last-child{margin-top:5px}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button{cursor:pointer;display:inline-block;padding:0 5px;position:relative;text-align:center;width:30%;height:80px;border:solid 1px silver;vertical-align:middle;line-height:1;font-weight:700;font-size:16px!important;border-radius:3px}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button span{display:block;font-size:15px!important;color:#333;font-weight: 500;line-height:.9!important}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button:focus,#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button:hover{color:#007fa4;border-color:#007fa4;background-color:#F5BD11!important}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button:focus span,#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button:hover span{color:#007fa4}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button.vi-enabled{border:dashed 1px #007fa4;background-color:#fffff3}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button.vi-enabled span{color:#007fa4!important}#mic-init-access-tool .mic-access-tool-box .mic-buttons-block button.vi-enabled::before{content:"\2713";direction:ltr!important;position:absolute;top:2px;right:2px;color:#000;font-weight:700;font-size:30px!important}#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits{position:relative!important;padding:0 5px!important;background-color:#AAA!important;text-align:center!important}#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits a,#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits span{display:inline-block!important;vertical-align:middle!important;color:#fff!important;width:auto!important;font-family:monospace!important;font-weight:700!important;font-size:15px!important}#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits a{text-decoration:underline!important}#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits a:focus,#mic-init-access-tool .mic-access-tool-box .mic-toolbox-all-credits a:hover{background-color:transparent!important}@media screen and (max-width:47em){#mic-init-access-tool .mic-access-tool-general-button>div span{display:none}#mic-init-access-tool .mic-disable-buttons{display:none}#mic-init-access-tool .mic-access-tool-box{width:100%}#mic-init-access-tool .mic-cursors-block{display:none}}body.mic-toolbox-zoom-up>:not(#mic-init-access-tool){zoom:1.4!important;-moz-transform:scale(1.4)!important;-moz-transform-origin:40% 0!important}body.mic-toolbox-contrast-monochrome>:not(#mic-init-access-tool){-webkit-filter:grayscale(1)!important;filter:grayscale(1)!important}body.mic-toolbox-contrast-soft,body.mic-toolbox-contrast-soft>:not(#mic-init-access-tool),body.mic-toolbox-contrast-soft>:not(#mic-init-access-tool) :not(img){color:#000!important;background:0 0!important}body.mic-toolbox-contrast-hard>:not(#mic-init-access-tool){background-color:#fff!important;color:#000!important;-webkit-filter:invert(100%)!important;filter:invert(100%)!important}body.mic-toolbox-disable-buttons-animations *{-webkit-transition-property:none!important;transition-property:none!important;-webkit-animation:none!important;animation:none!important;-webkit-animation-name:none!important;animation-name:none!important}body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) a:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) button:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) h1:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) h2:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) h3:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) h4:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) h5:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) h6:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) input:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) li:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) p:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) select:focus,body.mic-toolbox-disable-buttons-keyboard>:not(#mic-init-access-tool) textarea:focus{outline:0!important;background:#ff0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}body.mic-toolbox-fonts-simple :not(i):not(.fa){font-family:Arial,Helvetica,sans-serif!important}body.mic-toolbox-content-links a{text-decoration:underline!important}body.mic-toolbox-content-headers h1,body.mic-toolbox-content-headers h2,body.mic-toolbox-content-headers h3,body.mic-toolbox-content-headers h4,body.mic-toolbox-content-headers h5,body.mic-toolbox-content-headers h6{text-decoration:underline!important}body.mic-toolbox-cursor-big-white{cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAzCAYAAAAZ+mH/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDA1OTE2NURCQzkyMTFFN0IwODJCQjE5QzZFMDg2QjYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDA1OTE2NUVCQzkyMTFFN0IwODJCQjE5QzZFMDg2QjYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEMDU5MTY1QkJDOTIxMUU3QjA4MkJCMTlDNkUwODZCNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEMDU5MTY1Q0JDOTIxMUU3QjA4MkJCMTlDNkUwODZCNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Phwph8YAAAWrSURBVHjavFldSGxVFF7zq+N4/RtTuY1SU2SWoqUW/iAZhL1UFD4kVBD02Jv45os/+Psi+CCU9hRYkGVF1kOUmEYZpmGJEpqJ4Ev5e/XqzDi7tU5rz92zx7nqzBwXfBxn73P2/va311pnnS0AwDuI3xG34H9zIGwMC8NUsyIOEU8iphAexDnCzn2mE5AkrPx3PRPJZiJSEavZiqgkyJ5BfInIQQSZiOmKXDRBDSuSc1OKxFplJWISkasQMU2RiIF9Ph+kpqbKn88ivmAiIYTTLEVUfzAIeL1ecLlcsulpxKdmKxIxYFpaGrS0tEBOTg44nU7VWT83W5G3EIJQWVkpyAYGBkRBQYFAZYTsQ/yM8JJgxDfZqoRJVFRUiGAwaBDp6uoS+fn5AhVRiSwoRNxK5CSsSAQJv98vpPX19Ym8vLwbUSQmiZtU5L4kVEVSUlJMU+RSElKR3Nxc4XA4TFHkSiTIent7hcfjMUWRK5OQihCRZCtyLRJmKXJtElIRzKxJUyQuElKR7OxsPXzjUiRuEmSdnZ0GkUQVSYhEshRJmIRUJCsrK25FkkKCrKenR2RmZsalSNJIkHV0dIiMjAxht9uvpUhSScSrSNJJXKLIgxoRm2kkyPr7+w0imiI/MZEUScSeSCESCoXg9PQULJboqKO21tZW2Nvbg7GxMeOKVZtaxb+E+DdhEoeHh1BbWwv7+/sxidhsNkB14fz8XO2SVfxrRORKJI6OjoyJsPgFzAPhdrfbbUyws7MTzxqkIq9YL7uzu7sbsAqHkpISWFpaitqOsrIyQOeLV0z60hu779PoWDA8PAy7u7uGnFjmwcTERLgfX+XQ1tYGk5OThvToi9T8B+JDzgdB/lYJ8ceT/DvIvwOI7SgSVqs1rAARoG1gh4KFhQWYnZ2F+vr6yOWgUouLi5IE2TziH46GAE94rhChq5/7QhHbQU5EGBwchKGhITg4ODD2XNrW1haMj49HECDHbGxsNJ5jowOXF3i1enq2cJuNv+RSOVfcyxNVVVWivb39ooI2jObmZrG9vR2RD3C7RGFhoXrfPqIC8RjiIcRtRB5/Snr42IGQhUgnRuWIV4kNJhaYn583YlpVAO2uZLyysgINDQ1QXFwcDkvyDdqy6elpw1k5EZ0hvmf5z1j6gOIPQcVn7ilB3xZadiN8gHhZ/qb+8vLyqOw4MzNj9KNPyee+46On23x1MzknL8jBZ2P2CCWOj4/VpLKMGER8hjhA0HlBOfXTyskJa2pqIhLTxsYGrK6uhtMI4hfEX+wLAc05Q3JhsfIEhdm7iK/5YUqvi6qD0oSqFRUVQVNTE2AVLpvIB15n59MdVFcb3tQafuVzK/LyUkQx4mHEUwhapsBVi9LSUrG8vBy1LT6fz+hXxitmQrd4O2x6QaMr8RvibY5xku2YQV76J+ITkpG2Ym1tDaampiAQCIQfPjk5gerqasPB2fycngXvvy1WjfmGUnQ8TsoiHuVrgRJSHn4F79L9FMK0at0wmYn09HRVjTlW4gEKR3bMiO0hZnWIR/jVesRee8bwK2FFA95hvEihSMdKlC3JH1TfoCw7Nzcnmyg61tmnbJpTGkYSzSC+ReyxR9/lmwJKLAO3+fk+2irb+vo6jI6OQl1dHZydncHIyAhsbm4a+UJNxIhMmWeUA1yhErGyRJmcwTJYNpd22O5kkuTtP8icQNkV07yRbb1e74VZlsk/weO7lS0Jm1Op+dJ48hStELWyai5Gs5zA5XIZH8daRKggZd/jbfFofhEhl13LYvq/GiyKYum8oh9jTCoU//kK8TyHuJffHVFK2Hmv9bAR2hUUvwjxvyfe53yiP0eVz0cc5tM8oUV5Xwh9XHuMyWKZ4MFoFX8zGZkUyME/5lrijqx7tEiTL6+I+a57yCVrAQcP+BznFLJvlC1Vixa/gqDy/ggr8p8AAwB38ep+f+/fmwAAAABJRU5ErkJggg==),url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/w2.cur),auto!important}body.mic-toolbox-cursor-big-white a,body.mic-toolbox-cursor-big-white button{cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAtCAYAAAAz8ULgAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkE0QzFBMjdCQzkyMTFFNzg4RDE5NkYzNkM0MDkwNzAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkE0QzFBMjhCQzkyMTFFNzg4RDE5NkYzNkM0MDkwNzAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGQTRDMUEyNUJDOTIxMUU3ODhEMTk2RjM2QzQwOTA3MCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGQTRDMUEyNkJDOTIxMUU3ODhEMTk2RjM2QzQwOTA3MCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnfOpO8AAAhdSURBVHjaxFlpTBVX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),url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/wh2.cur),auto!important}body.mic-toolbox-cursor-big-black{cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAzCAYAAAAZ+mH/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODM1RTg1NDJCQzhFMTFFNzhFNDdGMzY5NjY0M0JBMTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODM1RTg1NDNCQzhFMTFFNzhFNDdGMzY5NjY0M0JBMTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MzVFODU0MEJDOEUxMUU3OEU0N0YzNjk2NjQzQkExNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MzVFODU0MUJDOEUxMUU3OEU0N0YzNjk2NjQzQkExNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PisYaokAAAcASURBVHjavFhrTFRH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),url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/b2.cur),auto!important}body.mic-toolbox-cursor-big-black a,body.mic-toolbox-cursor-big-black button{cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAA1CAYAAAADOrgJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUIxMTcwRTBCQTVCMTFFNzlFMTNDNDI4RjQ5NjYzNDAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUIxMTcwRTFCQTVCMTFFNzlFMTNDNDI4RjQ5NjYzNDAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QjExNzBERUJBNUIxMUU3OUUxM0M0MjhGNDk2NjM0MCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QjExNzBERkJBNUIxMUU3OUUxM0M0MjhGNDk2NjM0MCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsArU6kAAAuPSURBVHjazFoJcE1L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),url(https://raw.githubusercontent.com/mickidum/acc_toolbar/master/app/cursors/bh2.cur),auto!important}body.mic-toolbox-content-images span.mic-toolbox-images-titles{display:block!important;font-size:20px!important;max-width:180px!important;line-height:1!important;margin:0 auto!important;font-weight:400!important;text-align:center!important;background:#ffffe0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;padding:10px!important;border:solid 1px #007fa4!important;border-radius:0!important}</style></head>
+
+
+
+
+
+<!-- ============================================================================== ABRE PÁGINA == -->
+
+
+<body id="ccg"><div id="mic-init-access-tool"><button title="Menu de acessibilidade" tabindex="1" id="mic-access-tool-general-button" class="mic-access-tool-general-button mic-access-tool-general-button-right"><div><span>CTRL+F2</span> <img src="./PUC-Rio - Graduação - Ciência da Computação_files/acessibilidade.png" alt="Menu de acessibilidade"></div></button><div id="mic-access-tool-box" class="mic-access-tool-box mic-access-tool-box-right"><div class="mic-access-tool-box-header">Acessibilidade PUC-Rio<button title="Fechar" id="mic-access-tool-box-close-button">✗ - Fechar</button></div><div class="mic-disable-buttons"><button title="Teclado de navegação" id="mic-toolbox-disable-buttons-keyboard"><span>Teclado de navegação</span> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAP1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACzJYIvAAAAFHRSTlMAAQIEBQYLhomeoLW31dna3Oj5+90/ykwAAABVSURBVBgZncFJEoJQEAXBeg3i+FHbuv9ZjWAFS83kD2cPrjhnT6wQEkIIYnXuvAbv9LwiVopACMsTsdqpk2ZdHIgVUpsQxOo83HymgXiqPbl4cON3X+q6BbAaNKDxAAAAAElFTkSuQmCC" alt="Teclado de navegação"></button> <button title="Bloquear animações" id="mic-toolbox-disable-buttons-animations"><span>Bloquear animações</span> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAPFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQLyYwAAAAE3RSTlMABwoNDxAcIS84PkBBVGR7guj3cqQiVwAAAFxJREFUGNNlz9sOgCAMA9AiIioKav//Xx2XIGAfluwkSzpAoY963CCOo1xRjETn/SRFnEyuwAJ4VtkQfIEse2CFJDcbKFcNZGkhSQdRfO7xySTNZlOiD/7/soNYvHcOCRT6qv0LAAAAAElFTkSuQmCC" alt="Bloquear animações"></button></div><div id="mic-toolbox-contrast-block" class="mic-contrast-block mic-buttons-block"><span class="mic-subtitle-span">Alterar cor na tela</span> <button title="Preto e branco" id="mic-toolbox-contrast-monochrome"><span><img alt="Preto e branco" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAOVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC8dlA9AAAAEnRSTlMAAQkLT1BRkpSVl5iam8zP7/E3Z1DDAAAAc0lEQVQokZWSSRaAIAxDG3FAEJXc/7BuVAbrlCX/vTRpEXkXrIX67kinEASSnErCSt8BTB9VICLNkgHkFk0kkec5LfojG3w51HDvY6s0IMnhDtgnq3p4lxZzF7csOKvNTbv+W+IFpGxBO6HXTyuCUf8MlTaTLhCpbG3L9gAAAABJRU5ErkJggg=="> </span><span>Preto e branco</span></button> <button title="Brilho" id="mic-toolbox-contrast-soft"><span><img alt="Brilho" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAARVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADc6ur3AAAAFnRSTlMAAQgJCgtOT1BRkpSVl5iam8jMz+/x9WwUowAAAI1JREFUKJGNktsSwiAMRLNSehGrtdLz/5/qg2WwTBy7T4EzE5ZNzP5LKcm9n2F2iBaAx5HQ6BzYxijFaWvBGj5leH0BQQ7lEDZQ9TNUJ1PxpjsQK4js/0mH58wEcP0FUmnVOa1MC/QVjDUYQb44ds2A507C2kaS+84sDvl8iC4o3mDxRnj3R2umm78Mjd4oPA952m8bgAAAAABJRU5ErkJggg=="> </span><span>Brilho</span></button> <button title="Contraste" id="mic-toolbox-contrast-hard"><span><img alt="ניגודיות הפוכה" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAV1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOl5NtAAAAHHRSTlMAAQUICQoLTk9QUXN0kpSVl5iam8jMz9re4O/xs7FJiwAAAKNJREFUKJGNktsOgzAMQ53Sles6GGNA8f9/5x4K6qgyDT9VPVLixAH+S7wX9b8ne4XISJLPM2Gma2CrnYhrthxMNj7t+wsIGSxMuyytgd1ISX4qmJkkZ4Pm8CYDSYcu9m3huM/jY7s1ggVCkvdfwB+lbkopyEiWqXmdFiNkKGC6de1OdgGSr2IfcMpXEsob4KpwfYkqSEGNWoSDHi0gD/0YMn0A2QIYmULugckAAAAASUVORK5CYII="> </span><span>Contraste</span></button></div><div class="mic-fonts-block mic-buttons-block"><span class="mic-subtitle-span">Tamanho do texto</span> <button title="Aumentar" id="mic-toolbox-fonts-up"><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAUVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABcqRVCAAAAGnRSTlMAAQIEBwkKCxQgIyU2RlthYmN3mqbD3N75/ffAjZwAAABwSURBVBhXbc1XEoAgDATQxYJdsSLc/6AWigTJB7P7hgDgpuzxGy61SJiO9bEz0sdEJYlyU3movgSaii5MB/elsCa0llZH1MqZ1xVoBntvMVrOzHxgdu0LCA1Ev5xK6R3XWmKv7mAbsVtVd58Z6OS4AOceDZR02LMoAAAAAElFTkSuQmCC" alt="Aumentar"> </span><span>Aumentar</span> <span id="mic-toolbox-fonts-up-enabled"></span></button> <button title="Diminuir" id="mic-toolbox-fonts-down"><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAUVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABcqRVCAAAAGnRSTlMAAQIEBwkKCxQgIyU3RlthYmN3mqbD3N75/WrPbOoAAABvSURBVBhXbcvZFoMgDEXRo610UpuO1Pz/h/oQoEThJefutQB6/DtA947BmSw3rqpORfUD4jSvWv/dqvafvCq7TEmfZsOj47yomJqFqC+OUbMm09mOAPdvMoEq2llZGc7SPHkz/W3MdGsQ4t5gGEuuW74NlKW6ljMAAAAASUVORK5CYII=" alt="Diminuir"> </span><span>Diminuir</span></button> <button title="Texto legível" id="mic-toolbox-fonts-simple"><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAALVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADBoCg+AAAADnRSTlMABAYLDhAeKkBbZ5G32sGB+xIAAAA8SURBVAhbY2BgYDwDBscYGBiY3oHBc1QmEPC+g9DEM9cAjWyAMPcBzZmAwWTgewPXRlUmazADA0sokAEAvoY2e1eb61QAAAAASUVORK5CYII=" alt="Texto legível"> </span><span>Texto legível</span></button></div><div class="mic-content-block mic-buttons-block"><span class="mic-subtitle-span">Destacar conteúdo</span> <button title="Sublinhar links" id="mic-toolbox-content-links"><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAA81BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYh4bhAAAAUHRSTlMAAQIDBAUHCAoLDA0ODxATFRgcJCUnKCorLDc4OjxBQ0ZLTE9XW2FjZ3V5foKIjJKVmJqbnZ6jq62yub7AxcjKzM/V2tze4ujp7e/z9fn7/dE+l70AAADFSURBVBgZ1cHpQgFhGIbhZ/SpsbQorUqJUhHttEiZKCT3+R9Nw1/v/Oe6NP+8s05QVBTvidCVItzSy+z9cSFTgf6qtAunsrTJKpRn7MvQZV0TNxzIcMlHXKqcP3AkgwtoOQWAL4vf4zVdhrrczv6yZqR+mKoOYJTXjJV6/2XrBGg+QkmmTaCkApRladDmSzqEYxm+SW6vScrRleGOqibSjGRI/VLzpHiLa1kyQ+6XEp+8O5k2BoTenCIknxlXYooW87QI/gGkVyJRaE/etAAAAABJRU5ErkJggg==" alt="Sublinhar links"> </span><span>Sublinhar links</span></button> <button title="Sublinhar títulos" id="mic-toolbox-content-headers"><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcBAMAAACAI8KnAAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABt0UjBAAAACnRSTlMAARAeQEFSkZvvep8Y0AAAAElJREFUGJVjYKAmYHFxcVEAE2Au16pVqxzABDYug8QqAygBBqyrYATErFUwgiguGODkAp3kTp7JbKsEoARYMnNVqwKYIMaDVAIAmsgu7kDEZosAAAAASUVORK5CYII=" alt="Sublinhar títulos"> </span><span>Sublinhar títulos</span></button> <button title="Descrição imagens" id="mic-toolbox-content-images"><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAgVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABtFS1lAAAAKnRSTlMAAQMEBQgQHyIkJi9DRElbXmtscHN3e4WIiYuSl52go7C1usDo6evx9flG5RBaAAAAfUlEQVQoz93SSRKCQAxA0UTBWVFQnGVQUf79D+jKotvuXrjlr1J5VVlFpNdt3+1PlRrMKrYbMzJ52s16eKQyDPICmIV5GeLBOhIRPT0z7/Eb5Xfh4QTYBHkCwFz3V/Vw3ADACy4ua03X0eEdZnlkc4Hd2Wa3Pzh39K79fuEPdQoeE+qkypwAAAAASUVORK5CYII=" alt="Descrição imagens"> </span><span>Descrição imagens</span></button></div><div class="mic-cursors-block mic-buttons-block"><span class="mic-subtitle-span">Aumentar</span> <button title="Cursor branco" id="mic-toolbox-cursor-big-white"><span><img alt="Cursor branco" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAS1BMVEW9w8e+xMi/xMi/xcnCx8vCyMvIzdHL0NPS1tnT19nd4OLe4ePf4uTg4+Xq7O3s7u/x8vPx8/P19vf4+fn6+/v8/f3+/v7+//////+Nje9qAAAAXklEQVQoz83SNwKAMBADwTPJ5GDS/v+lFFByomXbaVTI7P/lmvdOMnSapaMd7Wi/mV6z52hHO9of2lJKS3B5EMtHODOXYzig8TiatbC+8xzNrAAq85sgCi7rj1P9pwslQQsBoORDzQAAAABJRU5ErkJggg=="> </span><span>Cursor branco</span></button> <button title="Cursor preto" id="mic-toolbox-cursor-big-black"><span><img alt="Cursor preto" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAWlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACLSV5RAAAAHXRSTlMAAQMEBgcTFCw3OFBUe3+AgoOIrbfHytrk7fX7/WJfHrcAAABoSURBVChTzdK7FoIwFAXRy1MSEXxHhfn/37SIK43JoWXa3Y7Z/us0fybJIB3tALNm4WiPzFlzydGemIvmrP/oHUJ41kW+/kviG6xtkX2zwFhib3aCV5XlhzOzHhiyHLuDE3w4bky1n75vow1/sgwkQQAAAABJRU5ErkJggg=="> </span><span>Cursor preto</span></button> <button title="Zoom da tela" id="mic-toolbox-zoom-up"><span><img alt="Zoom da tela" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAA51BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACWqgEeAAAATHRSTlMAAQIEBwgJCgwQGBkaISkqKywwMTM0Nzg/QEFCRUdNTlZdXnFzdHV3eXuRlJeYmp6goqOoqq2vsLLFx8jKzNrc3uDi6Onr7fHz9ff5oUSo3wAAAOJJREFUGBnVwelCAVEAhuF35mSZooW2U2lPiTYlTgtCDfXd//U0+HWUC/A8LIJw964dv13l+VdhoKlWir+Opfh8a22/LvUjZhWkqmEs11PH4AsHqgLZyEDmS2V8VrEBnCywIxk89zoj4WSB4FvreDraJOvcj3quBs86xDPUKpEmHNzqBM+79jDW9nRti/CiAzwV1Uk4WWBJWsaTl1aAmisCZbWZ0dJHhqmS1Ajwpfv63A6AVEWJhwBf1JVGjZtXTT2G+MylJjoNjV0wy2wcnZZyBHUlhswTPElqMldYGTXTLLhf0gcqXp6DTJoAAAAASUVORK5CYII="> </span><span>Zoom da tela</span></button></div><div class="link-access-page"> <p class="" title="undefined" id="mic-toolbox-link-nagishut" target="_blank"><!--undefined--></p>  <p class="" title="undefined" id="mic-toolbox-link-contact"><!--undefined--></p> <button title="Redefinir as configurações" id="mic-toolbox-disable-buttons-reset-all"><span>Redefinir as configurações</span> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAmVBMVEUAAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAACLAAC9qi4cAAAAMnRSTlMAAQUGBwgNDg8QExUXGRojJiwvNTo7PFdYXF1hYmNnaGlwdHt+j5GSx9fZ2tzg8/X5+2glG4cAAAB3SURBVAgdbcHZAkJQAEXRLU0olUbSrNIkzv9/XNzrsbX4w788izzt0UpllHOMrarN0A0yaULNUxXSWOrjACclWHfNgIc8rEhHQOrQGJWqRbzlYUwlxXBWgrXSFfBVhVgLh9pB5XrQHd92tPYyij6tIHt989jlnx+BHA122Bbd9AAAAABJRU5ErkJggg==" alt="Redefinir as configurações"></button></div><!-- <div dir="ltr" class="mic-toolbox-all-credits"><span>saiba mais sobre</span>&nbsp;&nbsp;<a target="_blank" href="https://mickidum.github.io/acc_toolbar/">toolbox</a></div> --></div></div>
+
+
+<!-- ===================================================================================== TOPO == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<header>
+
+
+<!-- Link acessibilidade, cabeçalho, brasão, título -->
+
+
+<!-- Link acessibilidade -->
+<a href="https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#link_pular_conteudo" id="puc_link_pular_para_conteudo" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Pular para o conteúdo da página&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#link_pular_conteudo&#39;});">Pular para o conteúdo da página</a><span></span>
+
+<!-- Cabeçalho PUC (busca e índice de A a Z) -->
+<iframe src="./PUC-Rio - Graduação - Ciência da Computação_files/puc_cabecalho.html" name="cabecalho" title="Cabeçalho PUC-Rio"></iframe>
+
+
+
+<div id="puc_topo_brasao_titulo_caminho">
+
+<!-- Brasão PUC -->
+<a href="https://www.puc-rio.br/" target="_parent" title="Ir para a página inicial do site PUC-Rio" id="puc_cabecalho_brasao" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Brasão da PUC-Rio&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/&#39;});">
+<img src="./PUC-Rio - Graduação - Ciência da Computação_files/brasao_preto_vertical.svg" alt="Brasão da PUC-Rio"></a>
+
+	<div id="puc_topo_titulo_caminho">
+
+<h1><a href="https://www.puc-rio.br/ensinopesq/ccg" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Coordenação Central de Graduação&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg&#39;});">Coordenação Central de Graduação</a></h1>
+
+
+<!-- fecha #puc_topo_titulo_caminho e #puc_topo_brasao_titulo_caminho no include do menu -->
+
+
+
+<!-- Caminho -->
+<nav><a href="https://www.puc-rio.br/ensinopesq/ccg" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Graduação&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg&#39;});">Graduação</a> &gt;  <a href="https://www.puc-rio.br/ensinopesq/ccg/cursos.html" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Cursos&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/cursos.html&#39;});">Cursos</a> &gt; </nav>
+
+
+<!-- Menu -->
+</div><!-- fecha #puc_topo_titulo_caminho -->
+</div><!-- fecha #puc_topo_brasao_titulo_caminho -->
+
+
+<!-- Para layout sem menu -->
+<div id="puc_menu_vazio"></div>
+
+
+
+</header>
+
+
+
+
+
+<!-- ===================================================================================== MEIO == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<section id="conteudo">
+
+
+<!-- ================================================================== MEIO > COLUNA PRINCIPAL == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<!-- destino do link de acessibilidade "pular para conteúdo" -->
+<article>
+
+
+
+
+
+
+<h2>Cursos</h2>
+
+
+
+<div class="puc_layout_area-inicial_nivelador ccg_cursos_intro">
+
+<div class="puc_layout_area-inicial_esquerda">
+
+
+
+<h3>Ciência da Computação</h3>
+
+<ul>
+<li><a href="https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#profissional" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;O profissional&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#profissional&#39;});">O profissional</a></li>
+<li><a href="https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#curso" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;O curso&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#curso&#39;});">O curso</a></li>
+<li><a href="https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#oportunidades" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Oportunidades&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#oportunidades&#39;});">Oportunidades</a></li>
+</ul>
+
+<h5>Periodização:</h5>
+
+<ul>
+<li><a href="https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#2023" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Ciência da Computação (Currículo 2023)&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#2023&#39;});">Ciência da Computação (Currículo 2023)</a></li>
+<li><a href="https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#12018" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Ciência da Computação (Currículo 1 - anterior a 2023)&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#12018&#39;});">Ciência da Computação (Currículo 1 - anterior a 2023)</a></li>
+<li><a href="https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#02018" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Ciência da Computação (Currículo 0 - anterior a 2023)&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html#02018&#39;});">Ciência da Computação (Currículo 0 - anterior a 2023)</a></li>
+</ul>
+
+<h5>Prazo proposto para a conclusão do curso:</h5>
+
+<p>4 anos letivos - máx: 7 anos letivos</p>
+
+
+
+
+<div class="ccg_cursos_coordenador">
+
+<p><img src="./PUC-Rio - Graduação - Ciência da Computação_files/img_ens_ccg_foto_coord_cien.jpg" alt="Coordenador do curso de Ciência da computação"></p>
+
+<p class="ccg_cursos_coordenador_nome">
+<strong>Coordenador:</strong><br>
+Professor Ivan Mathias Filho</p>
+
+</div>
+
+
+
+
+
+<p>Código do curso no MEC: 114286</p>
+<p> Reconhecimento do curso<br>
+Portaria Seres/MEC nº 21, de 12/03/2012<br>
+D.O.U. de 16/03/2012</p>
+<p>Renovação  de Reconhecimento<br>
+Portaria Seres/MEC nº 152, 21/06/2023<br>
+D.O.U. de 22/06/2023</p>
+
+
+
+
+</div><!-- /"puc_layout_area-inicial_esquerda" -->
+
+
+<div class="puc_layout_area-inicial_direita ccg_quadro_lateral">
+
+<div class="ccg_imagem_lateral">
+<div class="ccg_imagem_lateral_interno">
+<img src="./PUC-Rio - Graduação - Ciência da Computação_files/img_ens_ccg_foto_cienciacom.jpg" alt="Foto referente ao curso de Ciência da computação">
+</div></div>
+
+
+
+<h5>Localização:</h5>
+
+<p>Rua   Marquês de São Vicente, 225<br>
+Edifício   Rio Datacentro.  4º andar<br>
+Gávea -   Rio de Janeiro - RJ - CEP 22453-900<br>
+tel: 3527-1513   / fax: 3527-1530<br>
+e-mail: <a href="mailto:sec-grad@inf.puc-rio.br" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;sec-grad@inf.puc-rio.br&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;mailto:sec-grad@inf.puc-rio.br&#39;});">sec-grad@inf.puc-rio.br</a><br>
+site:   http://www.inf.puc-rio.br</p>
+
+<hr>
+
+<p>Conheça mais sobre:</p>
+
+<h5><a href="https://www.puc-rio.br/ensinopesq/ccg/dominios.html" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Domínios Adicionais&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/dominios.html&#39;});">Domínios Adicionais</a></h5>
+
+<p>Uma nova forma de você complementar seus estudos na PUC-Rio. <a href="https://www.puc-rio.br/ensinopesq/ccg/dominios.html" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;Leia aqui.&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/dominios.html&#39;});">Leia aqui.</a>
+
+
+
+
+</p></div><!-- /"puc_layout_area-inicial_direita ccg_quadro_lateral" -->
+
+
+</div><!-- /"puc_layout_area-inicial_nivelador" -->
+
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+
+
+
+
+
+<h4 id="profissional">O profissional</h4>
+
+<p>Deve estar apto a solucionar desafios da área de Informática, seja na <strong>Indústria do entretenimento</strong> - ferramentas para a construção de jogos e programas para TV digital interativa; <strong>na Computação móvel</strong> - softwares para dispositivos móveis, como telefones celulares e PDAs, entre outros; <strong>na Web - </strong>sistemas inteligentes, redes sociais, Web 2.0, sistemas multiagente e multimídia; <strong>nos Sistemas de apoio à decisão</strong> - mineração de dados e integração de grandes volumes de dados, informações e conhecimento, aplicados a diversas áreas como planejamento estratégico, mercado financeiro e gestão de projetos; <strong>na Computação gráfica</strong> - visualização de dados científicos e visão computacional; ou na <strong>Inclusão digital</strong> - acesso participativo universal do cidadão brasileiro ao conhecimento.</p>
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr> 
+
+
+<h4 id="curso">O curso</h4>
+
+<p>Foi desenvolvido em resposta à forte e crescente demanda por profissionais de Tecnologia da Informação, no país e no exterior, e apresenta currículo flexível. Está permeado por pesquisas de ponta, desenvolvidas pelos professores em diversos projetos acadêmicos e em parceria com empresas de grande porte. O currículo flexível dá ao aluno condições de construir seu curso de modo a se especializar nos tópicos de computação de seu maior interesse.</p>
+<p>O aluno de Ciência da Computação encontra diversas oportunidades de estágio remunerado, por meio de seus 13 laboratórios temáticos, além de contar com a possibilidade de conclusão do mestrado apenas um ano após a sua formatura.
+</p>
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+
+
+<h4 id="oportunidades">Oportunidades</h4>
+
+<p>Em termos de mercado, a demanda por alunos com perfil diretamente relacionado a Tecnologias de Informação e Comunicação indica que esta é uma excelente oportunidade para o ingresso no curso. A área também se configura como prioridade nacional, a partir da clara necessidade de formação desses profissionais.</p>
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+
+<h4 id="2023">Periodização - Ciência da Computação (Currículo 2023)</h4>
+
+<!-- Floater de busca de ementas -->
+<script src="./PUC-Rio - Graduação - Ciência da Computação_files/ementas_webservice.js.download" charset="utf-8"></script>
+
+<div id="ccg_floater_busca_ementa">
+ 
+<form name="ementaForm" action="javascript:SubmitEmenta()" method="post">
+
+	<span style="display:block; margin-bottom:3px;">Ementa de disciplina</span>
+	<input type="hidden" name="tb" value="em2">
+	<input name="cd" size="7" maxlength="7" type="text" onclick="javascript:this.value=&#39;&#39;;" value="Código">
+	<input type="image" src="./PUC-Rio - Graduação - Ciência da Computação_files/puc_cabecalho_icone_busca.png">
+
+</form>
+
+</div>
+ 
+
+
+
+<table class="puc_tabela_padrao_TAG-TABLE ccg_tabela_periodizacao" border="0" cellspacing="0">
+
+<tbody><tr>
+<td>Código</td>
+<td>Nome da Disciplina</td>
+<td>Créditos</td>
+<td>CH Semestral de Extensão</td>
+</tr>
+<tr>
+<td colspan="4">1º PERÍODO</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;CRE1200&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE1200&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE1200&#39;);&#39;});">CRE1200</a></td>
+<td>O Humano e o Fenômeno    Religioso</td>
+<td>4</td>
+<td>40h</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;CTC4002&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CTC4002&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CTC4002&#39;);&#39;});">CTC4002</a></td>
+<td>Modelagem e    Programação</td>
+<td>6</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1009&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1009&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1009&#39;);&#39;});">INF1009</a></td>
+<td>Lógica para    Computação</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1012&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1012&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1012&#39;);&#39;});">INF1012</a></td>
+<td>Modelagem de Dados</td>
+<td>2</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1034&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1034&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1034&#39;);&#39;});">INF1034</a></td>
+<td>Práticas de    Programação</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;LET1920&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;LET1920&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;LET1920&#39;);&#39;});">LET1920</a></td>
+<td>Compreensão Prod.    Texto Técnico</td>
+<td>2</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4">2º PERÍODO</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1037&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1037&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1037&#39;);&#39;});">INF1037</a></td>
+<td>Programação em C</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1039&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1039&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1039&#39;);&#39;});">INF1039</a></td>
+<td>Projetos: Aplicações    Interativas</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1403&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1403&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1403&#39;);&#39;});">INF1403</a></td>
+<td>Introd. a Interação    Humano-Computador</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;MAT4161&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT4161&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT4161&#39;);&#39;});">MAT4161</a></td>
+<td>Cálculo a uma    Variável</td>
+<td>6</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;MAT4200&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT4200&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT4200&#39;);&#39;});">MAT4200</a></td>
+<td>Álgebra Linear I</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4">3º PERÍODO</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;CRE0712&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE0712&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE0712&#39;);&#39;});">CRE0712</a></td>
+<td>Optativas de    Cristianismo</td>
+<td>4</td>
+<td>40h</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1010&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1010&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1010&#39;);&#39;});">INF1010</a></td>
+<td>Estruturas de Dados    Avançadas</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1018&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1018&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1018&#39;);&#39;});">INF1018</a></td>
+<td>Software Básico</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1040&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1040&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1040&#39;);&#39;});">INF1040</a></td>
+<td>Projetos: Programação    Modular</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1383&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1383&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1383&#39;);&#39;});">INF1383</a></td>
+<td>Bancos de Dados</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;MAT4162&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT4162&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT4162&#39;);&#39;});">MAT4162</a></td>
+<td>Cálculo a Várias    Varáveis I</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;ELL0900&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;ELL0900&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;ELL0900&#39;);&#39;});">ELL0900</a></td>
+<td>Elet Livres-Dentro/Fora  Dept</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4">4º PERÍODO</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1032&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1032&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1032&#39;);&#39;});">INF1032</a></td>
+<td>Introdução a     Ciência dos Dados</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1027&amp;nbsp;&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1027 &#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1027&amp;nbsp;&#39;);&#39;});">INF1027&nbsp;</a></td>
+<td>Teste e Medição de    Software</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1041&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1041&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1041&#39;);&#39;});">INF1041</a></td>
+<td>Engenharia de    Software</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1316&amp;nbsp;&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1316 &#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1316&amp;nbsp;&#39;);&#39;});">INF1316&nbsp;</a></td>
+<td>Sistemas Operacionais</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1636&amp;nbsp;&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1636 &#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1636&amp;nbsp;&#39;);&#39;});">INF1636&nbsp;</a></td>
+<td>Programação Orientada    a Objetos</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;MAT1320&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT1320&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT1320&#39;);&#39;});">MAT1320</a></td>
+<td>Introdução à    Matemática Discreta</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;MAT4202&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT4202&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT4202&#39;);&#39;});">MAT4202</a></td>
+<td>Álgebra Linear II</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4">5º PERÍODO</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;CRE1241&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE1241&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE1241&#39;);&#39;});">CRE1241</a></td>
+<td>Ética Cristã</td>
+<td>2</td>
+<td>20h</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF0377&amp;nbsp;&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0377 &#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0377&amp;nbsp;&#39;);&#39;});">INF0377&nbsp;</a></td>
+<td>Optativa de    Probabilidade Estatística</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1022&amp;nbsp;&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1022 &#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1022&amp;nbsp;&#39;);&#39;});">INF1022&nbsp;</a></td>
+<td>Analisadores Léxicos    e Sintáticos</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1029&amp;nbsp;&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1029 &#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1029&amp;nbsp;&#39;);&#39;});">INF1029&nbsp;</a></td>
+<td>Introd. à Arquitetura    de Computadores</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1631&amp;nbsp;&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1631 &#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1631&amp;nbsp;&#39;);&#39;});">INF1631&nbsp;</a></td>
+<td>Estruturas Discretas</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1643&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1643&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1643&#39;);&#39;});">INF1643</a></td>
+<td>Redes de Comunicação    de Dados</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1771&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1771&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1771&#39;);&#39;});">INF1771</a></td>
+<td>Inteligência    Artificial</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4">6º PERÍODO</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;CRE1275&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE1275&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE1275&#39;);&#39;});">CRE1275</a></td>
+<td>Ética Socioambiental    e Direitos Humanos</td>
+<td>2</td>
+<td>20h</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF0400&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0400&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0400&#39;);&#39;});">INF0400</a></td>
+<td>Optativas de     Ciências da Computação I</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1045&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1045&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1045&#39;);&#39;});">INF1045</a></td>
+<td>Projeto e Construção    de Sistemas</td>
+<td>6</td>
+<td>45h</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1014&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1014&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1014&#39;);&#39;});">INF1014</a></td>
+<td>Seminários</td>
+<td>1</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1416&amp;nbsp;&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1416 &#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1416&amp;nbsp;&#39;);&#39;});">INF1416&nbsp;</a></td>
+<td>Segurança da Informação</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1721&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1721&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1721&#39;);&#39;});">INF1721</a></td>
+<td>Análise de Algoritmos</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+  <td><a href="javascript:abreEmenta(&#39;INF1920&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1920&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1920&#39;);&#39;});">INF1920</a></td>
+  <td>Estágio    Supervisionado</td>
+  <td>1</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td><a href="javascript:abreEmenta(&#39;ELO0900&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;ELO0900&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;ELO0900&#39;);&#39;});">ELO0900</a></td>
+  <td>Eletivas de Orientação</td>
+  <td>4</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td colspan="4">7º PERÍODO</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1015&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1015&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1015&#39;);&#39;});">INF1015</a></td>
+<td>Computabilidade</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF0308&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0308&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0308&#39;);&#39;});">INF0308</a></td>
+<td>Optativa de    Programação Avançada</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF0401&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0401&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0401&#39;);&#39;});">INF0401</a></td>
+<td>Optativas de    Ciências da Computação II</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1950&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1950&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1950&#39;);&#39;});">INF1950</a></td>
+<td>Projeto Final I</td>
+<td>2</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+  <td><a href="javascript:abreEmenta(&#39;ELO0900&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;ELO0900&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;ELO0900&#39;);&#39;});">ELO0900</a></td>
+  <td>Eletiva de Orientação</td>
+  <td>8</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td><a href="javascript:abreEmenta(&#39;EXT0100&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;EXT0100&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;EXT0100&#39;);&#39;});">EXT0100</a></td>
+  <td>Optativas de Extensão</td>
+  <td>4</td>
+  <td>60h</td>
+</tr>
+<tr>
+  <td><a href="javascript:abreEmenta(&#39;JUR0205&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;JUR0205&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;JUR0205&#39;);&#39;});">JUR0205</a></td>
+  <td>Optativas de Direito para CTC</td>
+  <td>2</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td colspan="4">8º PERÍODO</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;FIL0300&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;FIL0300&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;FIL0300&#39;);&#39;});">FIL0300</a></td>
+<td>Optativa de Filosofia    CB-CTC</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;INF1951&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1951&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1951&#39;);&#39;});">INF1951</a></td>
+<td>Projeto Final II</td>
+<td>2</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;ELO0900&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;ELO0900&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;ELO0900&#39;);&#39;});">ELO0900</a></td>
+<td>Eletiva de Orientação</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+  <td><a href="javascript:abreEmenta(&#39;ELL0900&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;ELL0900&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;ELL0900&#39;);&#39;});">ELL0900</a></td>
+  <td>Elet Livres-Dentro/Fora Dept</td>
+  <td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="javascript:abreEmenta(&#39;EXT0100&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;EXT0100&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;EXT0100&#39;);&#39;});">EXT0100</a></td>
+<td>Optativas de Extensão</td>
+<td>8</td>
+<td>120h</td>
+</tr>
+<tr>
+  <td colspan="4">PERÍODO LETIVO INDETERMINADO</td>
+</tr>
+<tr>
+<td>ACP0900</td>
+<td>Atividades    Complemantares</td>
+<td>10</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+  <td colspan="4">Total de créditos:&nbsp;212</td>
+</tr>
+<tr>
+<td colspan="4">Carga Horária de Extensão:&nbsp;345</td>
+</tr>
+<tr>
+<td colspan="4">Carga Horária Total:&nbsp;3375</td>
+</tr>
+</tbody></table>
+<p>** Consulte o conjunto de disciplinas que compõem este grupo no&nbsp;<strong><a href="https://www.puc-rio.br/ensinopesq/academicas" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;PUC online&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;https://www.puc-rio.br/ensinopesq/academicas&#39;});">PUC online</a></strong>&nbsp;ou na secretaria do seu curso. </p>
+<ol>
+<li>As&nbsp;disciplinas optativas são relacionadas em grupo e podem ser cursadas separadamente até se completar o número de créditos que devem ser cumpridos. </li>
+<li>A organização das matrizes curriculares dos cursos da PUC-Rio é por sistema de créditos e todos possuem, em suas matrizes curriculares, disciplinas optativas, a serem cursadas por livre escolha do aluno, chamadas Eletivas Livres ou Eletivas dentro/fora do Departamento, desde que obedecidos o tipo e o número de créditos estabelecidos no currículo para cada tipo de eletiva. </li>
+<li>Semestralmente, as disciplinas de LIBRAS - LET 1801 Língua Brasileira de Sinais II e LET 1802 Língua Brasileira de Sinais II -, são oferecidas como optativas, de acordo com o Decreto nº 5.626, de 22/12/05.</li>
+</ol>
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+
+<h4 id="12018">Periodização - Ciência da Computação (Currículo 1 - anterior a 2023)</h4>
+
+
+<table class="puc_tabela_padrao_TAG-TABLE ccg_tabela_periodizacao" border="0" cellspacing="0">
+    <tbody><tr>
+      <td>Código</td>
+      <td>Nome da Disciplina </td>
+      <td>Créditos</td>
+    </tr>
+    <tr>
+      <td colspan="3">1º PERÍODO</td>
+    </tr>
+    
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1025&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1025&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1025&#39;);&#39;});">INF1025</a></td>
+        <td>Introdução    à Programação </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1012&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1012&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1012&#39;);&#39;});">INF1012</a></td>
+        <td>Modelagem    de Dados </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1009&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1009&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1009&#39;);&#39;});">INF1009</a></td>
+        <td>Lógica    para Computação </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1031&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1031&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1031&#39;);&#39;});">INF1031</a></td>
+        <td>Introdução    à Computação</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;MAT1157&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT1157&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT1157&#39;);&#39;});">MAT1157</a></td>
+        <td>Cálculo de    uma Variável A</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;MAT1320&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT1320&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT1320&#39;);&#39;});">MAT1320</a></td>
+        <td>Introdução    à Matemática Discreta</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="3">2º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;CRE1100&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE1100&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE1100&#39;);&#39;});">CRE1100</a></td>
+        <td>O Humano e    o Fenômeno Religioso </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF0380&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0380&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0380&#39;);&#39;});">INF0380</a></td>
+        <td>Optativas de&nbsp;Comp&nbsp;e Produção de Texto</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1403&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1403&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1403&#39;);&#39;});">INF1403</a></td>
+        <td>Intr Int    Humano-Computador </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1007&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1007&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1007&#39;);&#39;});">INF1007</a></td>
+        <td>Programação    II </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;MAT1158&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT1158&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT1158&#39;);&#39;});">MAT1158</a></td>
+        <td>Cálculo a uma    Variável B</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;MAT1250&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT1250&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT1250&#39;);&#39;});">MAT1250</a></td>
+        <td>Álgebra    Linear A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="3">3º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1383&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1383&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1383&#39;);&#39;});">INF1383</a></td>
+        <td>Banco de    Dados</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1631&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1631&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1631&#39;);&#39;});">INF1631</a></td>
+        <td>Estruturas    Discretas</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1010&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1010&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1010&#39;);&#39;});">INF1010</a></td>
+        <td>Estruturas    de Dados Avançadas </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1301&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1301&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1301&#39;);&#39;});">INF1301</a></td>
+        <td>Programação    Modular</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1018&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1018&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1018&#39;);&#39;});">INF1018</a></td>
+        <td>Software    Básico </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;MAT1162&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT1162&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT1162&#39;);&#39;});">MAT1162</a></td>
+        <td>Cálculo a    Várias Variáveis I</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="3">4º PERÍODO</td>
+      </tr>
+      <tr>
+		  <td><a href="javascript:abreEmenta(&#39;CRE0710&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE0710&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE0710&#39;);&#39;});">CRE0710</a></td>
+        <td>Optativas de Cristianismo</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1027&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1027&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1027&#39;);&#39;});">INF1027</a></td>
+        <td>Testes e    Medidas de Software </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1029&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1029&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1029&#39;);&#39;});">INF1029</a></td>
+        <td>Introdução à Arquitetura de Computadores</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1316&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1316&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1316&#39;);&#39;});">INF1316</a></td>
+        <td>Sistemas Operacionais </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1629&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1629&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1629&#39;);&#39;});">INF1629</a></td>
+        <td>Princípios    de Engenharia de Software </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1636&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1636&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1636&#39;);&#39;});">INF1636</a></td>
+        <td>Programação    Orientada Objetos </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="3">5º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;CRE1141&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE1141&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE1141&#39;);&#39;});">CRE1141</a></td>
+        <td>Ética    Crista </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF0377&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0377&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0377&#39;);&#39;});">INF0377</a></td>
+        <td>Optativas de Probabilidade e Estatística</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1022&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1022&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1022&#39;);&#39;});">INF1022</a></td>
+        <td>Analisadores    Léxicos e Sintáticos </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1028&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1028&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1028&#39;);&#39;});">INF1028</a></td>
+        <td>Projeto e    Construção Sistemas </td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1317&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1317&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1317&#39;);&#39;});">INF1317</a></td>
+        <td>Redes de    Computadores </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1721&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1721&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1721&#39;);&#39;});">INF1721</a></td>
+        <td>Análise de    Algoritmos </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="3">6º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1014&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1014&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1014&#39;);&#39;});">INF1014</a></td>
+        <td>Seminários </td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1033&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1033&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1033&#39;);&#39;});">INF1033</a></td>
+        <td>Estágio    Supervisionado em Computação </td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td colspan="3">7º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;CRE1175&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE1175&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE1175&#39;);&#39;});">CRE1175</a></td>
+        <td>Ética    Socioambiental Direitos Humanos </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;FIL0300&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;FIL0300&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;FIL0300&#39;);&#39;});">FIL0300</a></td>
+        <td>Optativas de Filosofia – CB/CTC</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1950&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1950&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1950&#39;);&#39;});">INF1950</a></td>
+        <td>Projeto    Final I </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td colspan="3">8º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF0381&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0381&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0381&#39;);&#39;});">INF0381</a></td>
+        <td>Optativas de Direito para Computação</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1951&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1951&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1951&#39;);&#39;});">INF1951</a></td>
+        <td>Projeto    Final II </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td colspan="3">PERÍODO LETIVO INDETERMINADO </td>
+      </tr>
+      <tr>
+        <td>ACP0900 </td>
+        <td>Atividades    Complementares </td>
+        <td>10 </td>
+      </tr>
+      <tr>
+        <td>ELL0900 </td>
+        <td>Eletivas Livres - Dentro/Fora do Departamento</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF0378&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0378&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0378&#39;);&#39;});">INF0378</a></td>
+        <td>Optativas de Formação em Computação</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF0379&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0379&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0379&#39;);&#39;});">INF0379</a></td>
+<td>Optativas de Computação</td>
+<td>18</td>
+      </tr>
+      <tr>
+        <td colspan="3">Total de créditos: 211 </td>
+      </tr>
+    </tbody></table>
+<p>Semestralmente, as disciplinas de LIBRAS - <a href="javascript:abreEmenta(&#39;LET1801&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;LET1801&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;LET1801&#39;);&#39;});">LET1801</a> Língua Brasileira de Sinais II e <a href="javascript:abreEmenta(&#39;LET1802&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;LET1802&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;LET1802&#39;);&#39;});">LET1802</a> Língua Brasileira de
+          Sinais II -, são oferecidas como optativas, de acordo com o Decreto nº 5.626,
+  de 22/12/05.</p>
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+ 
+
+<h4 id="02018">Periodização - Ciência da Computação (Currículo 0 - anterior a 2023)</h4>
+
+<table class="puc_tabela_padrao_TAG-TABLE ccg_tabela_periodizacao" border="0" cellspacing="0">
+  <tbody><tr>
+      <td>Código</td>
+      <td>Nome da Disciplina </td>
+      <td>Créditos</td>
+    </tr>
+      <tr>
+        <td colspan="3">1º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1025&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1025&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1025&#39;);&#39;});">INF1025</a></td>
+        <td>Introdução    à Programação </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1012&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1012&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1012&#39;);&#39;});">INF1012</a></td>
+        <td>Modelagem    de Dados </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1009&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1009&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1009&#39;);&#39;});">INF1009</a></td>
+        <td>Lógica    para Computação </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1031&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1031&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1031&#39;);&#39;});">INF1031</a></td>
+        <td>Introdução    à Computação</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;MAT1161&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT1161&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT1161&#39;);&#39;});">MAT1161</a></td>
+        <td>Cálculo de    uma Variável </td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;MAT1320&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT1320&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT1320&#39;);&#39;});">MAT1320</a></td>
+        <td>Introdução    à Matemática Discreta</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="3">2º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;CRE1100&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE1100&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE1100&#39;);&#39;});">CRE1100</a></td>
+        <td>O Humano e    o Fenômeno Religioso </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF0380&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0380&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0380&#39;);&#39;});">INF0380</a></td>
+        <td>Optativas de&nbsp;Comp&nbsp;e Produção de Texto</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1403&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1403&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1403&#39;);&#39;});">INF1403</a></td>
+        <td>Intr Int    Humano-Computador </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1007&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1007&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1007&#39;);&#39;});">INF1007</a></td>
+        <td>Programação    II </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;MAT0211&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT0211&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT0211&#39;);&#39;});">MAT0211</a></td>
+        <td>Optativas de Álgebra Linear</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="3">3º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1383&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1383&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1383&#39;);&#39;});">INF1383</a></td>
+        <td>Banco de    Dados</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1631&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1631&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1631&#39;);&#39;});">INF1631</a></td>
+        <td>Estruturas    Discretas</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1010&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1010&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1010&#39;);&#39;});">INF1010</a></td>
+        <td>Estruturas    de Dados Avançadas </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1301&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1301&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1301&#39;);&#39;});">INF1301</a></td>
+        <td>Programação    Modular</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1018&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1018&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1018&#39;);&#39;});">INF1018</a></td>
+        <td>Software    Básico </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;MAT1162&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;MAT1162&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;MAT1162&#39;);&#39;});">MAT1162</a></td>
+        <td>Cálculo a    Várias Variáveis I</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="3">4º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;CRE0710&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE0710&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE0710&#39;);&#39;});">CRE0710</a></td>
+		<td>Optativas de Cristianismo</td>
+      <td>4</td>
+        
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1027&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1027&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1027&#39;);&#39;});">INF1027</a></td>
+        <td>Testes e    Medidas de Software </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1029&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1029&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1029&#39;);&#39;});">INF1029</a></td>
+        <td>Introdução à Arquitetura de Computadores</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1316&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1316&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1316&#39;);&#39;});">INF1316</a></td>
+        <td>Sistemas    Operacionais </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1629&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1629&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1629&#39;);&#39;});">INF1629</a></td>
+        <td>Princípios    de Engenharia de Software </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1636&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1636&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1636&#39;);&#39;});">INF1636</a></td>
+        <td>Programação    Orientada Objetos </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="3">5º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;CRE1141&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE1141&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE1141&#39;);&#39;});">CRE1141</a></td>
+        <td>Ética    Crista </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF0377&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0377&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0377&#39;);&#39;});">INF0377</a></td>
+        <td>Optativas de Probabilidade e Estatística</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1022&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1022&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1022&#39;);&#39;});">INF1022</a></td>
+        <td>Analisadores    Léxicos e Sintáticos </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1028&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1028&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1028&#39;);&#39;});">INF1028</a></td>
+        <td>Projeto e    Construção Sistemas </td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1317&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1317&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1317&#39;);&#39;});">INF1317</a></td>
+        <td>Redes de    Computadores </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1721&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1721&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1721&#39;);&#39;});">INF1721</a></td>
+        <td>Análise de    Algoritmos </td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="3">6º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1014&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1014&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1014&#39;);&#39;});">INF1014</a></td>
+        <td>Seminários </td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1033&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1033&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1033&#39;);&#39;});">INF1033</a></td>
+        <td>Estágio    Supervisionado em Computação </td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td colspan="3">7º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;CRE1175&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;CRE1175&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;CRE1175&#39;);&#39;});">CRE1175</a></td>
+        <td>Ética Socioambiental    Direitos Humanos </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;FIL0300&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;FIL0300&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;FIL0300&#39;);&#39;});">FIL0300</a></td>
+        <td>Optativas de Filosofia – CB/CTC</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1950&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1950&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1950&#39;);&#39;});">INF1950</a></td>
+        <td>Projeto    Final I </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td colspan="3">8º PERÍODO</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF0381&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0381&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0381&#39;);&#39;});">INF0381</a></td>
+        <td>OPT    Direito para Computação</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF1951&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF1951&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF1951&#39;);&#39;});">INF1951</a></td>
+        <td>Projeto    Final II </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td colspan="3">PERÍODO LETIVO INDETERMINADO </td>
+      </tr>
+      <tr>
+        <td>ACP0900 </td>
+        <td>Atividades    Complementares </td>
+        <td>10 </td>
+      </tr>
+      <tr>
+        <td>ELL0900 </td>
+        <td>Eletivas Livres - Dentro/Fora do Departamento</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF0378&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0378&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0378&#39;);&#39;});">INF0378</a></td>
+        <td>Optativas de Formação em Computação</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td><a href="javascript:abreEmenta(&#39;INF0379&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;INF0379&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;INF0379&#39;);&#39;});">INF0379</a></td>
+<td>Optativas de Computação</td>
+<td>18</td>
+      </tr>
+      <tr>
+        <td colspan="3">Total de créditos: 205</td>
+      </tr>
+    </tbody></table>
+<p>Semestralmente, as disciplinas de LIBRAS - <a href="javascript:abreEmenta(&#39;LET1801&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;LET1801&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;LET1801&#39;);&#39;});">LET1801</a> Língua Brasileira de Sinais II e <a href="javascript:abreEmenta(&#39;LET1802&#39;);" title="ver ementa" onmousedown="gtagGlobalPUC( &#39;event&#39;, &#39;clique&#39;, { &#39;event_category&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;event_label&#39;: &#39;LET1802&#39;, &#39;origin_url&#39;:&#39;https://www.puc-rio.br/ensinopesq/ccg/ciencia_computacao.html&#39;, &#39;href&#39;:&#39;javascript:abreEmenta(&#39;LET1802&#39;);&#39;});">LET1802</a> Língua Brasileira de
+        Sinais II -, são oferecidas como optativas, de acordo com o Decreto nº 5.626,
+de 22/12/05.</p>
+
+
+
+
+
+
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+
+
+</article>
+
+
+
+
+
+<!-- ==================================================================== MEIO > COLUNA LATERAL == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<!-- =============================================================================== FECHA MEIO == -->
+
+
+</section>
+
+
+<!-- =================================================================================== RODAPÉ == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<footer>
+
+<!-- Rodapé PUC -->
+
+<iframe src="./PUC-Rio - Graduação - Ciência da Computação_files/puc_rodape.html" name="rodape" title="Rodapé PUC-Rio - endereço e copyright"></iframe>
+
+</footer>
+
+
+
+<!-- ============================================================================= FECHA PÁGINA == -->
+
+
+
+</body></html>
