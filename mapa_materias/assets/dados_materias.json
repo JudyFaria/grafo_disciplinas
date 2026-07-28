@@ -1,0 +1,711 @@
+{
+    "ACP0900": {
+        "nome": "ATIVIDADES COMPLEMENTARES",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "CRE0712": {
+        "nome": "OPTATIVAS DE CRISTIANISMO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "CRE1200": {
+        "nome": "O HUMANO E O FENOM RELIGIOSO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "CRE1241": {
+        "nome": "ÉTICA CRISTÃ",
+        "pre_requisitos": [
+            [
+                "CRE1112"
+            ],
+            [
+                "CRE1115"
+            ],
+            [
+                "CRE1116"
+            ],
+            [
+                "CRE1117"
+            ],
+            [
+                "CRE1118"
+            ],
+            [
+                "CRE1127"
+            ],
+            [
+                "CRE1212"
+            ],
+            [
+                "CRE1215"
+            ],
+            [
+                "CRE1216"
+            ],
+            [
+                "CRE1217"
+            ],
+            [
+                "CRE1218"
+            ],
+            [
+                "CRE1227"
+            ],
+            [
+                "TEO1230"
+            ],
+            [
+                "TEO1242"
+            ],
+            [
+                "TEO1245"
+            ],
+            [
+                "TEO1246"
+            ],
+            [
+                "TEO1322"
+            ],
+            [
+                "TEO1328"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "CRE1275": {
+        "nome": "ETICA SOCIOAMBIENT DIR HUMANOS",
+        "pre_requisitos": [
+            [
+                "CRE1141"
+            ],
+            [
+                "CRE1241"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "CTC4002": {
+        "nome": "MODELAGEM E PROGRAMAÇÃO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "ELL0900": {
+        "nome": "ELETIVAS LIVRES-DENTRO/FORA DEPT",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "ELO0900": {
+        "nome": "ELETIVAS DE ORIENTACAO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "EXT0100": {
+        "nome": "OPTATIVAS DE EXTENSAO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "FIL0300": {
+        "nome": "OPTATIVAS FILOSOFIA-CB/CTC",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF0308": {
+        "nome": "OPTATIVAS DE PROGRAMACAO AVANCADA",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF0377": {
+        "nome": "OPTATIVAS DE PROBABILIDADE E ESTATISTICA",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF0400": {
+        "nome": "OPTATIVAS DE CIÊNCIAS DA COMPUTAÇÃO I",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF0401": {
+        "nome": "OPTATIVAS DE CIÊNCIAS DA COMPUTAÇÃO II",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF1009": {
+        "nome": "LOGICA PARA COMPUTACAO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF1010": {
+        "nome": "ESTRUTURAS DE DADOS AVANCADAS",
+        "pre_requisitos": [
+            [
+                "INF1006"
+            ],
+            [
+                "INF1007"
+            ],
+            [
+                "INF1037"
+            ],
+            [
+                "INF1318"
+            ],
+            [
+                "INF1620"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1012": {
+        "nome": "MODELAGEM DE DADOS",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF1014": {
+        "nome": "SEMINARIOS",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF1015": {
+        "nome": "COMPUTABILIDADE",
+        "pre_requisitos": [
+            [
+                "INF1022",
+                "INF1721"
+            ],
+            [
+                "INF1626",
+                "INF1721"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1018": {
+        "nome": "SOFTWARE BASICO",
+        "pre_requisitos": [
+            [
+                "INF1006"
+            ],
+            [
+                "INF1007"
+            ],
+            [
+                "INF1037"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1022": {
+        "nome": "ANALIS LEXICOS E SINTATICOS",
+        "pre_requisitos": [
+            [
+                "INF1007",
+                "INF1009"
+            ],
+            [
+                "INF1009",
+                "INF1037"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1027": {
+        "nome": "TESTE E MEDICAO DE SOFTWARE",
+        "pre_requisitos": [
+            [
+                "INF1040"
+            ],
+            [
+                "INF1301"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1029": {
+        "nome": "INT ARQUITETURA COMPUTADORES",
+        "pre_requisitos": [
+            [
+                "INF1018"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1032": {
+        "nome": "INTRODUCAO A CIENCIA DOS DADOS",
+        "pre_requisitos": [
+            [
+                "INF1007",
+                "MAT1200"
+            ],
+            [
+                "INF1007",
+                "MAT1250"
+            ],
+            [
+                "INF1007",
+                "MAT1260"
+            ],
+            [
+                "INF1007",
+                "MAT1280"
+            ],
+            [
+                "INF1007",
+                "MAT4200"
+            ],
+            [
+                "INF1007",
+                "MAT4280"
+            ],
+            [
+                "INF1026",
+                "MAT1200"
+            ],
+            [
+                "INF1026",
+                "MAT1250"
+            ],
+            [
+                "INF1026",
+                "MAT1260"
+            ],
+            [
+                "INF1026",
+                "MAT1280"
+            ],
+            [
+                "INF1026",
+                "MAT4200"
+            ],
+            [
+                "INF1026",
+                "MAT4280"
+            ],
+            [
+                "INF1037",
+                "MAT1200"
+            ],
+            [
+                "INF1037",
+                "MAT1250"
+            ],
+            [
+                "INF1037",
+                "MAT1260"
+            ],
+            [
+                "INF1037",
+                "MAT1280"
+            ],
+            [
+                "INF1037",
+                "MAT4200"
+            ],
+            [
+                "INF1037",
+                "MAT4280"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1034": {
+        "nome": "PRÁTICAS DE PROGRAMAÇÃO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF1037": {
+        "nome": "PROGRAMACAO EM C",
+        "pre_requisitos": [
+            [
+                "CTC4002"
+            ],
+            [
+                "INF1025"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1039": {
+        "nome": "PROJETOS: APLICA INTERATIVAS",
+        "pre_requisitos": [
+            [
+                "CTC4002"
+            ],
+            [
+                "INF1025"
+            ]
+        ],
+        "co_requisitos": [
+            "INF1007",
+            "INF1403",
+            "INF1037",
+            "INF1403"
+        ]
+    },
+    "INF1040": {
+        "nome": "PROJ PROG MODULAR",
+        "pre_requisitos": [
+            [
+                "INF1007"
+            ],
+            [
+                "INF1037"
+            ]
+        ],
+        "co_requisitos": [
+            "INF1010",
+            "INF1018"
+        ]
+    },
+    "INF1041": {
+        "nome": "ENGENHARIA DE SOFTWARE",
+        "pre_requisitos": [
+            [
+                "INF1010",
+                "INF1040",
+                "INF1383"
+            ],
+            [
+                "INF1010",
+                "INF1301",
+                "INF1383"
+            ]
+        ],
+        "co_requisitos": [
+            "INF1027",
+            "INF1636"
+        ]
+    },
+    "INF1045": {
+        "nome": "PROJETO E CONSTRUÇÃO SISTEMAS",
+        "pre_requisitos": [
+            [
+                "INF1027",
+                "INF1383",
+                "INF1636"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1316": {
+        "nome": "SISTEMAS OPERACIONAIS",
+        "pre_requisitos": [
+            [
+                "INF1008"
+            ],
+            [
+                "INF1018"
+            ],
+            [
+                "INF1315"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1383": {
+        "nome": "BANCOS DE DADOS",
+        "pre_requisitos": [
+            [
+                "INF1006",
+                "INF1012"
+            ],
+            [
+                "INF1007",
+                "INF1012"
+            ],
+            [
+                "INF1012",
+                "INF1037"
+            ],
+            [
+                "INF1012",
+                "INF1515"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1403": {
+        "nome": "INTR INT HUMANO-COMPUTADOR",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF1416": {
+        "nome": "SEGURANCA DA INFORMACAO",
+        "pre_requisitos": [
+            [
+                "INF1317",
+                "INF1383"
+            ],
+            [
+                "INF1317",
+                "INF1731"
+            ],
+            [
+                "INF1383",
+                "INF1640"
+            ],
+            [
+                "INF1383",
+                "INF1643"
+            ],
+            [
+                "INF1640",
+                "INF1731"
+            ],
+            [
+                "INF1643",
+                "INF1731"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1631": {
+        "nome": "ESTRUTURAS DISCRETAS",
+        "pre_requisitos": [
+            [
+                "INF1007",
+                "MAT1310"
+            ],
+            [
+                "INF1007",
+                "MAT1320"
+            ],
+            [
+                "INF1037",
+                "MAT1310"
+            ],
+            [
+                "INF1037",
+                "MAT1320"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1636": {
+        "nome": "PROGRAMACAO ORIENTADA OBJETOS",
+        "pre_requisitos": [
+            [
+                "INF1040"
+            ],
+            [
+                "INF1301"
+            ],
+            [
+                "INF1628"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1643": {
+        "nome": "REDES DE COMUNICAÇÃO DE DADOS",
+        "pre_requisitos": [
+            [
+                "ENG4413"
+            ],
+            [
+                "INF1019"
+            ],
+            [
+                "INF1316"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1721": {
+        "nome": "ANALISE DE ALGORITMOS",
+        "pre_requisitos": [
+            [
+                "INF1006",
+                "INF1631"
+            ],
+            [
+                "INF1007",
+                "INF1631"
+            ],
+            [
+                "INF1010",
+                "INF1308"
+            ],
+            [
+                "INF1010",
+                "INF1631"
+            ],
+            [
+                "INF1037",
+                "INF1631"
+            ],
+            [
+                "INF1308",
+                "INF1389"
+            ],
+            [
+                "INF1389",
+                "INF1631"
+            ],
+            [
+                "INF1620",
+                "INF1631"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1771": {
+        "nome": "INTELIGENCIA ARTIFICIAL",
+        "pre_requisitos": [
+            [
+                "FIL1304",
+                "INF1010"
+            ],
+            [
+                "FIL1304",
+                "INF1389"
+            ],
+            [
+                "FIL1304",
+                "INF1620"
+            ],
+            [
+                "INF1009",
+                "INF1010"
+            ],
+            [
+                "INF1009",
+                "INF1389"
+            ],
+            [
+                "INF1009",
+                "INF1620"
+            ],
+            [
+                "INF1389",
+                "MAT1082"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1920": {
+        "nome": "ESTAGIO SUPERVISIONADO",
+        "pre_requisitos": [
+            [
+                "118 créditos"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1950": {
+        "nome": "PROJETO FINAL I",
+        "pre_requisitos": [
+            [
+                "120 créditose PORTUGUÊS (nivel 3)"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1951": {
+        "nome": "PROJETO FINAL II",
+        "pre_requisitos": [
+            [
+                "INF1372"
+            ],
+            [
+                "INF1390"
+            ],
+            [
+                "INF1405",
+                "INF1411"
+            ],
+            [
+                "INF1915"
+            ],
+            [
+                "INF1950"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "JUR0205": {
+        "nome": "OPTATIVAS DE DIREITO PARA CTC",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "LET1920": {
+        "nome": "COMPREENSAO PROD TEXTO TECNICO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "MAT1320": {
+        "nome": "INTRODUCAO MATEMATICA DISCRETA",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "MAT4161": {
+        "nome": "CÁLCULO A UMA VARIÁVEL",
+        "pre_requisitos": [
+            [
+                "CTC (nivel 2)"
+            ],
+            [
+                "MATEMÁTICA (nivel 2)"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "MAT4162": {
+        "nome": "CÁLCULO A VÁRIAS VARIÁVEIS I",
+        "pre_requisitos": [
+            [
+                "MAT1158"
+            ],
+            [
+                "MAT1161"
+            ],
+            [
+                "MAT1181"
+            ],
+            [
+                "MAT4161"
+            ],
+            [
+                "MAT4181"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "MAT4200": {
+        "nome": "ÁLGEBRA LINEAR I",
+        "pre_requisitos": [
+            [
+                "CTC (nivel 2)"
+            ],
+            [
+                "MATEMÁTICA (nivel 2)"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "MAT4202": {
+        "nome": "ÁLGEBRA LINEAR II",
+        "pre_requisitos": [
+            [
+                "MAT1250"
+            ],
+            [
+                "MAT1260"
+            ],
+            [
+                "MAT1280"
+            ],
+            [
+                "MAT1343"
+            ],
+            [
+                "MAT4200"
+            ],
+            [
+                "MAT4280"
+            ]
+        ],
+        "co_requisitos": []
+    }
+}
