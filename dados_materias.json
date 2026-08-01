@@ -4,9 +4,70 @@
         "pre_requisitos": [],
         "co_requisitos": []
     },
+    "CRE0710": {
+        "nome": "OPTATIVAS DE CRISTIANISMO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
     "CRE0712": {
         "nome": "OPTATIVAS DE CRISTIANISMO",
         "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "CRE1100": {
+        "nome": "O HUMANO E O FENOM RELIGIOSO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "CRE1141": {
+        "nome": "ETICA CRISTA",
+        "pre_requisitos": [
+            [
+                "CRE1112"
+            ],
+            [
+                "CRE1115"
+            ],
+            [
+                "CRE1116"
+            ],
+            [
+                "CRE1117"
+            ],
+            [
+                "CRE1118"
+            ],
+            [
+                "CRE1127"
+            ],
+            [
+                "TEO1230"
+            ],
+            [
+                "TEO1242"
+            ],
+            [
+                "TEO1245"
+            ],
+            [
+                "TEO1246"
+            ],
+            [
+                "TEO1322"
+            ],
+            [
+                "TEO1328"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "CRE1175": {
+        "nome": "ETICA SOCIOAMBIENT DIR HUMANOS",
+        "pre_requisitos": [
+            [
+                "CRE1141"
+            ]
+        ],
         "co_requisitos": []
     },
     "CRE1200": {
@@ -121,6 +182,26 @@
         "pre_requisitos": [],
         "co_requisitos": []
     },
+    "INF0378": {
+        "nome": "OPTATIVAS DE FORMACAO EM COMPUTACAO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF0379": {
+        "nome": "OPTATIVAS DE COMPUTACAO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF0380": {
+        "nome": "OPTATIVAS COMP E PRODUCAO DE TEXTO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF0381": {
+        "nome": "OPTATIVAS DIREITO P/ COMPUTACAO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
     "INF0400": {
         "nome": "OPTATIVAS DE CIÊNCIAS DA COMPUTAÇÃO I",
         "pre_requisitos": [],
@@ -129,6 +210,18 @@
     "INF0401": {
         "nome": "OPTATIVAS DE CIÊNCIAS DA COMPUTAÇÃO II",
         "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "INF1007": {
+        "nome": "PROGRAMACAO II",
+        "pre_requisitos": [
+            [
+                "INF1005"
+            ],
+            [
+                "INF1025"
+            ]
+        ],
         "co_requisitos": []
     },
     "INF1009": {
@@ -210,6 +303,11 @@
         ],
         "co_requisitos": []
     },
+    "INF1025": {
+        "nome": "INTRODUCAO A PROGRAMACAO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
     "INF1027": {
         "nome": "TESTE E MEDICAO DE SOFTWARE",
         "pre_requisitos": [
@@ -222,6 +320,22 @@
         ],
         "co_requisitos": []
     },
+    "INF1028": {
+        "nome": "PROJETO E CONSTRUCAO SISTEMAS",
+        "pre_requisitos": [
+            [
+                "INF1027",
+                "INF1383",
+                "INF1636"
+            ],
+            [
+                "INF1383",
+                "INF1413",
+                "INF1636"
+            ]
+        ],
+        "co_requisitos": []
+    },
     "INF1029": {
         "nome": "INT ARQUITETURA COMPUTADORES",
         "pre_requisitos": [
@@ -229,6 +343,11 @@
                 "INF1018"
             ]
         ],
+        "co_requisitos": []
+    },
+    "INF1031": {
+        "nome": "INTRODUCAO A COMPUTACAO",
+        "pre_requisitos": [],
         "co_requisitos": []
     },
     "INF1032": {
@@ -305,6 +424,18 @@
             [
                 "INF1037",
                 "MAT4280"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1033": {
+        "nome": "ESTAGIO SUPERV EM COMPUTACAO",
+        "pre_requisitos": [
+            [
+                "INF1028"
+            ],
+            [
+                "INF1045"
             ]
         ],
         "co_requisitos": []
@@ -388,6 +519,33 @@
         ],
         "co_requisitos": []
     },
+    "INF1301": {
+        "nome": "PROGRAMACAO MODULAR",
+        "pre_requisitos": [
+            [
+                "INF1006"
+            ],
+            [
+                "INF1007"
+            ],
+            [
+                "INF1037"
+            ],
+            [
+                "INF1089"
+            ],
+            [
+                "INF1318"
+            ],
+            [
+                "INF1389"
+            ],
+            [
+                "INF1620"
+            ]
+        ],
+        "co_requisitos": []
+    },
     "INF1316": {
         "nome": "SISTEMAS OPERACIONAIS",
         "pre_requisitos": [
@@ -399,6 +557,18 @@
             ],
             [
                 "INF1315"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1317": {
+        "nome": "REDES DE COMPUTADORES",
+        "pre_requisitos": [
+            [
+                "INF1019"
+            ],
+            [
+                "INF1316"
             ]
         ],
         "co_requisitos": []
@@ -456,6 +626,22 @@
             [
                 "INF1643",
                 "INF1731"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "INF1629": {
+        "nome": "PRINCIPIOS ENG DE SOFTWARE",
+        "pre_requisitos": [
+            [
+                "INF1013",
+                "INF1636"
+            ],
+            [
+                "INF1301"
+            ],
+            [
+                "INF1628"
             ]
         ],
         "co_requisitos": []
@@ -631,6 +817,53 @@
     },
     "LET1920": {
         "nome": "COMPREENSAO PROD TEXTO TECNICO",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "MAT0211": {
+        "nome": "OPTATIVAS DE ALGEBRA LINEAR I",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "MAT1157": {
+        "nome": "CALCULO A UMA VARIAVEL A",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "MAT1158": {
+        "nome": "CALCULO A UMA VARIAVEL B",
+        "pre_requisitos": [
+            [
+                "MAT1157"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "MAT1161": {
+        "nome": "CALCULO DE UMA VARIAVEL",
+        "pre_requisitos": [],
+        "co_requisitos": []
+    },
+    "MAT1162": {
+        "nome": "CALCULO A VARIAS VARIAVEIS I",
+        "pre_requisitos": [
+            [
+                "MAT1158"
+            ],
+            [
+                "MAT1161"
+            ],
+            [
+                "MAT1181"
+            ],
+            [
+                "MAT1341"
+            ]
+        ],
+        "co_requisitos": []
+    },
+    "MAT1250": {
+        "nome": "ALGEBRA LINEAR A",
         "pre_requisitos": [],
         "co_requisitos": []
     },

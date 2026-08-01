@@ -2,58 +2,96 @@ from bs4 import BeautifulSoup
 import re
 import json
 
-def extract_curriculum_CC(html_content):
-    soup = BeautifulSoup(html_content, 'html.parser')
+padrao_codigo = re.compile(r'^[A-Z]{3}\d{4}$')
+padrao_periodo = re.compile(r'(\d+)[ºo°]?\s*PER[IÍ]ODO', re.IGNORECASE)
 
-    # Regex para identificar o padrão exato de matérias da PUC (Ex: INF1005, MAT4202)
-    # ^ indica o começo da string, [A-Z]{3} são 3 letras, \d{4} são 4 números, $ indica o fim.
-    padrao_codigo = re.compile(r'^[A-Z]{3}\d{4}$')
 
-    # Usa SET ao invés de lista para evitar duplicatas
-    materias = set()
-
-    # Busca todas as tabelas que contem as grades
-    tabelas = soup.find_all('table', class_="ccg_tabela_periodizacao")
-
+def _tabela_curriculo_atual(tabelas):
+    """
+    Acha a tabela do currículo mais recente pelo rótulo (o que NÃO diz
+    "anterior a XXXX"), em vez de assumir que é sempre a primeira da
+    página — mais robusto se a ordem mudar no futuro.
+    """
     for tabela in tabelas:
-        linhas = tabela.find_all('tr')
+        rotulo_el = tabela.find_previous(['h1', 'h2', 'h3', 'h4', 'strong', 'b'])
+        rotulo = rotulo_el.get_text(strip=True) if rotulo_el else ''
+        if 'anterior' not in rotulo.lower():
+            return tabela, rotulo
+    return tabelas[0], None  # fallback
 
-        for linha in linhas:
+
+def extrair_periodo_curriculo_atual(html_content):
+    """
+    codigo -> periodo, usando só o currículo mais recente da página.
+    Quando o mesmo código aparece em mais de um período (eletivas com
+    intervalo de períodos), fica o menor.
+    """
+    soup = BeautifulSoup(html_content, 'html.parser')
+    tabelas = soup.find_all('table', class_='ccg_tabela_periodizacao')
+    tabela_atual, rotulo = _tabela_curriculo_atual(tabelas)
+
+    periodo_atual = None
+    mapeamento = {}
+
+    for linha in tabela_atual.find_all('tr'):
+        colunas = linha.find_all('td')
+        if not colunas:
+            continue
+
+        # Linha de cabeçalho de período: só 1 <td> (ex: "1º PERÍODO")
+        if len(colunas) == 1:
+            texto = colunas[0].get_text().replace('\xa0', '').strip()
+            match_periodo = padrao_periodo.search(texto)
+            if match_periodo:
+                periodo_atual = int(match_periodo.group(1))
+            continue
+
+        # Linha de disciplina: código na primeira coluna
+        codigo = colunas[0].get_text().replace('\xa0', '').strip()
+        if padrao_codigo.match(codigo) and periodo_atual is not None:
+            if codigo not in mapeamento or periodo_atual < mapeamento[codigo]:
+                mapeamento[codigo] = periodo_atual
+
+    return dict(sorted(mapeamento.items())), rotulo
+
+
+def extrair_todos_codigos(html_content):
+    """
+    Todos os códigos únicos entre os 3 currículos da página (sem se
+    importar com período) — pro 'universo' de disciplinas que o outro
+    scraper usa pra buscar nome/dependências.
+    """
+    soup = BeautifulSoup(html_content, 'html.parser')
+    tabelas = soup.find_all('table', class_='ccg_tabela_periodizacao')
+
+    codigos = set()
+    for tabela in tabelas:
+        for linha in tabela.find_all('tr'):
             colunas = linha.find_all('td')
+            if not colunas:
+                continue
+            codigo = colunas[0].get_text().replace('\xa0', '').strip()
+            if padrao_codigo.match(codigo):
+                codigos.add(codigo)
 
-            if colunas:
-                # O código sempre fica na primeira coluna (índice 0)
-                codigo_bruto = colunas[0].text
+    return sorted(codigos)
 
-                # Limpa espaços em branco e caracteres invisíveis do HTML (como o &nbsp;)
-                codigo_limpo = codigo_bruto.replace('\xa0', '').strip()
-
-                # Verifica se o texto extraído bate com a regra do Regex
-                if padrao_codigo.match(codigo_limpo):
-                    materias.add(codigo_limpo)
-
-        # Converte o set de volta para lista ordenada alfabeticamente
-        lista_final = list(materias)
-        lista_final.sort()
-
-        return lista_final
-    
 
 if __name__ == "__main__":
     caminho_html = "screpers/grade_cc.html"
-    caminho_lista = "screpers/lista_materias.json"
-    
-    try:
-        with open(caminho_html, "r", encoding="utf-8") as file:
-            html = file.read()
 
-        materias_extraidas = extract_curriculum_CC(html)
-        
-        # salva a lista gerada em um arquivo JSON
-        with open(caminho_lista, "w", encoding="utf-8") as file:
-            json.dump(materias_extraidas, file, ensure_ascii=False, indent=4)
+    with open(caminho_html, "r", encoding="utf-8") as file:
+        html = file.read()
 
-        print(f"Lista de matérias extraídas e salva em '{caminho_lista}' com sucesso.")
+    todos_codigos = extrair_todos_codigos(html)
+    periodos, rotulo_curriculo = extrair_periodo_curriculo_atual(html)
 
-    except FileNotFoundError:
-        print("Arquivo 'grade_cc.html' não encontrado. Certifique-se de que o arquivo está no mesmo diretório do script.")
+    with open("screpers/lista_materias.json", "w", encoding="utf-8") as file:
+        json.dump(todos_codigos, file, ensure_ascii=False, indent=4)
+
+    with open("screpers/periodos_curriculo_atual_cc.json", "w", encoding="utf-8") as file:
+        json.dump(periodos, file, ensure_ascii=False, indent=4)
+
+    print(f"{len(todos_codigos)} códigos únicos (todos os currículos) salvos em 'lista_materias.json'.")
+    print(f"Currículo usado pro período: '{rotulo_curriculo}'")
+    print(f"{len(periodos)} matérias com período salvas em 'periodos_curriculo_atual_cc.json'.")
