@@ -1,39 +1,34 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import '../models/disciplina_model.dart'; 
+import '../models/disciplina_model.dart';
 
 class DisciplinaService {
-  // Método assíncrono para carregar os dados
   Future<List<Disciplina>> carregarDisciplinas() async {
     try {
-      // 1. Lê o arquivo JSON da pasta assets
-      final String respostaString = await rootBundle.loadString('assets/dados_materias.json');
-      
-      // 2. Converte a string JSON para um Map do Dart
+      final String respostaString =
+          await rootBundle.loadString('assets/dados_materias.json');
       final Map<String, dynamic> jsonMap = jsonDecode(respostaString);
-      
-      // 3. Itera pelas entradas (entries) do mapa para construir as disciplinas
-      List<Disciplina> disciplinas = jsonMap.entries.map((entry) {
-        final String codigoDisciplina = entry.key; // Ex: "ACP0900"
-        final Map<String, dynamic> dados = entry.value; // Ex: {"nome": "...", "pre_requisitos": []}
-        
-        // Montamos um mapa intermediário com as chaves exatas que o seu
-        // construtor Disciplina.fromJson() está esperando ler.
-        final Map<String, dynamic> jsonFormatado = {
-          'codigo': codigoDisciplina,
+
+      Map<String, dynamic> periodos = {};
+      try {
+        final String periodosString =
+            await rootBundle.loadString('assets/periodos_curriculo_atual_cc.json');
+        periodos = jsonDecode(periodosString);
+      } catch (_) {
+        // opcional — sem esse arquivo, periodo fica null pra todo mundo
+      }
+
+      return jsonMap.entries.map((entry) {
+        final dados = entry.value as Map<String, dynamic>;
+        return Disciplina.fromJson({
+          'codigo': entry.key,
           'nome': dados['nome'],
-          // Traduzindo do snake_case do JSON para o camelCase do Dart
-          'preRequisitos': dados['pre_requisitos'], 
+          'preRequisitos': dados['pre_requisitos'],
           'coRequisitos': dados['co_requisitos'],
-        };
-        
-        return Disciplina.fromJson(jsonFormatado);
+          'periodo': periodos[entry.key],
+        });
       }).toList();
-      
-      return disciplinas;
-      
     } catch (e) {
-      // Em caso de erro (arquivo não encontrado ou json malformado)
       throw Exception('Erro ao carregar os dados das disciplinas: $e');
     }
   }

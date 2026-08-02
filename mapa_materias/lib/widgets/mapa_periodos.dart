@@ -8,12 +8,17 @@ import '../models/disciplina_model.dart';
 import '../models/semestre_academico.dart';
 
 class MapaPeriodosWidget extends StatefulWidget {
-  final List<Disciplina> disciplinas;
+    final List<Disciplina> disciplinas;
+    final Map<String, int>? periodosPersonalizados; // ex: vindos do falta-cursar
+    
+    const MapaPeriodosWidget({
+        super.key, 
+        required this.disciplinas, 
+        this.periodosPersonalizados
+    });
 
-  const MapaPeriodosWidget({super.key, required this.disciplinas});
-
-  @override
-  State<MapaPeriodosWidget> createState() => _MapaPeriodosWidgetState();
+    @override
+    State<MapaPeriodosWidget> createState() => _MapaPeriodosWidgetState();
 }
 
 class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
@@ -39,8 +44,11 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
 
     final base = SemestreAcademico.deData(DateTime.now());
     for (var d in widget.disciplinas) {
-      if (d.periodo != null) {
-        _semestre[d.codigo] = base.avancar(d.periodo! - 1);
+      
+      final periodo = widget.periodosPersonalizados?[d.codigo] ?? d.periodo;
+      
+      if (periodo != null) {
+        _semestre[d.codigo] = base.avancar(periodo - 1);
       }
     }
   }
@@ -52,6 +60,20 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
             _dependentesDiretos.putIfAbsent(codigo, () => []).add(d.codigo);
             }
         }
+    }
+
+    // Códigos usados pra aresta/cascata: interseção (obrigatório de fato) se
+    // houver; senão, cai pra união dos códigos que existem de verdade no
+    // currículo — cobre o caso de OU puro (ex: MAT4162), onde normalmente só
+    // uma das alternativas é uma disciplina real do currículo atual.
+    Set<String> _codigosRelevantes(Disciplina d) {
+        if (d.preRequisitos.isEmpty) return {};
+        final grupos = d.preRequisitos.map((g) => g.map((c) => c.trim()).toSet()).toList();
+        final comuns = grupos.reduce((a, b) => a.intersection(b));
+        if (comuns.isNotEmpty) return comuns;
+
+        final uniao = grupos.expand((g) => g).toSet();
+        return uniao.where((c) => _porCodigo.containsKey(c)).toSet();
     }
 
   void _moverDisciplina(String codigo, SemestreAcademico destino) {
