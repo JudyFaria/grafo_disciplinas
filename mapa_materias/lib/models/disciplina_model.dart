@@ -6,11 +6,14 @@ class Disciplina {
     final List<List<String>> preRequisitos;
     final List<String> coRequisitos;
 
+    final int? periodo; // período sugerido no currículo mais recente (pode ser nulo)
+
     Disciplina({
         required this.codigo,
         required this.nome,
         required this.preRequisitos,
         required this.coRequisitos,
+        this.periodo,
     });
 
     // Construtor para converter o JSON em um objeto Dart
@@ -32,6 +35,8 @@ class Disciplina {
                     ?.map((item) => item as String)
                     .toList() ??
                 [],
+
+            periodo: json['periodo'] as int?,
         );
     }
 }
