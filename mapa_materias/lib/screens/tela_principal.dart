@@ -77,15 +77,21 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
 
           final disciplinas = snapshot.data!;
           if (_periodosDaPlanilha == null) {
-            return MapaPeriodosWidget(disciplinas: disciplinas);
+            return MapaPeriodosWidget(
+                key: const ValueKey('grade-geral'),
+                disciplinas: disciplinas);
           }
 
-          final faltantes = disciplinas
-              .where((d) => _periodosDaPlanilha!.containsKey(d.codigo))
-              .toList();
+          final concluidasIniciais = disciplinas
+              .map((d) => d.codigo)
+              .toSet()
+              .difference(_periodosDaPlanilha!.keys.toSet());
+
           return MapaPeriodosWidget(
-            disciplinas: faltantes,
+            key: const ValueKey('pendentes'),
+            disciplinas: disciplinas, //// agora TODAS, não só as faltantes
             periodosPersonalizados: _periodosDaPlanilha,
+            concluidasIniciais: concluidasIniciais,
           );
         },
       ),
