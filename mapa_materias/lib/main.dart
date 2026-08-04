@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
-import 'screens/tela_principal.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'screens/auth_gate.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MapaMateriasApp());
 }
 
@@ -16,7 +22,7 @@ class MapaMateriasApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const TelaPrincipal(),
+      home: const AuthGate(),
     );
   }
 }

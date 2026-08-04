@@ -11,11 +11,18 @@ class MapaPeriodosWidget extends StatefulWidget {
   final Map<String, int>? periodosPersonalizados;
   final Set<String> concluidasIniciais;
 
+  final String uid;
+  final String? matricula; 
+  final Map<String, dynamic>? estadoSalvo;
+
   const MapaPeriodosWidget({
     super.key,
     required this.disciplinas,
+    required this.uid,
     this.periodosPersonalizados,
     this.concluidasIniciais = const {},
+    this.matricula,
+    this.estadoSalvo,
   });
 
   @override
@@ -49,46 +56,45 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
   void initState() {
     super.initState();
     _porCodigo = {for (var d in widget.disciplinas) d.codigo: d};
-    _concluidas = {...widget.concluidasIniciais};
     _construirDependencias();
 
-    final base = SemestreAcademico.deData(DateTime.now());
-    
-    for (var d in widget.disciplinas) {
-      if (_concluidas.contains(d.codigo)) continue; // já concluída, não precisa de período
-      
-      final periodo = widget.periodosPersonalizados?[d.codigo] ?? d.periodo;
-      
-      if (periodo != null) {
-        _semestre[d.codigo] = base.avancar(periodo - 1);
+    if (widget.estadoSalvo != null) {
+      _restaurarDeEstadoSalvo(widget.estadoSalvo!);
+    } else {
+      _concluidas = {...widget.concluidasIniciais};
+      final base = SemestreAcademico.deData(DateTime.now());
+      for (var d in widget.disciplinas) {
+        if (_concluidas.contains(d.codigo)) continue;
+        final periodo = widget.periodosPersonalizados?[d.codigo] ?? d.periodo;
+        if (periodo != null) {
+          _semestre[d.codigo] = base.avancar(periodo - 1);
+        }
       }
+    }
+  }
+
+  void _restaurarDeEstadoSalvo(Map<String, dynamic> dados) {
+    _concluidas = Set<String>.from(dados['concluidas'] as List? ?? []);
+
+    final semestreSalvo = dados['semestre'] as Map<String, dynamic>? ?? {};
+    for (var entry in semestreSalvo.entries) {
+      final s = entry.value as Map<String, dynamic>;
+      _semestre[entry.key] = SemestreAcademico(s['ano'] as int, s['semestre'] as int);
+    }
+
+    for (var s in (dados['colunasExtras'] as List? ?? [])) {
+      _colunasExtras.add(SemestreAcademico(s['ano'] as int, s['semestre'] as int));
     }
   }
 
   void _salvarProgresso() {
     _progressoService.salvar(
-        semestre: _semestre,
-        concluidas: _concluidas,
-        colunasExtras: _colunasExtras,
+      uid: widget.uid,
+      semestre: _semestre,
+      concluidas: _concluidas,
+      colunasExtras: _colunasExtras,
+      matricula: widget.matricula,
     );
-  }
-
-  Future<void> _carregarProgresso() async {
-    final dados = await _progressoService.carregar();
-    if (dados == null) return;
-
-    setState(() {
-        _semestre
-        ..clear()
-        ..addEntries((dados['semestre'] as Map<String, dynamic>).entries.map(
-                (e) => MapEntry(e.key, SemestreAcademico(e.value['ano'], e.value['semestre'])),
-            ));
-        _concluidas = Set<String>.from(dados['concluidas'] as List);
-        _colunasExtras
-        ..clear()
-        ..addAll((dados['colunasExtras'] as List)
-            .map((s) => SemestreAcademico(s['ano'], s['semestre'])));
-    });
   }
 
   @override
@@ -158,6 +164,8 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
     _timerDestaque = Timer(const Duration(seconds: 2), () {
       if (mounted) setState(() => _destacados = {});
     });
+
+    _salvarProgresso();
   }
 
   // Pré-requisito empurra o dependente pra FRENTE; co-requisito puxa pro
@@ -206,12 +214,16 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
           : (usados.toList()..sort()).last;
       _colunasExtras.add(ultimo.avancar(1));
     });
+
+    _salvarProgresso();
   }
 
   void _removerColuna(SemestreAcademico semestre) {
     final vazia = !widget.disciplinas.any((d) => _semestre[d.codigo] == semestre);
     if (!vazia) return;
     setState(() => _colunasExtras.remove(semestre));
+
+    _salvarProgresso();
   }
 
   void _marcarConcluida(String codigo) {
@@ -219,6 +231,8 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
         _concluidas.add(codigo);
         _semestre.remove(codigo);
     });
+
+    _salvarProgresso();
   }
 
   @override
@@ -384,26 +398,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
                             ),
                           ),
                         ),
-                        Positioned(
-                            left: colunas.length * (_larguraColuna + _espacoColuna),
-                            top: _alturaCabecalho + 8,
-                            width: _larguraColuna,
-                            child: Column(
-                                children: [
-                                    OutlinedButton.icon(
-                                        onPressed: _salvarProgresso,
-                                        icon: const Icon(Icons.save, size: 16),
-                                        label: const Text('Salvar'),
-                                    ),
-                                    const SizedBox(height: 8),
-                                    OutlinedButton.icon(
-                                        onPressed: _carregarProgresso,
-                                        icon: const Icon(Icons.folder_open, size: 16),
-                                        label: const Text('Carregar'),
-                                    ),
-                                ],
-                            ),
-                        ),
+                        
                       ],
                     ),
                   ),

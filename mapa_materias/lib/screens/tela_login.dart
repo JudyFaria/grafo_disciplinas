@@ -1,0 +1,131 @@
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import '../services/auth_service.dart';
+
+class TelaLogin extends StatefulWidget {
+  const TelaLogin({super.key});
+
+  @override
+  State<TelaLogin> createState() => _TelaLoginState();
+}
+
+class _TelaLoginState extends State<TelaLogin> {
+  final _authService = AuthService();
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _senhaController = TextEditingController();
+
+  bool _modoCadastro = false;
+  bool _carregando = false;
+  String? _erro;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _senhaController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _enviar() async {
+    if (!_formKey.currentState!.validate()) return;
+    setState(() {
+      _carregando = true;
+      _erro = null;
+    });
+    try {
+      if (_modoCadastro) {
+        await _authService.cadastrar(_emailController.text.trim(), _senhaController.text);
+      } else {
+        await _authService.entrar(_emailController.text.trim(), _senhaController.text);
+      }
+      // Se der certo, o AuthGate troca de tela sozinho (ouve authStateChanges)
+    } on FirebaseAuthException catch (e) {
+      setState(() => _erro = _mensagemDeErro(e.code));
+    } finally {
+      if (mounted) setState(() => _carregando = false);
+    }
+  }
+
+  String _mensagemDeErro(String codigo) {
+    switch (codigo) {
+      case 'user-not-found':
+        return 'Não existe conta com esse e-mail.';
+      case 'wrong-password':
+      case 'invalid-credential':
+        return 'E-mail ou senha incorretos.';
+      case 'email-already-in-use':
+        return 'Já existe uma conta com esse e-mail.';
+      case 'weak-password':
+        return 'A senha precisa ter pelo menos 6 caracteres.';
+      case 'invalid-email':
+        return 'E-mail inválido.';
+      default:
+        return 'Erro ao autenticar ($codigo).';
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 360),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    _modoCadastro ? 'Criar conta' : 'Entrar',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 24),
+                  TextFormField(
+                    controller: _emailController,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: const InputDecoration(labelText: 'E-mail'),
+                    validator: (v) => (v == null || !v.contains('@')) ? 'E-mail inválido' : null,
+                  ),
+                  const SizedBox(height: 12),
+                  TextFormField(
+                    controller: _senhaController,
+                    obscureText: true,
+                    decoration: const InputDecoration(labelText: 'Senha'),
+                    validator: (v) => (v == null || v.length < 6) ? 'Mínimo 6 caracteres' : null,
+                  ),
+                  if (_erro != null) ...[
+                    const SizedBox(height: 12),
+                    Text(_erro!, style: const TextStyle(color: Colors.red)),
+                  ],
+                  const SizedBox(height: 20),
+                  FilledButton(
+                    onPressed: _carregando ? null : _enviar,
+                    child: _carregando
+                        ? const SizedBox(
+                            width: 20, height: 20,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : Text(_modoCadastro ? 'Cadastrar' : 'Entrar'),
+                  ),
+                  const SizedBox(height: 12),
+                  TextButton(
+                    onPressed: _carregando
+                        ? null
+                        : () => setState(() => _modoCadastro = !_modoCadastro),
+                    child: Text(
+                      _modoCadastro ? 'Já tenho conta — entrar' : 'Não tenho conta — cadastrar',
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
