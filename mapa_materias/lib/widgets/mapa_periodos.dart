@@ -1,5 +1,3 @@
-// lib/widgets/mapa_periodos.dart
-
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../models/disciplina_model.dart';
@@ -8,11 +6,10 @@ import '../services/progresso_service.dart';
 
 class MapaPeriodosWidget extends StatefulWidget {
   final List<Disciplina> disciplinas;
+  final String uid;
   final Map<String, int>? periodosPersonalizados;
   final Set<String> concluidasIniciais;
-
-  final String uid;
-  final String? matricula; 
+  final String? matricula;
   final Map<String, dynamic>? estadoSalvo;
 
   const MapaPeriodosWidget({
@@ -40,22 +37,25 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
     Colors.green, Colors.indigo, Colors.brown, Colors.pink, Colors.cyan,
   ];
 
-  late Map<String, Disciplina> _porCodigo;
+  final ProgressoService _progressoService = ProgressoService();
+
+  late Map<String, Disciplina> _porCodigo; // pode ser sobrescrito por escolhas de optativa
+  late Map<String, Disciplina> _porCodigoOriginal; // pra sempre saber as opções e poder desfazer
   late Map<String, List<String>> _dependentesDiretos;
   late Map<String, Set<String>> _coRequisitosDiretos;
   final Map<String, SemestreAcademico> _semestre = {};
-  final Set<SemestreAcademico> _colunasExtras = {}; // adicionadas manualmente
+  final Set<SemestreAcademico> _colunasExtras = {};
+  final Map<String, String> _escolhaOptativa = {}; // código do slot -> código escolhido
   late Set<String> _concluidas;
   final ValueNotifier<bool> _dropInvalido = ValueNotifier(false);
   Set<String> _destacados = {};
   Timer? _timerDestaque;
 
-  final ProgressoService _progressoService = ProgressoService();
-
   @override
   void initState() {
     super.initState();
     _porCodigo = {for (var d in widget.disciplinas) d.codigo: d};
+    _porCodigoOriginal = Map.of(_porCodigo);
     _construirDependencias();
 
     if (widget.estadoSalvo != null) {
@@ -85,6 +85,12 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
     for (var s in (dados['colunasExtras'] as List? ?? [])) {
       _colunasExtras.add(SemestreAcademico(s['ano'] as int, s['semestre'] as int));
     }
+
+    final escolhasSalvas = dados['escolhas'] as Map<String, dynamic>? ?? {};
+    for (var entry in escolhasSalvas.entries) {
+      _aplicarEscolha(entry.key, entry.value as String);
+    }
+    if (escolhasSalvas.isNotEmpty) _construirDependencias();
   }
 
   void _salvarProgresso() {
@@ -93,6 +99,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
       semestre: _semestre,
       concluidas: _concluidas,
       colunasExtras: _colunasExtras,
+      escolhas: _escolhaOptativa,
       matricula: widget.matricula,
     );
   }
@@ -107,7 +114,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
   void _construirDependencias() {
     _dependentesDiretos = {};
     _coRequisitosDiretos = {};
-    for (var d in widget.disciplinas) {
+    for (var d in _porCodigo.values) {
       for (var codigo in _codigosRelevantes(d)) {
         _dependentesDiretos.putIfAbsent(codigo, () => []).add(d.codigo);
       }
@@ -133,33 +140,28 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
     return uniao.where((c) => _porCodigo.containsKey(c)).toSet();
   }
 
-  // Verifica ANTES de aceitar o drop. Trata OU de verdade: basta 1 grupo
-  // (caminho alternativo) inteiro satisfeito antes do destino pra liberar.
   bool _podeSoltarEm(String codigo, SemestreAcademico destino) {
     final disciplina = _porCodigo[codigo];
-    
     if (disciplina == null) return true;
-    
+
     for (var prereq in _codigosRelevantes(disciplina)) {
-        if (_concluidas.contains(prereq)) continue;
-        
-        final semestrePrereq = _semestre[prereq];
-        if (semestrePrereq != null && destino.compareTo(semestrePrereq) <= 0) {
-            return false;
-        }
+      if (_concluidas.contains(prereq)) continue;
+      final semestrePrereq = _semestre[prereq];
+      if (semestrePrereq != null && destino.compareTo(semestrePrereq) <= 0) {
+        return false;
+      }
     }
     return true;
   }
 
   void _moverDisciplina(String codigo, SemestreAcademico destino) {
     setState(() {
-      _concluidas.remove(codigo); // se estava marcada como concluída, agora não está mais
+      _concluidas.remove(codigo);
       _semestre[codigo] = destino;
-      
       final mudados = {codigo, ..._propagarAPartirDe(codigo)};
       _destacados = mudados;
     });
-    
+
     _timerDestaque?.cancel();
     _timerDestaque = Timer(const Duration(seconds: 2), () {
       if (mounted) setState(() => _destacados = {});
@@ -168,8 +170,6 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
     _salvarProgresso();
   }
 
-  // Pré-requisito empurra o dependente pra FRENTE; co-requisito puxa pro
-  // MESMO semestre. Retorna quem mudou, pra destacar na tela.
   Set<String> _propagarAPartirDe(String codigoMovido) {
     final mudados = <String>{};
     final fila = [codigoMovido];
@@ -214,30 +214,124 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
           : (usados.toList()..sort()).last;
       _colunasExtras.add(ultimo.avancar(1));
     });
-
     _salvarProgresso();
   }
 
   void _removerColuna(SemestreAcademico semestre) {
-    final vazia = !widget.disciplinas.any((d) => _semestre[d.codigo] == semestre);
+    final vazia = !_porCodigo.values.any((d) => _semestre[d.codigo] == semestre);
     if (!vazia) return;
     setState(() => _colunasExtras.remove(semestre));
-
     _salvarProgresso();
   }
 
   void _marcarConcluida(String codigo) {
     setState(() {
-        _concluidas.add(codigo);
-        _semestre.remove(codigo);
+      _concluidas.add(codigo);
+      _semestre.remove(codigo);
     });
-
     _salvarProgresso();
+  }
+
+  // Aplica uma escolha de optativa sem cascata nem persistência — usado
+  // tanto na escolha interativa quanto ao restaurar do Firestore.
+  void _aplicarEscolha(String codigoSlot, String codigoEscolhido) {
+    final escolhida = _porCodigo[codigoEscolhido];
+    final original = _porCodigoOriginal[codigoSlot];
+    if (escolhida == null || original == null) return;
+
+    _escolhaOptativa[codigoSlot] = codigoEscolhido;
+    _porCodigo[codigoSlot] = Disciplina(
+      codigo: original.codigo,
+      nome: escolhida.nome,
+      preRequisitos: escolhida.preRequisitos,
+      coRequisitos: escolhida.coRequisitos,
+      periodo: original.periodo,
+      grupoDisciplinas: original.grupoDisciplinas,
+    );
+  }
+
+  void _escolherOptativa(String codigoSlot, String codigoEscolhido) {
+    setState(() {
+      _aplicarEscolha(codigoSlot, codigoEscolhido);
+      _construirDependencias();
+      _reencaixarSlot(codigoSlot);
+    });
+    _salvarProgresso();
+  }
+
+  void _desfazerEscolha(String codigoSlot) {
+    setState(() {
+      _escolhaOptativa.remove(codigoSlot);
+      _porCodigo[codigoSlot] = _porCodigoOriginal[codigoSlot]!;
+      _construirDependencias();
+    });
+    _salvarProgresso();
+  }
+
+  // Depois de resolver a optativa, os pré-requisitos podem ter mudado —
+  // empurra o slot pra frente se a posição atual não bastar mais.
+  void _reencaixarSlot(String codigoSlot) {
+    final semestreAtual = _semestre[codigoSlot];
+    if (semestreAtual == null) return;
+
+    var minimo = semestreAtual;
+    for (var prereq in _codigosRelevantes(_porCodigo[codigoSlot]!)) {
+      final semestrePrereq = _semestre[prereq];
+      if (semestrePrereq != null) {
+        final exigido = semestrePrereq.avancar(1);
+        if (exigido.compareTo(minimo) > 0) minimo = exigido;
+      }
+    }
+
+    if (minimo.compareTo(semestreAtual) > 0) {
+      _semestre[codigoSlot] = minimo;
+      _destacados = {codigoSlot, ..._propagarAPartirDe(codigoSlot)};
+    }
+  }
+
+  void _abrirEscolhaOptativa(String codigoSlot) {
+    final original = _porCodigoOriginal[codigoSlot]!;
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text('Escolher matéria — ${original.nome}'),
+        content: SizedBox(
+          width: 320,
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              for (var codigoOpcao in original.grupoDisciplinas)
+                ListTile(
+                  title: Text(codigoOpcao),
+                  subtitle: Text(_porCodigoOriginal[codigoOpcao]?.nome ?? '(sem ementa)'),
+                  selected: _escolhaOptativa[codigoSlot] == codigoOpcao,
+                  onTap: () {
+                    Navigator.pop(context);
+                    _escolherOptativa(codigoSlot, codigoOpcao);
+                  },
+                ),
+              if (_escolhaOptativa.containsKey(codigoSlot))
+                ListTile(
+                  leading: const Icon(Icons.close),
+                  title: const Text('Remover escolha'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    _desfazerEscolha(codigoSlot);
+                  },
+                ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    final semPeriodo = widget.disciplinas.where((d) => !_semestre.containsKey(d.codigo)).toList();
+    final semPeriodo = _porCodigo.values.where((d) => !_semestre.containsKey(d.codigo)).toList();
 
     final usados = _todosOsSemestresUsados();
     final colunas = <SemestreAcademico>[];
@@ -251,7 +345,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
     }
 
     final porColuna = <SemestreAcademico, List<Disciplina>>{for (var s in colunas) s: []};
-    for (var d in widget.disciplinas) {
+    for (var d in _porCodigo.values) {
       final s = _semestre[d.codigo];
       if (s != null) porColuna[s]!.add(d);
     }
@@ -272,7 +366,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
         colunas.isEmpty ? 0.0 : colunas.length * (_larguraColuna + _espacoColuna) - _espacoColuna;
 
     final arestas = <(String, String)>[];
-    for (var d in widget.disciplinas) {
+    for (var d in _porCodigo.values) {
       if (!_semestre.containsKey(d.codigo)) continue;
       for (var codigo in _codigosRelevantes(d)) {
         if (_semestre.containsKey(codigo)) arestas.add((codigo, d.codigo));
@@ -370,6 +464,9 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
                                 cor: _paleta[col % _paleta.length],
                                 dropInvalido: _dropInvalido,
                                 destacado: _destacados.contains(d.codigo),
+                                ehOptativa: _porCodigoOriginal[d.codigo]!.grupoDisciplinas.isNotEmpty,
+                                optativaResolvida: _escolhaOptativa.containsKey(d.codigo),
+                                onTapOptativa: () => _abrirEscolhaOptativa(d.codigo),
                               ),
                             ),
                         ],
@@ -398,7 +495,6 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
                             ),
                           ),
                         ),
-                        
                       ],
                     ),
                   ),
@@ -412,46 +508,46 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
   }
 
   Widget _colunaConcluidas() {
-    final itens = widget.disciplinas.where((d) => _concluidas.contains(d.codigo)).toList()
-        ..sort((a, b) => a.codigo.compareTo(b.codigo));
+    final itens = _porCodigo.values.where((d) => _concluidas.contains(d.codigo)).toList()
+      ..sort((a, b) => a.codigo.compareTo(b.codigo));
 
     return SizedBox(
-        width: _larguraColuna,
-        child: DragTarget<String>(
-            onAcceptWithDetails: (details) => _marcarConcluida(details.data),
-            builder: (context, candidate, rejected) => Container(
+      width: _larguraColuna,
+      child: DragTarget<String>(
+        onAcceptWithDetails: (details) => _marcarConcluida(details.data),
+        builder: (context, candidate, rejected) => Container(
+          decoration: BoxDecoration(
+            color: candidate.isNotEmpty ? Colors.green.withOpacity(0.08) : null,
+            borderRadius: BorderRadius.circular(6),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                height: _alturaCabecalho,
+                alignment: Alignment.center,
                 decoration: BoxDecoration(
-                    color: candidate.isNotEmpty ? Colors.green.withOpacity(0.08) : null,
-                    borderRadius: BorderRadius.circular(6),
+                  color: candidate.isNotEmpty ? Colors.green.shade200 : Colors.green.shade100,
+                  borderRadius: BorderRadius.circular(6),
                 ),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                        Container(
-                            height: _alturaCabecalho,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                                color: candidate.isNotEmpty ? Colors.green.shade200 : Colors.green.shade100,
-                                borderRadius: BorderRadius.circular(6),
-                            ),
-                            child: const Text('Concluídas', style: TextStyle(fontWeight: FontWeight.bold)),
-                        ),
-                        const SizedBox(height: 8),
-                        Expanded(
-                            child: ListView(
-                                children: [
-                                for (var d in itens)
-                                    Padding(
-                                    padding: const EdgeInsets.only(bottom: _espacoCard),
-                                    child: _CardArrastavel(disciplina: d, cor: Colors.green, dropInvalido: _dropInvalido),
-                                    ),
-                                ],
-                            ),
-                        ),
-                    ],
+                child: const Text('Concluídas', style: TextStyle(fontWeight: FontWeight.bold)),
+              ),
+              const SizedBox(height: 8),
+              Expanded(
+                child: ListView(
+                  children: [
+                    for (var d in itens)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: _espacoCard),
+                        child: _CardArrastavel(disciplina: d, cor: Colors.green, dropInvalido: _dropInvalido),
+                      ),
+                  ],
                 ),
-            ),
+              ),
+            ],
+          ),
         ),
+      ),
     );
   }
 }
@@ -461,12 +557,18 @@ class _CardArrastavel extends StatelessWidget {
   final MaterialColor cor;
   final ValueNotifier<bool> dropInvalido;
   final bool destacado;
+  final bool ehOptativa;
+  final bool optativaResolvida;
+  final VoidCallback? onTapOptativa;
 
   const _CardArrastavel({
     required this.disciplina,
     required this.cor,
     required this.dropInvalido,
     this.destacado = false,
+    this.ehOptativa = false,
+    this.optativaResolvida = false,
+    this.onTapOptativa,
   });
 
   @override
@@ -485,15 +587,26 @@ class _CardArrastavel extends StatelessWidget {
         ),
       ),
       childWhenDragging: Opacity(opacity: 0.35, child: _card()),
-      child: _card(),
+      child: ehOptativa ? GestureDetector(onTap: onTapOptativa, child: _card()) : _card(),
     );
   }
 
   Widget _card({bool elevado = false, bool invalido = false}) {
-    final corBorda = invalido ? Colors.red : (destacado ? Colors.deepOrange : cor);
-    final corTexto = invalido
+    final Color corBorda = invalido
+        ? Colors.red
+        : destacado
+            ? Colors.deepOrange
+            : (ehOptativa && !optativaResolvida)
+                ? Colors.purple
+                : cor;
+    final Color corTexto = invalido
         ? Colors.red.shade900
-        : (destacado ? Colors.deepOrange.shade900 : cor.shade900);
+        : destacado
+            ? Colors.deepOrange.shade900
+            : (ehOptativa && !optativaResolvida)
+                ? Colors.purple.shade900
+                : cor.shade900;
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 2),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -511,8 +624,17 @@ class _CardArrastavel extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(disciplina.codigo,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: corTexto)),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(disciplina.codigo,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: corTexto)),
+              if (ehOptativa) ...[
+                const SizedBox(width: 4),
+                Icon(optativaResolvida ? Icons.swap_horiz : Icons.list_alt, size: 12, color: corTexto),
+              ],
+            ],
+          ),
           Text(disciplina.nome,
               maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 10)),
         ],

@@ -12,6 +12,7 @@ class ProgressoService {
     required Map<String, SemestreAcademico> semestre,
     required Set<String> concluidas,
     required Set<SemestreAcademico> colunasExtras,
+    required Map<String, String> escolhas,
     String? matricula,
   }) {
     return _documento(uid).set({
@@ -22,6 +23,7 @@ class ProgressoService {
       'concluidas': concluidas.toList(),
       'colunasExtras':
           colunasExtras.map((s) => {'ano': s.ano, 'semestre': s.semestre}).toList(),
+      'escolhas': escolhas,
       'atualizadoEm': FieldValue.serverTimestamp(),
     });
   }

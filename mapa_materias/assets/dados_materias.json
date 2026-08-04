@@ -2,17 +2,159 @@
     "ACP0900": {
         "nome": "ATIVIDADES COMPLEMENTARES",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE0710": {
+        "nome": "OPTATIVAS DE CRISTIANISMO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "CRE1112",
+                "nome": "CRE1112"
+            },
+            {
+                "codigo": "CRE1115",
+                "nome": "CRE1115"
+            },
+            {
+                "codigo": "CRE1116",
+                "nome": "CRE1116"
+            },
+            {
+                "codigo": "CRE1117",
+                "nome": "CRE1117"
+            },
+            {
+                "codigo": "CRE1118",
+                "nome": "CRE1118"
+            },
+            {
+                "codigo": "CRE1127",
+                "nome": "CRE1127"
+            },
+            {
+                "codigo": "CRE1212",
+                "nome": "CRE1212"
+            },
+            {
+                "codigo": "CRE1215",
+                "nome": "CRE1215"
+            },
+            {
+                "codigo": "CRE1216",
+                "nome": "CRE1216"
+            },
+            {
+                "codigo": "CRE1217",
+                "nome": "CRE1217"
+            },
+            {
+                "codigo": "CRE1218",
+                "nome": "CRE1218"
+            },
+            {
+                "codigo": "CRE1227",
+                "nome": "CRE1227"
+            }
+        ]
     },
     "CRE0712": {
         "nome": "OPTATIVAS DE CRISTIANISMO",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "CRE1212",
+                "nome": "CRE1212"
+            },
+            {
+                "codigo": "CRE1215",
+                "nome": "CRE1215"
+            },
+            {
+                "codigo": "CRE1216",
+                "nome": "CRE1216"
+            },
+            {
+                "codigo": "CRE1217",
+                "nome": "CRE1217"
+            },
+            {
+                "codigo": "CRE1218",
+                "nome": "CRE1218"
+            },
+            {
+                "codigo": "CRE1227",
+                "nome": "CRE1227"
+            }
+        ]
+    },
+    "CRE1100": {
+        "nome": "O HUMANO E O FENOM RELIGIOSO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1141": {
+        "nome": "ETICA CRISTA",
+        "pre_requisitos": [
+            [
+                "CRE1112"
+            ],
+            [
+                "CRE1115"
+            ],
+            [
+                "CRE1116"
+            ],
+            [
+                "CRE1117"
+            ],
+            [
+                "CRE1118"
+            ],
+            [
+                "CRE1127"
+            ],
+            [
+                "TEO1230"
+            ],
+            [
+                "TEO1242"
+            ],
+            [
+                "TEO1245"
+            ],
+            [
+                "TEO1246"
+            ],
+            [
+                "TEO1322"
+            ],
+            [
+                "TEO1328"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1175": {
+        "nome": "ETICA SOCIOAMBIENT DIR HUMANOS",
+        "pre_requisitos": [
+            [
+                "CRE1141"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "CRE1200": {
         "nome": "O HUMANO E O FENOM RELIGIOSO",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "CRE1241": {
         "nome": "ÉTICA CRISTÃ",
@@ -72,7 +214,8 @@
                 "TEO1328"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "CRE1275": {
         "nome": "ETICA SOCIOAMBIENT DIR HUMANOS",
@@ -84,57 +227,683 @@
                 "CRE1241"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "CTC4002": {
         "nome": "MODELAGEM E PROGRAMAÇÃO",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "ELL0900": {
         "nome": "ELETIVAS LIVRES-DENTRO/FORA DEPT",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "ELO0900": {
         "nome": "ELETIVAS DE ORIENTACAO",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "EXT0100": {
         "nome": "OPTATIVAS DE EXTENSAO",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "ACN1038",
+                "nome": "ACN1038"
+            },
+            {
+                "codigo": "ARQ1501",
+                "nome": "ARQ1501"
+            },
+            {
+                "codigo": "ARQ1502",
+                "nome": "ARQ1502"
+            },
+            {
+                "codigo": "ARQ1503",
+                "nome": "ARQ1503"
+            },
+            {
+                "codigo": "ARQ1504",
+                "nome": "ARQ1504"
+            },
+            {
+                "codigo": "ARQ1505",
+                "nome": "ARQ1505"
+            },
+            {
+                "codigo": "DSG1013",
+                "nome": "DSG1013"
+            },
+            {
+                "codigo": "DSG1014",
+                "nome": "DSG1014"
+            },
+            {
+                "codigo": "DSG1015",
+                "nome": "DSG1015"
+            },
+            {
+                "codigo": "DSG1016",
+                "nome": "DSG1016"
+            },
+            {
+                "codigo": "DSG1017",
+                "nome": "DSG1017"
+            },
+            {
+                "codigo": "DSG1018",
+                "nome": "DSG1018"
+            },
+            {
+                "codigo": "DSG1019",
+                "nome": "DSG1019"
+            },
+            {
+                "codigo": "EDU1828",
+                "nome": "EDU1828"
+            },
+            {
+                "codigo": "EDU1829",
+                "nome": "EDU1829"
+            },
+            {
+                "codigo": "EDU1830",
+                "nome": "EDU1830"
+            },
+            {
+                "codigo": "EDU1831",
+                "nome": "EDU1831"
+            },
+            {
+                "codigo": "EXT1100",
+                "nome": "EXT1100"
+            },
+            {
+                "codigo": "EXT1200",
+                "nome": "EXT1200"
+            },
+            {
+                "codigo": "EXT1300",
+                "nome": "EXT1300"
+            },
+            {
+                "codigo": "EXT1307",
+                "nome": "EXT1307"
+            },
+            {
+                "codigo": "EXT1308",
+                "nome": "EXT1308"
+            },
+            {
+                "codigo": "EXT1400",
+                "nome": "EXT1400"
+            },
+            {
+                "codigo": "EXT1401",
+                "nome": "EXT1401"
+            },
+            {
+                "codigo": "EXT1402",
+                "nome": "EXT1402"
+            },
+            {
+                "codigo": "EXT1403",
+                "nome": "EXT1403"
+            },
+            {
+                "codigo": "EXT1404",
+                "nome": "EXT1404"
+            },
+            {
+                "codigo": "EXT1405",
+                "nome": "EXT1405"
+            },
+            {
+                "codigo": "EXT1406",
+                "nome": "EXT1406"
+            },
+            {
+                "codigo": "EXT1407",
+                "nome": "EXT1407"
+            },
+            {
+                "codigo": "EXT1408",
+                "nome": "EXT1408"
+            },
+            {
+                "codigo": "EXT1410",
+                "nome": "EXT1410"
+            },
+            {
+                "codigo": "EXT1414",
+                "nome": "EXT1414"
+            },
+            {
+                "codigo": "EXT1415",
+                "nome": "EXT1415"
+            },
+            {
+                "codigo": "EXT1416",
+                "nome": "EXT1416"
+            },
+            {
+                "codigo": "LET1333",
+                "nome": "LET1333"
+            },
+            {
+                "codigo": "QUI1958",
+                "nome": "QUI1958"
+            }
+        ]
     },
     "FIL0300": {
         "nome": "OPTATIVAS FILOSOFIA-CB/CTC",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "FIL1000",
+                "nome": "FIL1000"
+            },
+            {
+                "codigo": "FIL1002",
+                "nome": "FIL1002"
+            },
+            {
+                "codigo": "FIL1005",
+                "nome": "FIL1005"
+            },
+            {
+                "codigo": "FIL1006",
+                "nome": "FIL1006"
+            },
+            {
+                "codigo": "FIL1200",
+                "nome": "FIL1200"
+            },
+            {
+                "codigo": "FIL1210",
+                "nome": "FIL1210"
+            },
+            {
+                "codigo": "FIL1211",
+                "nome": "FIL1211"
+            },
+            {
+                "codigo": "FIL1212",
+                "nome": "FIL1212"
+            },
+            {
+                "codigo": "FIL1251",
+                "nome": "FIL1251"
+            },
+            {
+                "codigo": "FIL1252",
+                "nome": "FIL1252"
+            },
+            {
+                "codigo": "FIL1253",
+                "nome": "FIL1253"
+            },
+            {
+                "codigo": "FIL1254",
+                "nome": "FIL1254"
+            },
+            {
+                "codigo": "FIL1255",
+                "nome": "FIL1255"
+            },
+            {
+                "codigo": "FIL1256",
+                "nome": "FIL1256"
+            },
+            {
+                "codigo": "FIL1304",
+                "nome": "FIL1304"
+            },
+            {
+                "codigo": "FIL1310",
+                "nome": "FIL1310"
+            },
+            {
+                "codigo": "FIL1315",
+                "nome": "FIL1315"
+            },
+            {
+                "codigo": "FIL1318",
+                "nome": "FIL1318"
+            },
+            {
+                "codigo": "FIL1400",
+                "nome": "FIL1400"
+            },
+            {
+                "codigo": "FIL1500",
+                "nome": "FIL1500"
+            },
+            {
+                "codigo": "FIL1800",
+                "nome": "FIL1800"
+            },
+            {
+                "codigo": "FIL1801",
+                "nome": "FIL1801"
+            },
+            {
+                "codigo": "FIL1802",
+                "nome": "FIL1802"
+            },
+            {
+                "codigo": "FIL1803",
+                "nome": "FIL1803"
+            },
+            {
+                "codigo": "FIL1813",
+                "nome": "FIL1813"
+            },
+            {
+                "codigo": "FIL1814",
+                "nome": "FIL1814"
+            }
+        ]
     },
     "INF0308": {
         "nome": "OPTATIVAS DE PROGRAMACAO AVANCADA",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "ENG1419",
+                "nome": "ENG1419"
+            },
+            {
+                "codigo": "ENG4033",
+                "nome": "ENG4033"
+            },
+            {
+                "codigo": "INF1304",
+                "nome": "INF1304"
+            },
+            {
+                "codigo": "INF1406",
+                "nome": "INF1406"
+            },
+            {
+                "codigo": "INF1407",
+                "nome": "INF1407"
+            }
+        ]
     },
     "INF0377": {
         "nome": "OPTATIVAS DE PROBABILIDADE E ESTATISTICA",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "ENG1029",
+                "nome": "ENG1029"
+            },
+            {
+                "codigo": "INF1036",
+                "nome": "INF1036"
+            }
+        ]
+    },
+    "INF0378": {
+        "nome": "OPTATIVAS DE FORMACAO EM COMPUTACAO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "ADM1019",
+                "nome": "ADM1019"
+            },
+            {
+                "codigo": "INF1011",
+                "nome": "INF1011"
+            },
+            {
+                "codigo": "INF1015",
+                "nome": "INF1015"
+            },
+            {
+                "codigo": "INF1032",
+                "nome": "INF1032"
+            },
+            {
+                "codigo": "INF1410",
+                "nome": "INF1410"
+            },
+            {
+                "codigo": "INF1416",
+                "nome": "INF1416"
+            },
+            {
+                "codigo": "INF1608",
+                "nome": "INF1608"
+            },
+            {
+                "codigo": "INF1771",
+                "nome": "INF1771"
+            }
+        ]
+    },
+    "INF0379": {
+        "nome": "OPTATIVAS DE COMPUTACAO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "INF1013",
+                "nome": "INF1013"
+            },
+            {
+                "codigo": "INF1015",
+                "nome": "INF1015"
+            },
+            {
+                "codigo": "INF1016",
+                "nome": "INF1016"
+            },
+            {
+                "codigo": "INF1032",
+                "nome": "INF1032"
+            },
+            {
+                "codigo": "INF1036",
+                "nome": "INF1036"
+            },
+            {
+                "codigo": "INF1038",
+                "nome": "INF1038"
+            },
+            {
+                "codigo": "INF1190",
+                "nome": "INF1190"
+            },
+            {
+                "codigo": "INF1300",
+                "nome": "INF1300"
+            },
+            {
+                "codigo": "INF1304",
+                "nome": "INF1304"
+            },
+            {
+                "codigo": "INF1305",
+                "nome": "INF1305"
+            },
+            {
+                "codigo": "INF1307",
+                "nome": "INF1307"
+            },
+            {
+                "codigo": "INF1310",
+                "nome": "INF1310"
+            },
+            {
+                "codigo": "INF1324",
+                "nome": "INF1324"
+            },
+            {
+                "codigo": "INF1328",
+                "nome": "INF1328"
+            },
+            {
+                "codigo": "INF1331",
+                "nome": "INF1331"
+            },
+            {
+                "codigo": "INF1335",
+                "nome": "INF1335"
+            },
+            {
+                "codigo": "INF1336",
+                "nome": "INF1336"
+            },
+            {
+                "codigo": "INF1338",
+                "nome": "INF1338"
+            },
+            {
+                "codigo": "INF1339",
+                "nome": "INF1339"
+            },
+            {
+                "codigo": "INF1340",
+                "nome": "INF1340"
+            },
+            {
+                "codigo": "INF1341",
+                "nome": "INF1341"
+            },
+            {
+                "codigo": "INF1350",
+                "nome": "INF1350"
+            },
+            {
+                "codigo": "INF1371",
+                "nome": "INF1371"
+            },
+            {
+                "codigo": "INF1374",
+                "nome": "INF1374"
+            },
+            {
+                "codigo": "INF1377",
+                "nome": "INF1377"
+            },
+            {
+                "codigo": "INF1406",
+                "nome": "INF1406"
+            },
+            {
+                "codigo": "INF1407",
+                "nome": "INF1407"
+            },
+            {
+                "codigo": "INF1408",
+                "nome": "INF1408"
+            },
+            {
+                "codigo": "INF1416",
+                "nome": "INF1416"
+            },
+            {
+                "codigo": "INF1608",
+                "nome": "INF1608"
+            },
+            {
+                "codigo": "INF1715",
+                "nome": "INF1715"
+            },
+            {
+                "codigo": "INF1761",
+                "nome": "INF1761"
+            },
+            {
+                "codigo": "INF1771",
+                "nome": "INF1771"
+            },
+            {
+                "codigo": "INF1801",
+                "nome": "INF1801"
+            },
+            {
+                "codigo": "INF1802",
+                "nome": "INF1802"
+            },
+            {
+                "codigo": "INF1803",
+                "nome": "INF1803"
+            },
+            {
+                "codigo": "INF1804",
+                "nome": "INF1804"
+            },
+            {
+                "codigo": "INF1810",
+                "nome": "INF1810"
+            },
+            {
+                "codigo": "INF1811",
+                "nome": "INF1811"
+            },
+            {
+                "codigo": "INF1812",
+                "nome": "INF1812"
+            },
+            {
+                "codigo": "INF1821",
+                "nome": "INF1821"
+            },
+            {
+                "codigo": "INF1822",
+                "nome": "INF1822"
+            },
+            {
+                "codigo": "INF1823",
+                "nome": "INF1823"
+            },
+            {
+                "codigo": "INF1824",
+                "nome": "INF1824"
+            }
+        ]
+    },
+    "INF0380": {
+        "nome": "OPTATIVAS COMP E PRODUCAO DE TEXTO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "LET1090",
+                "nome": "LET1090"
+            },
+            {
+                "codigo": "LET1910",
+                "nome": "LET1910"
+            }
+        ]
+    },
+    "INF0381": {
+        "nome": "OPTATIVAS DIREITO P/ COMPUTACAO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "JUR1016",
+                "nome": "JUR1016"
+            },
+            {
+                "codigo": "JUR1809",
+                "nome": "JUR1809"
+            },
+            {
+                "codigo": "JUR1855",
+                "nome": "JUR1855"
+            }
+        ]
     },
     "INF0400": {
         "nome": "OPTATIVAS DE CIÊNCIAS DA COMPUTAÇÃO I",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "INF1011",
+                "nome": "INF1011"
+            },
+            {
+                "codigo": "INF1038",
+                "nome": "INF1038"
+            },
+            {
+                "codigo": "INF1304",
+                "nome": "INF1304"
+            },
+            {
+                "codigo": "INF1340",
+                "nome": "INF1340"
+            },
+            {
+                "codigo": "INF1370",
+                "nome": "INF1370"
+            },
+            {
+                "codigo": "INF1407",
+                "nome": "INF1407"
+            },
+            {
+                "codigo": "INF1761",
+                "nome": "INF1761"
+            }
+        ]
     },
     "INF0401": {
         "nome": "OPTATIVAS DE CIÊNCIAS DA COMPUTAÇÃO II",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "ENG1456",
+                "nome": "ENG1456"
+            },
+            {
+                "codigo": "ENG4456",
+                "nome": "ENG4456"
+            },
+            {
+                "codigo": "INF1016",
+                "nome": "INF1016"
+            },
+            {
+                "codigo": "INF1341",
+                "nome": "INF1341"
+            },
+            {
+                "codigo": "INF1350",
+                "nome": "INF1350"
+            },
+            {
+                "codigo": "INF1374",
+                "nome": "INF1374"
+            },
+            {
+                "codigo": "INF1377",
+                "nome": "INF1377"
+            },
+            {
+                "codigo": "INF1608",
+                "nome": "INF1608"
+            }
+        ]
+    },
+    "INF1007": {
+        "nome": "PROGRAMACAO II",
+        "pre_requisitos": [
+            [
+                "INF1005"
+            ],
+            [
+                "INF1025"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1009": {
         "nome": "LOGICA PARA COMPUTACAO",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1010": {
         "nome": "ESTRUTURAS DE DADOS AVANCADAS",
@@ -155,17 +924,20 @@
                 "INF1620"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1012": {
         "nome": "MODELAGEM DE DADOS",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1014": {
         "nome": "SEMINARIOS",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1015": {
         "nome": "COMPUTABILIDADE",
@@ -179,7 +951,8 @@
                 "INF1721"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1018": {
         "nome": "SOFTWARE BASICO",
@@ -194,7 +967,8 @@
                 "INF1037"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1022": {
         "nome": "ANALIS LEXICOS E SINTATICOS",
@@ -208,7 +982,14 @@
                 "INF1037"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1025": {
+        "nome": "INTRODUCAO A PROGRAMACAO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1027": {
         "nome": "TESTE E MEDICAO DE SOFTWARE",
@@ -220,7 +1001,25 @@
                 "INF1301"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1028": {
+        "nome": "PROJETO E CONSTRUCAO SISTEMAS",
+        "pre_requisitos": [
+            [
+                "INF1027",
+                "INF1383",
+                "INF1636"
+            ],
+            [
+                "INF1383",
+                "INF1413",
+                "INF1636"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1029": {
         "nome": "INT ARQUITETURA COMPUTADORES",
@@ -229,7 +1028,14 @@
                 "INF1018"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1031": {
+        "nome": "INTRODUCAO A COMPUTACAO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1032": {
         "nome": "INTRODUCAO A CIENCIA DOS DADOS",
@@ -307,12 +1113,27 @@
                 "MAT4280"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1033": {
+        "nome": "ESTAGIO SUPERV EM COMPUTACAO",
+        "pre_requisitos": [
+            [
+                "INF1028"
+            ],
+            [
+                "INF1045"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1034": {
         "nome": "PRÁTICAS DE PROGRAMAÇÃO",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1037": {
         "nome": "PROGRAMACAO EM C",
@@ -324,7 +1145,8 @@
                 "INF1025"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1039": {
         "nome": "PROJETOS: APLICA INTERATIVAS",
@@ -341,7 +1163,8 @@
             "INF1403",
             "INF1037",
             "INF1403"
-        ]
+        ],
+        "grupo_disciplinas": []
     },
     "INF1040": {
         "nome": "PROJ PROG MODULAR",
@@ -356,7 +1179,8 @@
         "co_requisitos": [
             "INF1010",
             "INF1018"
-        ]
+        ],
+        "grupo_disciplinas": []
     },
     "INF1041": {
         "nome": "ENGENHARIA DE SOFTWARE",
@@ -375,7 +1199,8 @@
         "co_requisitos": [
             "INF1027",
             "INF1636"
-        ]
+        ],
+        "grupo_disciplinas": []
     },
     "INF1045": {
         "nome": "PROJETO E CONSTRUÇÃO SISTEMAS",
@@ -386,7 +1211,36 @@
                 "INF1636"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1301": {
+        "nome": "PROGRAMACAO MODULAR",
+        "pre_requisitos": [
+            [
+                "INF1006"
+            ],
+            [
+                "INF1007"
+            ],
+            [
+                "INF1037"
+            ],
+            [
+                "INF1089"
+            ],
+            [
+                "INF1318"
+            ],
+            [
+                "INF1389"
+            ],
+            [
+                "INF1620"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1316": {
         "nome": "SISTEMAS OPERACIONAIS",
@@ -401,7 +1255,21 @@
                 "INF1315"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1317": {
+        "nome": "REDES DE COMPUTADORES",
+        "pre_requisitos": [
+            [
+                "INF1019"
+            ],
+            [
+                "INF1316"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1383": {
         "nome": "BANCOS DE DADOS",
@@ -423,12 +1291,14 @@
                 "INF1515"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1403": {
         "nome": "INTR INT HUMANO-COMPUTADOR",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1416": {
         "nome": "SEGURANCA DA INFORMACAO",
@@ -458,7 +1328,25 @@
                 "INF1731"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1629": {
+        "nome": "PRINCIPIOS ENG DE SOFTWARE",
+        "pre_requisitos": [
+            [
+                "INF1013",
+                "INF1636"
+            ],
+            [
+                "INF1301"
+            ],
+            [
+                "INF1628"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1631": {
         "nome": "ESTRUTURAS DISCRETAS",
@@ -480,7 +1368,8 @@
                 "MAT1320"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1636": {
         "nome": "PROGRAMACAO ORIENTADA OBJETOS",
@@ -495,7 +1384,8 @@
                 "INF1628"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1643": {
         "nome": "REDES DE COMUNICAÇÃO DE DADOS",
@@ -510,7 +1400,8 @@
                 "INF1316"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1721": {
         "nome": "ANALISE DE ALGORITMOS",
@@ -548,7 +1439,8 @@
                 "INF1631"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1771": {
         "nome": "INTELIGENCIA ARTIFICIAL",
@@ -582,7 +1474,8 @@
                 "MAT1082"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1920": {
         "nome": "ESTAGIO SUPERVISIONADO",
@@ -591,7 +1484,8 @@
                 "118 créditos"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1950": {
         "nome": "PROJETO FINAL I",
@@ -600,7 +1494,8 @@
                 "120 créditose PORTUGUÊS (nivel 3)"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "INF1951": {
         "nome": "PROJETO FINAL II",
@@ -622,22 +1517,145 @@
                 "INF1950"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "JUR0205": {
         "nome": "OPTATIVAS DE DIREITO PARA CTC",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "JUR1016",
+                "nome": "JUR1016"
+            },
+            {
+                "codigo": "JUR1022",
+                "nome": "JUR1022"
+            },
+            {
+                "codigo": "JUR1111",
+                "nome": "JUR1111"
+            },
+            {
+                "codigo": "JUR1240",
+                "nome": "JUR1240"
+            },
+            {
+                "codigo": "JUR1250",
+                "nome": "JUR1250"
+            },
+            {
+                "codigo": "JUR1251",
+                "nome": "JUR1251"
+            },
+            {
+                "codigo": "JUR1653",
+                "nome": "JUR1653"
+            },
+            {
+                "codigo": "JUR1809",
+                "nome": "JUR1809"
+            },
+            {
+                "codigo": "JUR1855",
+                "nome": "JUR1855"
+            }
+        ]
     },
     "LET1920": {
         "nome": "COMPREENSAO PROD TEXTO TECNICO",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "MAT0211": {
+        "nome": "OPTATIVAS DE ALGEBRA LINEAR I",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": [
+            {
+                "codigo": "MAT1200",
+                "nome": "MAT1200"
+            },
+            {
+                "codigo": "MAT1210",
+                "nome": "MAT1210"
+            },
+            {
+                "codigo": "MAT1250",
+                "nome": "MAT1250"
+            },
+            {
+                "codigo": "MAT1260",
+                "nome": "MAT1260"
+            },
+            {
+                "codigo": "MAT1280",
+                "nome": "MAT1280"
+            },
+            {
+                "codigo": "MAT4200",
+                "nome": "MAT4200"
+            },
+            {
+                "codigo": "MAT4280",
+                "nome": "MAT4280"
+            }
+        ]
+    },
+    "MAT1157": {
+        "nome": "CALCULO A UMA VARIAVEL A",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "MAT1158": {
+        "nome": "CALCULO A UMA VARIAVEL B",
+        "pre_requisitos": [
+            [
+                "MAT1157"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "MAT1161": {
+        "nome": "CALCULO DE UMA VARIAVEL",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "MAT1162": {
+        "nome": "CALCULO A VARIAS VARIAVEIS I",
+        "pre_requisitos": [
+            [
+                "MAT1158"
+            ],
+            [
+                "MAT1161"
+            ],
+            [
+                "MAT1181"
+            ],
+            [
+                "MAT1341"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "MAT1250": {
+        "nome": "ALGEBRA LINEAR A",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "MAT1320": {
         "nome": "INTRODUCAO MATEMATICA DISCRETA",
         "pre_requisitos": [],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "MAT4161": {
         "nome": "CÁLCULO A UMA VARIÁVEL",
@@ -649,7 +1667,8 @@
                 "MATEMÁTICA (nivel 2)"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "MAT4162": {
         "nome": "CÁLCULO A VÁRIAS VARIÁVEIS I",
@@ -670,7 +1689,8 @@
                 "MAT4181"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "MAT4200": {
         "nome": "ÁLGEBRA LINEAR I",
@@ -682,7 +1702,8 @@
                 "MATEMÁTICA (nivel 2)"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     },
     "MAT4202": {
         "nome": "ÁLGEBRA LINEAR II",
@@ -706,6 +1727,1630 @@
                 "MAT4280"
             ]
         ],
-        "co_requisitos": []
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1112": {
+        "nome": "O CRIST E AS GRANDES RELIGIOES",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1115": {
+        "nome": "CRISTIANISMO E JUDAISMO",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1116": {
+        "nome": "BIBLIA E CRISTIANISMO",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1117": {
+        "nome": "CRIST E DIAL COM O MUNDO MODER",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1118": {
+        "nome": "CRISTIANISMO E PROBL SOCIAIS",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1127": {
+        "nome": "O CRISTIANISMO",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1212": {
+        "nome": "O CRIST E AS GRANDES RELIGIÕES",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ],
+            [
+                "CRE1200"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1215": {
+        "nome": "CRISTIANISMO E JUDAÍSMO",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ],
+            [
+                "CRE1200"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1216": {
+        "nome": "BÍBLIA E CRISTIANISMO",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ],
+            [
+                "CRE1200"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1217": {
+        "nome": "CRIST E DIAL COM O MUNDO MODER",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ],
+            [
+                "CRE1200"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1218": {
+        "nome": "CRISTIANISMO E PROBL SOCIAIS",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ],
+            [
+                "CRE1200"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "CRE1227": {
+        "nome": "O CRISTIANISMO",
+        "pre_requisitos": [
+            [
+                "CRE1100"
+            ],
+            [
+                "CRE1200"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ACN1038": {
+        "nome": "CURADORIA E PROD EM ART E CULT",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ARQ1501": {
+        "nome": "EXTENSÃO EM PROJ AMBIENTAIS",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ARQ1502": {
+        "nome": "GRÁFICA DIGITAL EM URBANISMO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ARQ1503": {
+        "nome": "CANTEIRO EXPERIMENTAL",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ARQ1504": {
+        "nome": "FAVLAB",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ARQ1505": {
+        "nome": "ASS INTERDISC EM HAB SOCIAL",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "DSG1013": {
+        "nome": "DEXPO DESIGN EXTENSÃO/POLÍTICA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "DSG1014": {
+        "nome": "PIUES DESIGN",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "DSG1015": {
+        "nome": "DESIGN OBJETOS DE APRENDIZAGEM",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "DSG1016": {
+        "nome": "PROJ GRÁFICO PUBLICA CRIATIVAS",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "DSG1017": {
+        "nome": "AEIOU: ART EDU INCLU E ORI UNI",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "DSG1018": {
+        "nome": "DESIGN FOR PEACE: DSG ECO PAZ",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "DSG1019": {
+        "nome": "DESIGN EMOCIONAL",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EDU1828": {
+        "nome": "APOIO NOAP",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EDU1829": {
+        "nome": "APOIO PED. EJA E EP",
+        "pre_requisitos": [
+            [
+                "48 créditos"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EDU1830": {
+        "nome": "OFIC PEDAG DIR HUM E MULTIC",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EDU1831": {
+        "nome": "EDUC DIFERENTES ESPAÇOS II",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1100": {
+        "nome": "TÓPICOS ESPECIAIS DE EXTENSÃO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1200": {
+        "nome": "TÓPICOS ESPECIAIS DE EXTENSÃO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1300": {
+        "nome": "TÓPICOS ESPECIAIS DE EXTENSÃO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1307": {
+        "nome": "TOP ESP EXT 3 TEC INOVAÇÃO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1308": {
+        "nome": "TOP ESP EXT 3 LIN EX AR CULT",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1400": {
+        "nome": "TÓPICOS ESPECIAIS DE EXTENSÃO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1401": {
+        "nome": "EXT PRÉ-VEST COMUNITÁRIO I",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1402": {
+        "nome": "EXT PRÉ-VEST COMUNITÁRIO II",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1403": {
+        "nome": "TOP ESPECIAIS PROJETO RONDON",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1404": {
+        "nome": "TOP ESP POL TEORIA PRÁTICA EXT",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1405": {
+        "nome": "TOP ESP CIDAD E PATRIM CULT",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1406": {
+        "nome": "TOP ESP EXT 4 DIAL SOC CID ATI",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1407": {
+        "nome": "TOP ESP EXT 4 TEC INOVAÇÃO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1408": {
+        "nome": "TOP ESP EXT 4 LIN EX AR CULT",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1410": {
+        "nome": "TOP ESP EXT 4 CID SUST RESI",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1414": {
+        "nome": "TOP ESP IV: SUSTENTAB E ASG",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1415": {
+        "nome": "TOP ESP EXT 4 DIR HUM JUS SOC",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "EXT1416": {
+        "nome": "TOP ESP EXT 4 EMP ECO CRIATIV",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "LET1333": {
+        "nome": "LING. E INTERV. NA SOCIEDADE",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "QUI1958": {
+        "nome": "TÓP ESP EXTENSÃO EM QUÍMICA I",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1000": {
+        "nome": "INTRODUCAO A FILOSOFIA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1002": {
+        "nome": "FILOSOFIA DA CIENCIA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1005": {
+        "nome": "FILOSOFIA DA CIENCIA(PARA CTC)",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1006": {
+        "nome": "HISTORIA DO PENSAMENTO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1200": {
+        "nome": "HISTORIA DA FILOSOFIA I",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1210": {
+        "nome": "CORR DO PENS CONTEMPORANEO I",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1211": {
+        "nome": "CORR DO PENS CONTEMPORANEO II",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1212": {
+        "nome": "CORR DO PENS CONTEMPORANEO III",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1251": {
+        "nome": "SEMINARIO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1252": {
+        "nome": "SEMINARIO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1253": {
+        "nome": "SEMINARIO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1254": {
+        "nome": "SEMINARIO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1255": {
+        "nome": "SEMINARIO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1256": {
+        "nome": "SEMINARIO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1304": {
+        "nome": "LOGICA I (INTR FIL A LOGICA)",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1310": {
+        "nome": "LOGICA II(INTR A LOG MODERNA)",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1315": {
+        "nome": "LOGICA MATEMATICA I",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1318": {
+        "nome": "FUNDAMENTOS DA MATEMATICA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1400": {
+        "nome": "FILOSOFIA GERAL I",
+        "pre_requisitos": [
+            [
+                "PORTUGUÊS (nivel 3)"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1500": {
+        "nome": "FILOSOFIA DA NATUREZA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1800": {
+        "nome": "FILOSOFIA DA CULTURA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1801": {
+        "nome": "FILOSOFIA DA HISTORIA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1802": {
+        "nome": "FILOSOFIA DA LINGUAGEM",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1803": {
+        "nome": "FILOSOFIA DA ARTE",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1813": {
+        "nome": "FILOSOFIA SOCIAL",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "FIL1814": {
+        "nome": "FILOSOFIA POLITICA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ENG1419": {
+        "nome": "PROGRAM DE MICROCONTROLADORES",
+        "pre_requisitos": [
+            [
+                "CTC4002",
+                "ENG1000"
+            ],
+            [
+                "CTC4002",
+                "ENG1127"
+            ],
+            [
+                "CTC4002",
+                "ENG4010"
+            ],
+            [
+                "CTC4002",
+                "INF1009"
+            ],
+            [
+                "ENG1000",
+                "INF1005"
+            ],
+            [
+                "ENG1000",
+                "INF1025"
+            ],
+            [
+                "ENG1127",
+                "INF1025"
+            ],
+            [
+                "ENG4010",
+                "INF1025"
+            ],
+            [
+                "INF1005",
+                "INF1009"
+            ],
+            [
+                "INF1009",
+                "INF1025"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ENG4033": {
+        "nome": "PROJ PROG MICROCONTROLADORES",
+        "pre_requisitos": [
+            [
+                "INF1007"
+            ],
+            [
+                "INF1037"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1304": {
+        "nome": "DISTRIBUICAO E CONCORRENCIA",
+        "pre_requisitos": [
+            [
+                "INF1316"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1406": {
+        "nome": "PROGR DISTRIBUIDA CONCORRENTE",
+        "pre_requisitos": [
+            [
+                "INF1018"
+            ],
+            [
+                "INF1337"
+            ],
+            [
+                "INF1636"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1407": {
+        "nome": "PROGRAMACAO PARA A WEB",
+        "pre_requisitos": [
+            [
+                "INF1026"
+            ],
+            [
+                "INF1337"
+            ],
+            [
+                "INF1636"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ENG1029": {
+        "nome": "PROBABILIDADE E ESTATISTICA",
+        "pre_requisitos": [
+            [
+                "MAT1112"
+            ],
+            [
+                "MAT1152"
+            ],
+            [
+                "MAT1162"
+            ],
+            [
+                "MAT1172"
+            ],
+            [
+                "MAT1182"
+            ],
+            [
+                "MAT4162"
+            ],
+            [
+                "MAT4182"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1036": {
+        "nome": "PROBABILIDADE COMPUTACIONAL",
+        "pre_requisitos": [
+            [
+                "CTC4002",
+                "MAT4161"
+            ],
+            [
+                "INF1005",
+                "MAT1158"
+            ],
+            [
+                "INF1005",
+                "MAT1162"
+            ],
+            [
+                "INF1025",
+                "MAT1158"
+            ],
+            [
+                "INF1025",
+                "MAT1161"
+            ],
+            [
+                "INF1025",
+                "MAT1162"
+            ],
+            [
+                "INF1025",
+                "MAT4161"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ADM1019": {
+        "nome": "INTRODUCAO A FINANCAS",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1011": {
+        "nome": "SEMANTICA DE LINGUAGENS",
+        "pre_requisitos": [
+            [
+                "INF1010",
+                "INF1022"
+            ],
+            [
+                "INF1010",
+                "INF1626"
+            ],
+            [
+                "INF1620",
+                "INF1626"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1410": {
+        "nome": "GERENC PROJ EM INFORMATICA",
+        "pre_requisitos": [
+            [
+                "100 créditos"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1608": {
+        "nome": "ANALISE NUMERICA I",
+        "pre_requisitos": [
+            [
+                "INF1007",
+                "MAT1200"
+            ],
+            [
+                "INF1007",
+                "MAT1250"
+            ],
+            [
+                "INF1007",
+                "MAT1260"
+            ],
+            [
+                "INF1007",
+                "MAT1280"
+            ],
+            [
+                "INF1007",
+                "MAT4200"
+            ],
+            [
+                "INF1007",
+                "MAT4280"
+            ],
+            [
+                "INF1037",
+                "MAT1200"
+            ],
+            [
+                "INF1037",
+                "MAT1250"
+            ],
+            [
+                "INF1037",
+                "MAT1260"
+            ],
+            [
+                "INF1037",
+                "MAT1280"
+            ],
+            [
+                "INF1037",
+                "MAT4200"
+            ],
+            [
+                "INF1037",
+                "MAT4280"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1013": {
+        "nome": "MODELAGEM DE SOFTWARE",
+        "pre_requisitos": [
+            [
+                "INF1012",
+                "INF1337"
+            ],
+            [
+                "INF1012",
+                "INF1636"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1016": {
+        "nome": "ESP/ANALISE FORMAL DE SISTEMAS",
+        "pre_requisitos": [
+            [
+                "INF1010",
+                "INF1626"
+            ],
+            [
+                "INF1620",
+                "INF1626"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1038": {
+        "nome": "APRENDIZADO AUTOMATICO",
+        "pre_requisitos": [
+            [
+                "ENG1029",
+                "INF1007",
+                "MAT1200"
+            ],
+            [
+                "ENG1029",
+                "INF1007",
+                "MAT1250"
+            ],
+            [
+                "ENG1029",
+                "INF1007",
+                "MAT1260"
+            ],
+            [
+                "ENG1029",
+                "INF1007",
+                "MAT1280"
+            ],
+            [
+                "ENG1029",
+                "INF1007",
+                "MAT4200"
+            ],
+            [
+                "ENG1029",
+                "INF1007",
+                "MAT4280"
+            ],
+            [
+                "ENG1029",
+                "INF1037",
+                "MAT1200"
+            ],
+            [
+                "ENG1029",
+                "INF1037",
+                "MAT1250"
+            ],
+            [
+                "ENG1029",
+                "INF1037",
+                "MAT1260"
+            ],
+            [
+                "ENG1029",
+                "INF1037",
+                "MAT1280"
+            ],
+            [
+                "ENG1029",
+                "INF1037",
+                "MAT4200"
+            ],
+            [
+                "ENG1029",
+                "INF1037",
+                "MAT4280"
+            ],
+            [
+                "ENG1410",
+                "INF1007",
+                "MAT1200"
+            ],
+            [
+                "ENG1410",
+                "INF1007",
+                "MAT1250"
+            ],
+            [
+                "ENG1410",
+                "INF1007",
+                "MAT1260"
+            ],
+            [
+                "ENG1410",
+                "INF1007",
+                "MAT1280"
+            ],
+            [
+                "ENG1410",
+                "INF1007",
+                "MAT4200"
+            ],
+            [
+                "ENG1410",
+                "INF1007",
+                "MAT4280"
+            ],
+            [
+                "ENG1410",
+                "INF1037",
+                "MAT1250"
+            ],
+            [
+                "ENG1410",
+                "INF1037",
+                "MAT1260"
+            ],
+            [
+                "ENG1410",
+                "INF1037",
+                "MAT1280"
+            ],
+            [
+                "ENG1410",
+                "INF1037",
+                "MAT4200"
+            ],
+            [
+                "ENG1410",
+                "INF1037",
+                "MAT4280"
+            ],
+            [
+                "ENG4010",
+                "INF1037",
+                "MAT4200"
+            ],
+            [
+                "ENG4501",
+                "INF1007",
+                "MAT1200"
+            ],
+            [
+                "ENG4501",
+                "INF1007",
+                "MAT1250"
+            ],
+            [
+                "ENG4501",
+                "INF1007",
+                "MAT1260"
+            ],
+            [
+                "ENG4501",
+                "INF1007",
+                "MAT1280"
+            ],
+            [
+                "ENG4501",
+                "INF1007",
+                "MAT4200"
+            ],
+            [
+                "ENG4501",
+                "INF1007",
+                "MAT4280"
+            ],
+            [
+                "ENG4501",
+                "INF1037",
+                "MAT1200"
+            ],
+            [
+                "ENG4501",
+                "INF1037",
+                "MAT1250"
+            ],
+            [
+                "ENG4501",
+                "INF1037",
+                "MAT1260"
+            ],
+            [
+                "ENG4501",
+                "INF1037",
+                "MAT1280"
+            ],
+            [
+                "ENG4501",
+                "INF1037",
+                "MAT4200"
+            ],
+            [
+                "ENG4501",
+                "INF1037",
+                "MAT4280"
+            ],
+            [
+                "INF1007",
+                "INF1036",
+                "MAT1200"
+            ],
+            [
+                "INF1007",
+                "INF1036",
+                "MAT1250"
+            ],
+            [
+                "INF1007",
+                "INF1036",
+                "MAT1260"
+            ],
+            [
+                "INF1007",
+                "INF1036",
+                "MAT1280"
+            ],
+            [
+                "INF1007",
+                "INF1036",
+                "MAT4200"
+            ],
+            [
+                "INF1007",
+                "INF1036",
+                "MAT4280"
+            ],
+            [
+                "INF1036",
+                "INF1037",
+                "MAT1200"
+            ],
+            [
+                "INF1036",
+                "INF1037",
+                "MAT1250"
+            ],
+            [
+                "INF1036",
+                "INF1037",
+                "MAT1260"
+            ],
+            [
+                "INF1036",
+                "INF1037",
+                "MAT1280"
+            ],
+            [
+                "INF1036",
+                "INF1037",
+                "MAT4200"
+            ],
+            [
+                "INF1036",
+                "INF1037",
+                "MAT4280"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1190": {
+        "nome": "TOPICOS AVANCADOS COMPUTACAO",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1300": {
+        "nome": "TOP EM COMPUTACAO I",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1305": {
+        "nome": "TOP EM COMPUTACAO II",
+        "pre_requisitos": [
+            [
+                "INF1010"
+            ],
+            [
+                "INF1018"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1307": {
+        "nome": "TOP EM COMPUTACAO IV",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1310": {
+        "nome": "TOP EM COMPUTACAO V",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1324": {
+        "nome": "TOP EM COMPUTACAO IX",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1328": {
+        "nome": "TOP EM COMPUTACAO X",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1331": {
+        "nome": "TOP EM COMPUTACAO XII",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1335": {
+        "nome": "TOP ESPECIAIS EM INFORMATICA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1336": {
+        "nome": "TOP ESPECIAIS EM INFORMATICA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1338": {
+        "nome": "TOP ESPECIAIS EM INFORMATICA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1339": {
+        "nome": "COMPUTACAO GRAF TRIDIMENSIONAL",
+        "pre_requisitos": [
+            [
+                "INF1301",
+                "MAT1200"
+            ],
+            [
+                "INF1301",
+                "MAT1210"
+            ],
+            [
+                "INF1628",
+                "MAT1200"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1340": {
+        "nome": "BANCO DE DADOS II",
+        "pre_requisitos": [
+            [
+                "INF1383"
+            ],
+            [
+                "INF1731"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1341": {
+        "nome": "BANCO DE DADOS III",
+        "pre_requisitos": [
+            [
+                "INF1383"
+            ],
+            [
+                "INF1731"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1350": {
+        "nome": "PROG DE SISTEMAS REATIVOS",
+        "pre_requisitos": [
+            [
+                "INF1010"
+            ],
+            [
+                "INF1018"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1371": {
+        "nome": "PROGRAMACAO EM UNIX",
+        "pre_requisitos": [
+            [
+                "INF1019"
+            ],
+            [
+                "INF1316"
+            ],
+            [
+                "INF1627"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1374": {
+        "nome": "BANCO DE DADOS IV",
+        "pre_requisitos": [
+            [
+                "INF1383"
+            ],
+            [
+                "INF1731"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1377": {
+        "nome": "ENGENHARIA DE REQUISITOS",
+        "pre_requisitos": [
+            [
+                "70 créditos"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1408": {
+        "nome": "ANALISE DE PROCESSOS",
+        "pre_requisitos": [
+            [
+                "100 créditos"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1715": {
+        "nome": "COMPILADORES",
+        "pre_requisitos": [
+            [
+                "INF1010",
+                "INF1018",
+                "INF1022"
+            ],
+            [
+                "INF1010",
+                "INF1018",
+                "INF1626"
+            ],
+            [
+                "INF1010",
+                "INF1315",
+                "INF1626"
+            ],
+            [
+                "INF1010",
+                "INF1612",
+                "INF1626"
+            ],
+            [
+                "INF1018",
+                "INF1620",
+                "INF1626"
+            ],
+            [
+                "INF1302",
+                "INF1315",
+                "INF1389"
+            ],
+            [
+                "INF1315",
+                "INF1389",
+                "INF1626"
+            ],
+            [
+                "INF1612",
+                "INF1620",
+                "INF1626"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1761": {
+        "nome": "COMPUTACAO GRAFICA",
+        "pre_requisitos": [
+            [
+                "INF1006",
+                "MAT1200"
+            ],
+            [
+                "INF1006",
+                "MAT1210"
+            ],
+            [
+                "INF1007",
+                "MAT1200"
+            ],
+            [
+                "INF1007",
+                "MAT1210"
+            ],
+            [
+                "INF1007",
+                "MAT1250"
+            ],
+            [
+                "INF1007",
+                "MAT1260"
+            ],
+            [
+                "INF1007",
+                "MAT1280"
+            ],
+            [
+                "INF1007",
+                "MAT4200"
+            ],
+            [
+                "INF1007",
+                "MAT4280"
+            ],
+            [
+                "INF1037",
+                "MAT1200"
+            ],
+            [
+                "INF1037",
+                "MAT1250"
+            ],
+            [
+                "INF1037",
+                "MAT1260"
+            ],
+            [
+                "INF1037",
+                "MAT1280"
+            ],
+            [
+                "INF1037",
+                "MAT4200"
+            ],
+            [
+                "INF1037",
+                "MAT4280"
+            ],
+            [
+                "INF1318",
+                "MAT1200"
+            ],
+            [
+                "INF1318",
+                "MAT1210"
+            ],
+            [
+                "INF1620",
+                "MAT1200"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1801": {
+        "nome": "TOPICOS EM ENG COMPUTACAO I",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1802": {
+        "nome": "TOP EM ENG DE COMPUTACAO II",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1803": {
+        "nome": "TOPICOS EM ENG COMPUTACAO III",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1804": {
+        "nome": "TOPICOS EM ENG COMPUTACAO IV",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1810": {
+        "nome": "TOPICOS EM ENG COMPUTACAO X",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1811": {
+        "nome": "SEMINARIO I",
+        "pre_requisitos": [
+            [
+                "75 créditos"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1812": {
+        "nome": "SEMINARIO II",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1821": {
+        "nome": "PROJETO ORIENTADO I",
+        "pre_requisitos": [
+            [
+                "75 créditos"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1822": {
+        "nome": "PROJETO ORIENTADO II",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1823": {
+        "nome": "PROJETO ORIENTADO III",
+        "pre_requisitos": [
+            [
+                "75 créditos"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1824": {
+        "nome": "PROJETO ORIENTADO IV",
+        "pre_requisitos": [
+            [
+                "75 créditos"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "LET1090": {
+        "nome": "COM EXPRESSAO I (PARA COM SOC)",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "LET1910": {
+        "nome": "ANAL E PROD DO TEXTO ACAD",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "JUR1016": {
+        "nome": "LEGISLACAO SOCIAL",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "JUR1809": {
+        "nome": "DIREITO DO AUTOR",
+        "pre_requisitos": [
+            [
+                "100 créditos"
+            ],
+            [
+                "ART1021"
+            ],
+            [
+                "ART1022"
+            ],
+            [
+                "JUR1802"
+            ],
+            [
+                "JUR1831"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "JUR1855": {
+        "nome": "DIREITO DA INFORMATICA",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "INF1370": {
+        "nome": "FERRAMENTAS DO UNIX",
+        "pre_requisitos": [
+            [
+                "INF1019"
+            ],
+            [
+                "INF1316"
+            ],
+            [
+                "INF1627"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ENG1456": {
+        "nome": "INTELIGENCIA COMPUT APLICADA",
+        "pre_requisitos": [
+            [
+                "INF1007"
+            ],
+            [
+                "INF1026"
+            ],
+            [
+                "INF1037"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "ENG4456": {
+        "nome": "INTELIGÊNCIA COMPUTACIONAL",
+        "pre_requisitos": [
+            [
+                "BIA1101",
+                "CTC4002"
+            ],
+            [
+                "INF1007"
+            ],
+            [
+                "INF1026"
+            ],
+            [
+                "INF1037"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "JUR1022": {
+        "nome": "NOCOES DE DIREITO P/ EMPREEND",
+        "pre_requisitos": [
+            [
+                "48 créditos"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "JUR1111": {
+        "nome": "DIREITO AMBIENTAL",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "JUR1240": {
+        "nome": "NEGOCIAC,MEDIACAO/ARBITRAGEM",
+        "pre_requisitos": [
+            [
+                "150 créditos"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "JUR1250": {
+        "nome": "MERCADO DE CAPITAIS",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "JUR1251": {
+        "nome": "PROPRIEDADE INTELECTUAL",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "JUR1653": {
+        "nome": "CONTRATOS INTERNACIONAIS",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "MAT1200": {
+        "nome": "ALGEBRA LINEAR I",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "MAT1210": {
+        "nome": "ALGEBRA LINEAR P/ INF I",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "MAT1260": {
+        "nome": "ALGEBRA LINEAR 1",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "MAT1280": {
+        "nome": "ALGEBRA LINEAR 1 ESPECIAL",
+        "pre_requisitos": [],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
+    },
+    "MAT4280": {
+        "nome": "ÁLGEBRA LINEAR I ESPECIAL",
+        "pre_requisitos": [
+            [
+                "CTC (nivel 2)"
+            ],
+            [
+                "CTC4002"
+            ]
+        ],
+        "co_requisitos": [],
+        "grupo_disciplinas": []
     }
 }

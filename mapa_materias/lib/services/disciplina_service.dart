@@ -26,6 +26,7 @@ class DisciplinaService {
           'preRequisitos': dados['pre_requisitos'],
           'coRequisitos': dados['co_requisitos'],
           'periodo': periodos[entry.key],
+          'grupoDisciplinas': dados['grupo_disciplinas'],
         });
       }).toList();
     } catch (e) {

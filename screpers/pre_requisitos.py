@@ -63,10 +63,30 @@ def get_subject_data(code):
             links_coreq = fieldset_coreq.find_all('a')
             co_requisitos = [link.text.strip() for link in links_coreq]
 
+        # "Grupo de Disciplinas" -- aparece em optativas/eletivas/extensão
+        # no lugar de pré-requisito: é uma lista de matérias concretas que
+        # valem como opção pra essa "vaga".
+        grupo_disciplinas = []
+        cabecalho_grupo = soup.find(
+            lambda tag: tag.name in ('legend', 'h2', 'h3', 'b', 'strong')
+            and 'grupo de disciplinas' in tag.get_text(strip=True).lower()
+        )
+        if cabecalho_grupo:
+            container = cabecalho_grupo.find_parent('fieldset') or cabecalho_grupo.find_parent()
+            if container:
+                for link in container.find_all('a'):
+                    codigo_opcao = link.get_text(strip=True)
+                    if not codigo_opcao:
+                        continue
+                    nome_opcao = link.find_next(string=True)
+                    nome_opcao = nome_opcao.strip() if nome_opcao else ''
+                    grupo_disciplinas.append({'codigo': codigo_opcao, 'nome': nome_opcao})
+
         return{
             "nome": nome,
             "pre_requisitos": pre_requisitos,
-            "co_requisitos": co_requisitos
+            "co_requisitos": co_requisitos,
+            "grupo_disciplinas": grupo_disciplinas,
         }
     
     except requests.exceptions.RequestException as e:
@@ -93,17 +113,28 @@ def main():
 
     # dicionário para armazenar os dados das matérias
     dados_materias = {}
+    codigos_pendentes = list(materias_cc) 
+    codigos_processados = set()
 
-    # executa as requisições  
-    for code in materias_cc:
+    while codigos_pendentes:
+        code = codigos_pendentes.pop(0)
+        if code in codigos_processados:
+            continue  # já processado, pula para o próximo
+
+        codigos_processados.add(code)
+
         print(f"Buscando: {code}")
         dados = get_subject_data(code)
-        
+
         if dados:
             dados_materias[code] = dados
-        
-        time.sleep(2)  # Pausa de 2 segundos entre as requisições para não sobrecarregar o servidor
+            for opcao in dados.get('grupo_disciplinas', []):
+                codigo_opcao = opcao['codigo'].strip().upper()
+                if codigo_opcao and codigo_opcao not in codigos_processados:
+                    codigos_pendentes.append(codigo_opcao)
 
+        time.sleep(2)
+    
     with open(caminho_saida, 'w', encoding='utf-8') as f:
         json.dump(dados_materias, f, ensure_ascii=False, indent=4)
 

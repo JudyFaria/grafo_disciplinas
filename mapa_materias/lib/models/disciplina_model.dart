@@ -1,42 +1,37 @@
 class Disciplina {
-    final String codigo;
-    final String nome;
-    
-    // Lista das mmaterias: lista externa -> OU, lista INter a -> E
-    final List<List<String>> preRequisitos;
-    final List<String> coRequisitos;
+  final String codigo;
+  final String nome;
+  final List<List<String>> preRequisitos;
+  final List<String> coRequisitos;
+  final int? periodo;
+  final List<String> grupoDisciplinas; // códigos das opções, se for optativa/eletiva
 
-    final int? periodo; // período sugerido no currículo mais recente (pode ser nulo)
+  Disciplina({
+    required this.codigo,
+    required this.nome,
+    required this.preRequisitos,
+    required this.coRequisitos,
+    this.periodo,
+    this.grupoDisciplinas = const [],
+  });
 
-    Disciplina({
-        required this.codigo,
-        required this.nome,
-        required this.preRequisitos,
-        required this.coRequisitos,
-        this.periodo,
-    });
-
-    // Construtor para converter o JSON em um objeto Dart
-    factory Disciplina.fromJson(Map<String, dynamic> json) {
-        return Disciplina(
-            codigo: json['codigo'] as String,
-            nome: json['nome'] as String,
-            
-            // Mapeando a lista de listas
-            preRequisitos: (json['preRequisitos'] as List<dynamic>?)
-                    ?.map((listaInterna) => (listaInterna as List<dynamic>)
-                        .map((item) => item as String)
-                        .toList())
-                    .toList() ??
-                [],
-                
-            // Mapeando a lista simples
-            coRequisitos: (json['coRequisitos'] as List<dynamic>?)
-                    ?.map((item) => item as String)
-                    .toList() ??
-                [],
-
-            periodo: json['periodo'] as int?,
-        );
-    }
+  factory Disciplina.fromJson(Map<String, dynamic> json) {
+    return Disciplina(
+      codigo: json['codigo'] as String,
+      nome: json['nome'] as String,
+      preRequisitos: (json['preRequisitos'] as List<dynamic>?)
+              ?.map((g) => (g as List<dynamic>).map((i) => i as String).toList())
+              .toList() ??
+          [],
+      coRequisitos: (json['coRequisitos'] as List<dynamic>?)
+              ?.map((i) => i as String)
+              .toList() ??
+          [],
+      periodo: json['periodo'] as int?,
+      grupoDisciplinas: (json['grupoDisciplinas'] as List<dynamic>?)
+              ?.map((item) => (item as Map<String, dynamic>)['codigo'] as String)
+              .toList() ??
+          [],
+    );
+  }
 }
