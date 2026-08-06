@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../models/semestre_academico.dart';
 
 class ProgressoService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -9,21 +8,12 @@ class ProgressoService {
 
   Future<void> salvar({
     required String uid,
-    required Map<String, SemestreAcademico> semestre,
-    required Set<String> concluidas,
-    required Set<SemestreAcademico> colunasExtras,
-    required Map<String, String> escolhas,
+    required Map<String, dynamic> dados,
     String? matricula,
   }) {
     return _documento(uid).set({
       'matricula': matricula,
-      'semestre': semestre.map(
-        (codigo, s) => MapEntry(codigo, {'ano': s.ano, 'semestre': s.semestre}),
-      ),
-      'concluidas': concluidas.toList(),
-      'colunasExtras':
-          colunasExtras.map((s) => {'ano': s.ano, 'semestre': s.semestre}).toList(),
-      'escolhas': escolhas,
+      ...dados,
       'atualizadoEm': FieldValue.serverTimestamp(),
     });
   }
