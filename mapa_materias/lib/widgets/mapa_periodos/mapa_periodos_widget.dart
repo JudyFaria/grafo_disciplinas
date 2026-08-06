@@ -6,6 +6,7 @@ import '../../models/estado_grafo.dart';
 import '../../services/progresso_service.dart';
 import 'card_arrastavel.dart';
 import 'setas_painter.dart';
+import 'secao_expansivel.dart';
 
 class MapaPeriodosWidget extends StatefulWidget {
   final List<Disciplina> disciplinas;
@@ -15,7 +16,6 @@ class MapaPeriodosWidget extends StatefulWidget {
   final Set<String> faltantesSemPeriodo;
   final String? matricula;
   final Map<String, dynamic>? estadoSalvo;
-  final VoidCallback? onResetar;
 
   const MapaPeriodosWidget({
     super.key,
@@ -26,7 +26,6 @@ class MapaPeriodosWidget extends StatefulWidget {
     this.faltantesSemPeriodo = const {},
     this.matricula,
     this.estadoSalvo,
-    this.onResetar,
   });
 
   @override
@@ -102,29 +101,6 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
     super.dispose();
   }
 
-  void _confirmarReset() {
-    showDialog(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('Resetar para o padrão da universidade?'),
-        content: const Text(
-          'Isso desfaz arrastes, escolhas de optativa e concluídas marcadas '
-          'manualmente, voltando pra grade oficial sugerida pela PUC.',
-        ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
-          FilledButton(
-            onPressed: () {
-              Navigator.pop(context);
-              widget.onResetar?.call();
-            },
-            child: const Text('Resetar'),
-          ),
-        ],
-      ),
-    );
-  }
-
   void _abrirEscolhaOptativa(String codigoSlot) {
     final original = _estado.porCodigoOriginal[codigoSlot]!;
     showDialog(
@@ -170,6 +146,26 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
     return ListenableBuilder(listenable: _estado, builder: (context, _) => _construirConteudo());
   }
 
+  Widget _cardCompacto(Disciplina d, MaterialColor cor, String? foco, Set<String> relacionados,
+      {bool ehOptativa = false, bool optativaResolvida = false}) {
+    return SizedBox(
+      width: 160,
+      height: _alturaCard,
+      child: CardArrastavel(
+        disciplina: d,
+        cor: cor,
+        dropInvalido: _dropInvalido,
+        emFoco: d.codigo == foco,
+        conectado: relacionados.contains(d.codigo),
+        ehOptativa: ehOptativa,
+        optativaResolvida: optativaResolvida,
+        onTapOptativa: ehOptativa ? () => _abrirEscolhaOptativa(d.codigo) : null,
+        onTap: () => _alternarSelecao(d.codigo),
+        onHover: (entrou) => _setHover(d.codigo, entrou),
+      ),
+    );
+  }
+
   Widget _construirConteudo() {
     final semPeriodo = _estado.porCodigo.values
         .where((d) =>
@@ -177,6 +173,8 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
             !_estado.concluidas.contains(d.codigo) &&
             !_estado.codigosDeOpcaoApenas.contains(d.codigo))
         .toList();
+    final concluidas = _estado.porCodigo.values.where((d) => _estado.concluidas.contains(d.codigo)).toList()
+      ..sort((a, b) => a.codigo.compareTo(b.codigo));
 
     final usados = _estado.todosOsSemestresUsados();
     final colunas = <SemestreAcademico>[];
@@ -230,257 +228,164 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
     return SizedBox.expand(
       child: Padding(
         padding: const EdgeInsets.all(12),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _colunaConcluidas(foco, relacionados),
-            const SizedBox(width: 16),
-            _colunaSemPeriodo(semPeriodo, foco, relacionados),
-            const SizedBox(width: 16),
+            SecaoExpansivel(
+              titulo: 'Concluídas',
+              quantidade: concluidas.length,
+              cor: Colors.green,
+              inicialmenteAberta: false,
+              aoAceitar: _estado.marcarConcluida,
+              itens: [
+                for (var d in concluidas) _cardCompacto(d, Colors.green, foco, relacionados),
+              ],
+            ),
+            SecaoExpansivel(
+              titulo: 'Sem período fixo',
+              quantidade: semPeriodo.length,
+              cor: Colors.grey,
+              inicialmenteAberta: true,
+              podeAceitar: _estado.naoTemPeriodoDefinido,
+              aoAceitar: _estado.removerDoGrafo,
+              itens: [
+                for (var d in semPeriodo)
+                  _cardCompacto(
+                    d, Colors.grey, foco, relacionados,
+                    ehOptativa: _estado.porCodigoOriginal[d.codigo]?.grupoDisciplinas.isNotEmpty ?? false,
+                    optativaResolvida: _estado.escolhaOptativa.containsKey(d.codigo),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 4),
             Expanded(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: SingleChildScrollView(
-                  child: SizedBox(
-                    width: larguraGrade + _larguraColuna + _espacoColuna,
-                    height: maiorAltura,
-                    child: Stack(
-                      children: [
-                        for (var col = 0; col < colunas.length; col++) ...[
-                          Positioned(
-                            left: col * (_larguraColuna + _espacoColuna),
-                            top: 0,
-                            width: _larguraColuna,
-                            height: maiorAltura,
-                            child: DragTarget<String>(
-                              onWillAcceptWithDetails: (details) {
-                                final pode = _estado.podeSoltarEm(details.data, colunas[col]);
-                                _dropInvalido.value = !pode;
-                                return pode;
-                              },
-                              onLeave: (_) => _dropInvalido.value = false,
-                              onAcceptWithDetails: (details) {
-                                _dropInvalido.value = false;
-                                _destacar(_estado.moverDisciplina(details.data, colunas[col]));
-                              },
-                              builder: (context, candidate, rejected) => Container(
-                                color: candidate.isNotEmpty
-                                    ? _paleta[col % _paleta.length].withOpacity(0.15)
-                                    : rejected.isNotEmpty
-                                        ? Colors.red.withOpacity(0.15)
-                                        : Colors.transparent,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: col * (_larguraColuna + _espacoColuna),
-                            top: 0,
-                            width: _larguraColuna,
-                            child: Container(
-                              height: _alturaCabecalho,
-                              decoration: BoxDecoration(
-                                color: _paleta[col % _paleta.length].shade100,
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Text(
-                                    colunas[col].toString(),
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                      color: _paleta[col % _paleta.length].shade900,
-                                    ),
-                                  ),
-                                  if (porColuna[colunas[col]]!.isEmpty &&
-                                      (col == 0 || col == colunas.length - 1))
-                                    Positioned(
-                                      right: 0,
-                                      child: IconButton(
-                                        icon: const Icon(Icons.close, size: 16),
-                                        tooltip: 'Remover coluna vazia',
-                                        padding: EdgeInsets.zero,
-                                        constraints: const BoxConstraints(),
-                                        onPressed: () => _estado.removerColuna(colunas[col]),
-                                      ),
-                                    ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          for (var d in porColuna[colunas[col]]!)
-                            Positioned(
-                              left: posicoes[d.codigo]!.dx,
-                              top: posicoes[d.codigo]!.dy,
-                              width: _larguraColuna,
-                              height: _alturaCard,
-                              child: CardArrastavel(
-                                disciplina: d,
-                                cor: _paleta[col % _paleta.length],
-                                dropInvalido: _dropInvalido,
-                                destacado: _destacados.contains(d.codigo),
-                                emFoco: d.codigo == foco,
-                                conectado: relacionados.contains(d.codigo),
-                                ehOptativa:
-                                    _estado.porCodigoOriginal[d.codigo]!.grupoDisciplinas.isNotEmpty,
-                                optativaResolvida: _estado.escolhaOptativa.containsKey(d.codigo),
-                                onTapOptativa: () => _abrirEscolhaOptativa(d.codigo),
-                                onTap: () => _alternarSelecao(d.codigo),
-                                onHover: (entrou) => _setHover(d.codigo, entrou),
-                              ),
-                            ),
-                        ],
+              child: InteractiveViewer(
+                constrained: false,
+                boundaryMargin: const EdgeInsets.all(120),
+                minScale: 0.4,
+                maxScale: 2.5,
+                child: SizedBox(
+                  width: larguraGrade + _larguraColuna + _espacoColuna,
+                  height: maiorAltura,
+                  child: Stack(
+                    children: [
+                      for (var col = 0; col < colunas.length; col++) ...[
                         Positioned(
-                          left: colunas.length * (_larguraColuna + _espacoColuna),
+                          left: col * (_larguraColuna + _espacoColuna),
                           top: 0,
                           width: _larguraColuna,
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: _alturaCabecalho,
-                                child: Center(
-                                  child: OutlinedButton.icon(
-                                    onPressed: _estado.adicionarProximoPeriodo,
-                                    icon: const Icon(Icons.add, size: 16),
-                                    label: const Text('Período'),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              OutlinedButton.icon(
-                                onPressed: _confirmarReset,
-                                icon: const Icon(Icons.restart_alt, size: 16),
-                                label: const Text('Resetar'),
-                              ),
-                            ],
-                          ),
-                        ),
-                        IgnorePointer(
-                          child: CustomPaint(
-                            size: Size(larguraGrade, maiorAltura),
-                            painter: SetasPainter(
-                              arestas: arestas,
-                              posicoes: posicoes,
-                              larguraCard: _larguraColuna,
-                              alturaCard: _alturaCard,
-                              destacados: _destacados,
-                              codigoFoco: foco,
+                          height: maiorAltura,
+                          child: DragTarget<String>(
+                            onWillAcceptWithDetails: (details) {
+                              final pode = _estado.podeSoltarEm(details.data, colunas[col]);
+                              _dropInvalido.value = !pode;
+                              return pode;
+                            },
+                            onLeave: (_) => _dropInvalido.value = false,
+                            onAcceptWithDetails: (details) {
+                              _dropInvalido.value = false;
+                              _destacar(_estado.moverDisciplina(details.data, colunas[col]));
+                            },
+                            builder: (context, candidate, rejected) => Container(
+                              color: candidate.isNotEmpty
+                                  ? _paleta[col % _paleta.length].withOpacity(0.15)
+                                  : rejected.isNotEmpty
+                                      ? Colors.red.withOpacity(0.15)
+                                      : Colors.transparent,
                             ),
                           ),
                         ),
+                        Positioned(
+                          left: col * (_larguraColuna + _espacoColuna),
+                          top: 0,
+                          width: _larguraColuna,
+                          child: Container(
+                            height: _alturaCabecalho,
+                            decoration: BoxDecoration(
+                              color: _paleta[col % _paleta.length].shade100,
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Text(
+                                  colunas[col].toString(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    color: _paleta[col % _paleta.length].shade900,
+                                  ),
+                                ),
+                                if (porColuna[colunas[col]]!.isEmpty &&
+                                    (col == 0 || col == colunas.length - 1))
+                                  Positioned(
+                                    right: 0,
+                                    child: IconButton(
+                                      icon: const Icon(Icons.close, size: 16),
+                                      tooltip: 'Remover coluna vazia',
+                                      padding: EdgeInsets.zero,
+                                      constraints: const BoxConstraints(),
+                                      onPressed: () => _estado.removerColuna(colunas[col]),
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        for (var d in porColuna[colunas[col]]!)
+                          Positioned(
+                            left: posicoes[d.codigo]!.dx,
+                            top: posicoes[d.codigo]!.dy,
+                            width: _larguraColuna,
+                            height: _alturaCard,
+                            child: CardArrastavel(
+                              disciplina: d,
+                              cor: _paleta[col % _paleta.length],
+                              dropInvalido: _dropInvalido,
+                              destacado: _destacados.contains(d.codigo),
+                              emFoco: d.codigo == foco,
+                              conectado: relacionados.contains(d.codigo),
+                              ehOptativa:
+                                  _estado.porCodigoOriginal[d.codigo]!.grupoDisciplinas.isNotEmpty,
+                              optativaResolvida: _estado.escolhaOptativa.containsKey(d.codigo),
+                              onTapOptativa: () => _abrirEscolhaOptativa(d.codigo),
+                              onTap: () => _alternarSelecao(d.codigo),
+                              onHover: (entrou) => _setHover(d.codigo, entrou),
+                            ),
+                          ),
                       ],
-                    ),
+                      Positioned(
+                        left: colunas.length * (_larguraColuna + _espacoColuna),
+                        top: 0,
+                        width: _larguraColuna,
+                        height: _alturaCabecalho,
+                        child: Center(
+                          child: OutlinedButton.icon(
+                            onPressed: _estado.adicionarProximoPeriodo,
+                            icon: const Icon(Icons.add, size: 16),
+                            label: const Text('Período'),
+                          ),
+                        ),
+                      ),
+                      IgnorePointer(
+                        child: CustomPaint(
+                          size: Size(larguraGrade, maiorAltura),
+                          painter: SetasPainter(
+                            arestas: arestas,
+                            posicoes: posicoes,
+                            larguraCard: _larguraColuna,
+                            alturaCard: _alturaCard,
+                            destacados: _destacados,
+                            codigoFoco: foco,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _colunaConcluidas(String? foco, Set<String> relacionados) {
-    final itens = _estado.porCodigo.values.where((d) => _estado.concluidas.contains(d.codigo)).toList()
-      ..sort((a, b) => a.codigo.compareTo(b.codigo));
-
-    return SizedBox(
-      width: _larguraColuna,
-      child: DragTarget<String>(
-        onAcceptWithDetails: (details) => _estado.marcarConcluida(details.data),
-        builder: (context, candidate, rejected) => Container(
-          decoration: BoxDecoration(
-            color: candidate.isNotEmpty ? Colors.green.withOpacity(0.08) : null,
-            borderRadius: BorderRadius.circular(6),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                height: _alturaCabecalho,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: candidate.isNotEmpty ? Colors.green.shade200 : Colors.green.shade100,
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: const Text('Concluídas', style: TextStyle(fontWeight: FontWeight.bold)),
-              ),
-              const SizedBox(height: 8),
-              Expanded(
-                child: ListView(
-                  children: [
-                    for (var d in itens)
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: _espacoCard),
-                        child: CardArrastavel(
-                          disciplina: d,
-                          cor: Colors.green,
-                          dropInvalido: _dropInvalido,
-                          emFoco: d.codigo == foco,
-                          conectado: relacionados.contains(d.codigo),
-                          onTap: () => _alternarSelecao(d.codigo),
-                          onHover: (entrou) => _setHover(d.codigo, entrou),
-                        ),
-                      ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _colunaSemPeriodo(List<Disciplina> itens, String? foco, Set<String> relacionados) {
-    return SizedBox(
-      width: _larguraColuna,
-      child: DragTarget<String>(
-        onWillAcceptWithDetails: (details) => _estado.naoTemPeriodoDefinido(details.data),
-        onAcceptWithDetails: (details) => _estado.removerDoGrafo(details.data),
-        builder: (context, candidate, rejected) => Container(
-          decoration: BoxDecoration(
-            color: candidate.isNotEmpty ? Colors.grey.withOpacity(0.15) : null,
-            borderRadius: BorderRadius.circular(6),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                height: _alturaCabecalho,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: candidate.isNotEmpty ? Colors.grey.shade400 : Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: const Text('Sem período definido', style: TextStyle(fontWeight: FontWeight.bold)),
-              ),
-              const SizedBox(height: 8),
-              Expanded(
-                child: ListView(
-                  children: [
-                    for (var d in itens)
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: _espacoCard),
-                        child: CardArrastavel(
-                          disciplina: d,
-                          cor: Colors.grey,
-                          dropInvalido: _dropInvalido,
-                          emFoco: d.codigo == foco,
-                          conectado: relacionados.contains(d.codigo),
-                          ehOptativa: _estado.porCodigoOriginal[d.codigo]?.grupoDisciplinas.isNotEmpty ?? false,
-                          optativaResolvida: _estado.escolhaOptativa.containsKey(d.codigo),
-                          onTapOptativa: () => _abrirEscolhaOptativa(d.codigo),
-                          onTap: () => _alternarSelecao(d.codigo),
-                          onHover: (entrou) => _setHover(d.codigo, entrou),
-                        ),
-                      ),
-                  ],
-                ),
-              ),
-            ],
-          ),
         ),
       ),
     );

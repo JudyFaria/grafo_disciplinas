@@ -34,7 +34,7 @@ class CardArrastavel extends StatelessWidget {
     return MouseRegion(
       onEnter: onHover == null ? null : (_) => onHover!(true),
       onExit: onHover == null ? null : (_) => onHover!(false),
-      child: Draggable<String>(
+      child: LongPressDraggable<String>(
         data: disciplina.codigo,
         onDragEnd: (_) => dropInvalido.value = false,
         feedback: Material(
@@ -49,6 +49,7 @@ class CardArrastavel extends StatelessWidget {
         ),
         childWhenDragging: Opacity(opacity: 0.35, child: _card()),
         child: GestureDetector(onTap: onTap, child: _card()),
+        delay: const Duration(milliseconds: 200),
       ),
     );
   }

@@ -68,9 +68,6 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     }
   }
 
-  // "Padrão da universidade": descarta planilha, matrícula e progresso
-  // salvo — o próximo build monta a grade oficial do zero, como um
-  // usuário que nunca importou nada.
   void _resetarParaGradeOficial() {
     setState(() {
       _periodosDaPlanilha = null;
@@ -80,20 +77,86 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     });
   }
 
+  void _confirmarReset() {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Resetar para o padrão da universidade?'),
+        content: const Text(
+          'Isso descarta a planilha importada e qualquer alteração manual, '
+          'voltando pra grade oficial da PUC do zero, como um usuário novo.',
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
+          FilledButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _resetarParaGradeOficial();
+            },
+            child: const Text('Resetar'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _construirMenu() {
+    return Drawer(
+      child: SafeArea(
+        child: Column(
+          children: [
+            DrawerHeader(
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: Text('Mapa de Matérias', style: Theme.of(context).textTheme.titleLarge),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.upload_file),
+              title: const Text('Importar pendências'),
+              onTap: () {
+                Navigator.pop(context);
+                _importarPendencias();
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.restart_alt),
+              title: const Text('Resetar para grade oficial'),
+              onTap: () {
+                Navigator.pop(context);
+                _confirmarReset();
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.save_outlined),
+              title: const Text('Salvar momento'),
+              subtitle: const Text('em breve'),
+              enabled: false,
+            ),
+            const Spacer(),
+            const Divider(height: 1),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('Sair'),
+              onTap: () {
+                Navigator.pop(context);
+                AuthService().sair();
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mapa de Pré-requisitos'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            tooltip: 'Sair',
-            onPressed: () => AuthService().sair(),
-          ),
-        ],
       ),
+      drawer: _construirMenu(),
       body: _carregandoProgresso
           ? const Center(child: CircularProgressIndicator())
           : FutureBuilder<List<Disciplina>>(
@@ -124,7 +187,6 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     uid: _uid,
                     estadoSalvo: _progressoSalvo,
                     matricula: _progressoSalvo!['matricula'] as String?,
-                    onResetar: _resetarParaGradeOficial,
                   );
                 }
 
@@ -133,17 +195,11 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     key: const ValueKey('grade-geral'),
                     disciplinas: disciplinas,
                     uid: _uid,
-                    onResetar: _resetarParaGradeOficial,
                   );
                 }
 
-                // Grade oficial = códigos que a própria universidade indica
-                // com período no currículo (não o catálogo geral, que
-                // inclui opções de optativa/extensão).
-                final gradeOficial = disciplinas
-                    .where((d) => d.periodo != null)
-                    .map((d) => d.codigo)
-                    .toSet();
+                final gradeOficial =
+                    disciplinas.where((d) => d.periodo != null).map((d) => d.codigo).toSet();
                 final faltantes = {..._periodosDaPlanilha!.keys, ..._faltantesSemPeriodo};
                 final concluidasIniciais = gradeOficial.difference(faltantes);
 
@@ -155,15 +211,9 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   faltantesSemPeriodo: _faltantesSemPeriodo,
                   concluidasIniciais: concluidasIniciais,
                   matricula: _matricula,
-                  onResetar: _resetarParaGradeOficial,
                 );
               },
             ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _importarPendencias,
-        icon: const Icon(Icons.upload_file),
-        label: const Text('Importar pendências'),
-      ),
     );
   }
 }
