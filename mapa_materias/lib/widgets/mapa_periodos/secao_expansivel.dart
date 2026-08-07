@@ -73,11 +73,17 @@ class _SecaoExpansivelState extends State<SecaoExpansivel> {
             ),
           ),
           if (_aberta)
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: widget.itens.isEmpty
-                  ? const Text('Nenhuma matéria aqui', style: TextStyle(color: Colors.grey))
-                  : Wrap(spacing: 8, runSpacing: 8, children: widget.itens),
+            ConstrainedBox(
+                constraints: const BoxConstraints(maxHeight: 240),
+                child: widget.itens.isEmpty
+                    ? const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Text('Nenhuma matéria aqui', style: TextStyle(color: Colors.grey)),
+                    )
+                    : SingleChildScrollView(
+                        padding: const EdgeInsets.all(10),
+                        child: Wrap(spacing: 8, runSpacing: 8, children: widget.itens),
+                    ),
             ),
         ],
       ),
