@@ -3,7 +3,10 @@ import 'package:flutter/services.dart';
 import '../models/disciplina_model.dart';
 
 class DisciplinaService {
-  Future<List<Disciplina>> carregarDisciplinas() async {
+  // Só existe currículo de Ciência da Computação por enquanto — os
+  // arquivos continuam nos mesmos caminhos de sempre. Quando tiver dados
+  // de outros cursos, mapeia `curso` pro caminho certo aqui.
+  Future<List<Disciplina>> carregarDisciplinas(String curso) async {
     try {
       final String respostaString =
           await rootBundle.loadString('assets/dados_materias.json');
@@ -14,9 +17,7 @@ class DisciplinaService {
         final String periodosString =
             await rootBundle.loadString('assets/periodos_curriculo_atual_cc.json');
         periodos = jsonDecode(periodosString);
-      } catch (_) {
-        // opcional — sem esse arquivo, periodo fica null pra todo mundo
-      }
+      } catch (_) {}
 
       return jsonMap.entries.map((entry) {
         final dados = entry.value as Map<String, dynamic>;

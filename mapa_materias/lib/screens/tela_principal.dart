@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import '../models/disciplina_model.dart';
+import '../models/cursos_disponiveis.dart';
 import '../widgets/mapa_periodos/mapa_periodos_widget.dart';
 import '../services/disciplina_service.dart';
 import '../services/planilha_service.dart';
 import '../services/progresso_service.dart';
 import '../services/auth_service.dart';
+import '../services/usuario_service.dart';
+import 'tela_ajuda.dart';
 
 class TelaPrincipal extends StatefulWidget {
   const TelaPrincipal({super.key});
@@ -17,7 +20,12 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
   final DisciplinaService _disciplinaService = DisciplinaService();
   final PlanilhaService _planilhaService = PlanilhaService();
   final ProgressoService _progressoService = ProgressoService();
-  late Future<List<Disciplina>> _futureDisciplinas;
+  final UsuarioService _usuarioService = UsuarioService();
+
+  Future<List<Disciplina>>? _futureDisciplinas;
+  PerfilUsuario? _perfil;
+  bool _carregandoPerfil = true;
+  String _cursoEscolha = cursosDisponiveis.first.$1;
 
   Map<String, int>? _periodosDaPlanilha;
   Set<String> _faltantesSemPeriodo = {};
@@ -30,9 +38,22 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
   @override
   void initState() {
     super.initState();
-    _futureDisciplinas = _disciplinaService.carregarDisciplinas();
+    _carregarPerfil();
     _carregarProgressoSalvo();
   }
+
+  Future<void> _carregarPerfil() async {
+    final perfil = await _usuarioService.carregarPerfil(_uid);
+    if (!mounted) return;
+    setState(() {
+      _perfil = perfil;
+      _carregandoPerfil = false;
+      if (perfil != null) {
+        _futureDisciplinas = _disciplinaService.carregarDisciplinas(perfil.curso);
+      }
+    });
+  }
+
 
   Future<void> _carregarProgressoSalvo() async {
     final dados = await _progressoService.carregar(_uid);
@@ -62,9 +83,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     } catch (e) {
       debugPrint('Erro ao importar pendências: $e');
       if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Erro ao importar a planilha: $e')),
-      );
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Erro ao importar a planilha: $e')));
     }
   }
 
@@ -100,6 +119,43 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     );
   }
 
+  void _abrirEscolhaCurso() {
+    showDialog(
+      context: context,
+      builder: (context) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: const Text('Seu curso'),
+          content: DropdownButtonFormField<String>(
+            initialValue: _perfil?.curso ?? _cursoEscolha,
+            items: [
+              for (final (valor, rotulo) in cursosDisponiveis)
+                DropdownMenuItem(value: valor, child: Text(rotulo)),
+            ],
+            onChanged: (v) => setDialogState(() => _cursoEscolha = v!),
+          ),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
+            FilledButton(
+              onPressed: () async {
+                Navigator.pop(context);
+                await _usuarioService.salvarPerfil(_uid, curso: _cursoEscolha);
+                if (!mounted) return;
+                setState(() {
+                  _perfil = PerfilUsuario(curso: _cursoEscolha, nickname: _perfil?.nickname);
+                  _futureDisciplinas = _disciplinaService.carregarDisciplinas(_cursoEscolha);
+                  _progressoSalvo = null;
+                  _periodosDaPlanilha = null;
+                  _faltantesSemPeriodo = {};
+                });
+              },
+              child: const Text('Salvar'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _construirMenu() {
     return Drawer(
       child: SafeArea(
@@ -108,8 +164,22 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
             DrawerHeader(
               child: Align(
                 alignment: Alignment.bottomLeft,
-                child: Text('Mapa de Matérias', style: Theme.of(context).textTheme.titleLarge),
+                child: Text(
+                  (_perfil?.nickname?.isNotEmpty ?? false) ? 'Olá, ${_perfil!.nickname}' : 'GrafoFlow',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
               ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.school_outlined),
+              title: const Text('Meu curso'),
+              subtitle: Text(
+                cursosDisponiveis.firstWhere((c) => c.$1 == _perfil?.curso, orElse: () => cursosDisponiveis.first).$2,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                _abrirEscolhaCurso();
+              },
             ),
             ListTile(
               leading: const Icon(Icons.upload_file),
@@ -133,6 +203,14 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               subtitle: const Text('em breve'),
               enabled: false,
             ),
+            ListTile(
+              leading: const Icon(Icons.help_outline),
+              title: const Text('Como usar'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (_) => const TelaAjuda()));
+              },
+            ),
             const Spacer(),
             const Divider(height: 1),
             ListTile(
@@ -151,9 +229,10 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mapa de Pré-requisitos'),
+        title: const Text('GrafoFlow'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       drawer: _construirMenu(),
@@ -173,9 +252,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     ),
                   );
                 } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                  return const Center(
-                    child: Text('Nenhuma disciplina encontrada.', style: TextStyle(fontSize: 16)),
-                  );
+                  return const Center(child: Text('Nenhuma disciplina encontrada.', style: TextStyle(fontSize: 16)));
                 }
 
                 final disciplinas = snapshot.data!;
@@ -198,8 +275,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   );
                 }
 
-                final gradeOficial =
-                    disciplinas.where((d) => d.periodo != null).map((d) => d.codigo).toSet();
+                final gradeOficial = disciplinas.where((d) => d.periodo != null).map((d) => d.codigo).toSet();
                 final faltantes = {..._periodosDaPlanilha!.keys, ..._faltantesSemPeriodo};
                 final concluidasIniciais = gradeOficial.difference(faltantes);
 
@@ -213,7 +289,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   matricula: _matricula,
                 );
               },
-            ),
+      ),
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../models/cursos_disponiveis.dart';
 import '../services/auth_service.dart';
+import '../services/usuario_service.dart';
 
 class TelaLogin extends StatefulWidget {
   const TelaLogin({super.key});
@@ -11,18 +13,22 @@ class TelaLogin extends StatefulWidget {
 
 class _TelaLoginState extends State<TelaLogin> {
   final _authService = AuthService();
+  final _usuarioService = UsuarioService();
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _senhaController = TextEditingController();
+  final _nicknameController = TextEditingController();
 
   bool _modoCadastro = false;
   bool _carregando = false;
   String? _erro;
+  String _cursoSelecionado = cursosDisponiveis.first.$1;
 
   @override
   void dispose() {
     _emailController.dispose();
     _senhaController.dispose();
+    _nicknameController.dispose();
     super.dispose();
   }
 
@@ -34,17 +40,26 @@ class _TelaLoginState extends State<TelaLogin> {
     });
     try {
       if (_modoCadastro) {
-        await _authService.cadastrar(_emailController.text.trim(), _senhaController.text);
+        final credencial =
+            await _authService.cadastrar(_emailController.text.trim(), _senhaController.text);
+        final uid = credencial.user?.uid;
+        if (uid != null) {
+          await _usuarioService.salvarPerfil(
+            uid,
+            curso: _cursoSelecionado,
+            nickname: _nicknameController.text.trim(),
+          );
+        }
       } else {
         await _authService.entrar(_emailController.text.trim(), _senhaController.text);
       }
-      // Se der certo, o AuthGate troca de tela sozinho (ouve authStateChanges)
     } on FirebaseAuthException catch (e) {
       setState(() => _erro = _mensagemDeErro(e.code));
     } finally {
       if (mounted) setState(() => _carregando = false);
     }
   }
+
 
   String _mensagemDeErro(String codigo) {
     switch (codigo) {
@@ -97,28 +112,40 @@ class _TelaLoginState extends State<TelaLogin> {
                     decoration: const InputDecoration(labelText: 'Senha'),
                     validator: (v) => (v == null || v.length < 6) ? 'Mínimo 6 caracteres' : null,
                   ),
-                  if (_erro != null) ...[
+                  if (_modoCadastro) ...[
                     const SizedBox(height: 12),
+                    TextFormField(
+                      controller: _nicknameController,
+                      decoration: const InputDecoration(labelText: 'NickName'),
+                      validator: (v) => (v == null || v.trim().isEmpty) ? 'Escolha um apelido' : null,
+                    ),
+                    const SizedBox(height: 12),
+                    DropdownButtonFormField<String>(
+                      initialValue: _cursoSelecionado,
+                      decoration: const InputDecoration(labelText: 'Curso'),
+                      items: [
+                        for (final (valor, rotulo) in cursosDisponiveis)
+                          DropdownMenuItem(value: valor, child: Text(rotulo)),
+                      ],
+                      onChanged: (v) => setState(() => _cursoSelecionado = v!),
+                    ),
+                  ],
+                  
+                  if (_erro != null) ...[
+                    const SizedBox(height: 4),
                     Text(_erro!, style: const TextStyle(color: Colors.red)),
                   ],
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 12),
                   FilledButton(
                     onPressed: _carregando ? null : _enviar,
                     child: _carregando
-                        ? const SizedBox(
-                            width: 20, height: 20,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
+                        ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2))
                         : Text(_modoCadastro ? 'Cadastrar' : 'Entrar'),
                   ),
                   const SizedBox(height: 12),
                   TextButton(
-                    onPressed: _carregando
-                        ? null
-                        : () => setState(() => _modoCadastro = !_modoCadastro),
-                    child: Text(
-                      _modoCadastro ? 'Já tenho conta — entrar' : 'Não tenho conta — cadastrar',
-                    ),
+                    onPressed: _carregando ? null : () => setState(() => _modoCadastro = !_modoCadastro),
+                    child: Text(_modoCadastro ? 'Já tenho conta — entrar' : 'Não tenho conta — cadastrar'),
                   ),
                 ],
               ),
