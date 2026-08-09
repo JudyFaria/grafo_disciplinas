@@ -10,10 +10,13 @@ class AuthService {
     return _auth.signInWithEmailAndPassword(email: email, password: senha);
   }
 
-
   Future<UserCredential> cadastrar(String email, String senha) async {
     final credencial = await _auth.createUserWithEmailAndPassword(email: email, password: senha);
     return credencial;
+  }
+
+  Future<void> redefinirSenha(String email) {
+    return _auth.sendPasswordResetEmail(email: email);
   }
 
   Future<void> recarregarUsuario() async {

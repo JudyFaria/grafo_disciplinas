@@ -40,6 +40,11 @@ class _TelaLoginState extends State<TelaLogin> {
     });
     try {
       if (_modoCadastro) {
+        final nickname = _nicknameController.text.trim();
+        if (nickname.isNotEmpty && !await _usuarioService.nicknameDisponivel(nickname)) {
+          setState(() => _erro = 'Esse nome de usuário já está em uso.');
+          return;
+        }
         final credencial =
             await _authService.cadastrar(_emailController.text.trim(), _senhaController.text);
         final uid = credencial.user?.uid;
@@ -47,11 +52,20 @@ class _TelaLoginState extends State<TelaLogin> {
           await _usuarioService.salvarPerfil(
             uid,
             curso: _cursoSelecionado,
-            nickname: _nicknameController.text.trim(),
+            nickname: nickname,
+            email: _emailController.text.trim(),
           );
         }
       } else {
-        await _authService.entrar(_emailController.text.trim(), _senhaController.text);
+        final identificador = _emailController.text.trim();
+        final email = identificador.contains('@')
+            ? identificador
+            : await _usuarioService.resolverEmailPorNickname(identificador);
+        if (email == null) {
+          setState(() => _erro = 'Usuário não encontrado.');
+          return;
+        }
+        await _authService.entrar(email, _senhaController.text);
       }
     } on FirebaseAuthException catch (e) {
       setState(() => _erro = _mensagemDeErro(e.code));
@@ -60,6 +74,25 @@ class _TelaLoginState extends State<TelaLogin> {
     }
   }
 
+  Future<void> _esqueciSenha() async {
+    final identificador = _emailController.text.trim();
+    if (identificador.isEmpty) {
+      setState(() => _erro = 'Digite seu e-mail ou usuário ali em cima primeiro.');
+      return;
+    }
+    final email = identificador.contains('@')
+        ? identificador
+        : await _usuarioService.resolverEmailPorNickname(identificador);
+    if (email == null) {
+      setState(() => _erro = 'Usuário não encontrado.');
+      return;
+    }
+    await _authService.redefinirSenha(email);
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Enviamos um link de redefinição de senha pra $email.')),
+    );
+  }
 
   String _mensagemDeErro(String codigo) {
     switch (codigo) {
@@ -67,7 +100,7 @@ class _TelaLoginState extends State<TelaLogin> {
         return 'Não existe conta com esse e-mail.';
       case 'wrong-password':
       case 'invalid-credential':
-        return 'E-mail ou senha incorretos.';
+        return 'Usuário ou senha incorretos.';
       case 'email-already-in-use':
         return 'Já existe uma conta com esse e-mail.';
       case 'weak-password':
@@ -101,9 +134,13 @@ class _TelaLoginState extends State<TelaLogin> {
                   const SizedBox(height: 24),
                   TextFormField(
                     controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: const InputDecoration(labelText: 'E-mail'),
-                    validator: (v) => (v == null || !v.contains('@')) ? 'E-mail inválido' : null,
+                    keyboardType: _modoCadastro ? TextInputType.emailAddress : TextInputType.text,
+                    decoration: InputDecoration(labelText: _modoCadastro ? 'E-mail' : 'E-mail ou usuário'),
+                    validator: (v) {
+                      if (v == null || v.trim().isEmpty) return 'Obrigatório';
+                      if (_modoCadastro && !v.contains('@')) return 'E-mail inválido';
+                      return null;
+                    },
                   ),
                   const SizedBox(height: 12),
                   TextFormField(
@@ -112,6 +149,14 @@ class _TelaLoginState extends State<TelaLogin> {
                     decoration: const InputDecoration(labelText: 'Senha'),
                     validator: (v) => (v == null || v.length < 6) ? 'Mínimo 6 caracteres' : null,
                   ),
+                  if (!_modoCadastro)
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: _carregando ? null : _esqueciSenha,
+                        child: const Text('Esqueci minha senha'),
+                      ),
+                    ),
                   if (_modoCadastro) ...[
                     const SizedBox(height: 12),
                     TextFormField(
@@ -130,7 +175,6 @@ class _TelaLoginState extends State<TelaLogin> {
                       onChanged: (v) => setState(() => _cursoSelecionado = v!),
                     ),
                   ],
-                  
                   if (_erro != null) ...[
                     const SizedBox(height: 4),
                     Text(_erro!, style: const TextStyle(color: Colors.red)),
