@@ -12,7 +12,7 @@ class TelaAjuda extends StatelessWidget {
         children: const [
           _SecaoAjuda(
             titulo: '1. Baixe seu "Falta Cursar"',
-            texto: 'No sistema acadêmico da PUC, procure o relatório de disciplinas '
+            texto: 'No sistema acadêmico da PUC (SAU), procure o relatório de disciplinas '
                 'curriculares não cumpridas ("Falta Cursar") e baixe o arquivo em Excel (.xlsx).',
           ),
           _SecaoAjuda(
