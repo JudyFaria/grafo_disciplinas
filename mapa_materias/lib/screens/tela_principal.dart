@@ -33,6 +33,8 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
   Map<String, dynamic>? _progressoSalvo;
   bool _carregandoProgresso = true;
 
+  int _resetKey = 0;
+
   String get _uid => AuthService().usuarioAtual!.uid;
 
   @override
@@ -93,6 +95,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
       _faltantesSemPeriodo = {};
       _matricula = null;
       _progressoSalvo = null;
+      _resetKey++;
     });
   }
 
@@ -259,7 +262,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
 
                 if (_progressoSalvo != null) {
                   return MapaPeriodosWidget(
-                    key: const ValueKey('progresso-salvo'),
+                    key: ValueKey('progresso-salvo-$_resetKey'),
                     disciplinas: disciplinas,
                     uid: _uid,
                     estadoSalvo: _progressoSalvo,
@@ -269,7 +272,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
 
                 if (_periodosDaPlanilha == null) {
                   return MapaPeriodosWidget(
-                    key: const ValueKey('grade-geral'),
+                    key: ValueKey('grade-geral-$_resetKey'),
                     disciplinas: disciplinas,
                     uid: _uid,
                   );
@@ -280,7 +283,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 final concluidasIniciais = gradeOficial.difference(faltantes);
 
                 return MapaPeriodosWidget(
-                  key: const ValueKey('pendentes'),
+                  key: ValueKey('pendentes-$_resetKey'),
                   disciplinas: disciplinas,
                   uid: _uid,
                   periodosPersonalizados: _periodosDaPlanilha,
