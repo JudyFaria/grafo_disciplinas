@@ -8,6 +8,8 @@ import 'card_arrastavel.dart';
 import 'setas_painter.dart';
 import 'secao_expansivel.dart';
 
+import 'package:flutter/foundation.dart';
+
 class MapaPeriodosWidget extends StatefulWidget {
   final List<Disciplina> disciplinas;
   final String uid;
@@ -141,6 +143,38 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
     );
   }
 
+  void _abrirEscolhaGrupoPrereq(String codigo) {
+    final disciplina = _estado.porCodigoOriginal[codigo]!;
+    final grupos = _estado.gruposPrereqValidos(codigo);
+    final grupoAtivo = _estado.grupoPrereqAtivo(codigo);
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text('Pré-requisito usado — ${disciplina.nome}'),
+        content: SizedBox(
+          width: 320,
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              for (var i = 0; i < grupos.length; i++)
+                ListTile(
+                  title: Text(grupos[i].join(' + ')),
+                  selected: setEquals(grupos[i], grupoAtivo),
+                  onTap: () {
+                    Navigator.pop(context);
+                    _destacar(_estado.escolherGrupoPrereq(codigo, i));
+                  },
+                ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Fechar')),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(listenable: _estado, builder: (context, _) => _construirConteudo());
@@ -162,6 +196,8 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
         onTapOptativa: ehOptativa ? () => _abrirEscolhaOptativa(d.codigo) : null,
         onTap: () => _alternarSelecao(d.codigo),
         onHover: (entrou) => _setHover(d.codigo, entrou),
+        
+        onTapAlternativasPrereq: () => _abrirEscolhaGrupoPrereq(d.codigo),
       ),
     );
   }
@@ -351,6 +387,9 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
                               onTapOptativa: () => _abrirEscolhaOptativa(d.codigo),
                               onTap: () => _alternarSelecao(d.codigo),
                               onHover: (entrou) => _setHover(d.codigo, entrou),
+
+                              temAlternativasPrereq: _estado.temMultiplosGruposPrereq(d.codigo),
+                              onTapAlternativasPrereq: () => _abrirEscolhaGrupoPrereq(d.codigo),
                             ),
                           ),
                       ],

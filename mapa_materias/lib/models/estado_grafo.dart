@@ -14,6 +14,9 @@ class EstadoGrafo extends ChangeNotifier {
   late Map<String, List<String>> dependentesDiretos;
   late Map<String, Set<String>> coRequisitosDiretos;
 
+//   late Set<String> codigosComAlternativasDePrereq;
+  final Map<String, int> grupoPrereqEscolhido = {};
+
   final Map<String, SemestreAcademico> semestre = {};
   final Set<SemestreAcademico> colunasExtras = {};
   final Map<String, String> escolhaOptativa = {};
@@ -49,6 +52,16 @@ class EstadoGrafo extends ChangeNotifier {
     } else {
         _inicializarPadrao();
     }
+  }
+
+  // Tem alternativa quando existe algum código que varia entre os grupos
+  // (ou seja, a interseção não cobre tudo que aparece no total).
+  bool _temAlternativasDePrerequisito(Disciplina d) {
+    if (d.preRequisitos.length <= 1) return false;
+    final grupos = d.preRequisitos.map((g) => g.map((c) => c.trim()).toSet()).toList();
+    final comuns = grupos.reduce((a, b) => a.intersection(b));
+    final uniao = grupos.expand((g) => g).toSet();
+    return uniao.length > comuns.length;
   }
 
   Set<String> _calcularCodigosDeOpcaoApenas() {
@@ -92,7 +105,11 @@ class EstadoGrafo extends ChangeNotifier {
     for (var entry in escolhasSalvas.entries) {
       _aplicarEscolha(entry.key, entry.value as String);
     }
-    if (escolhasSalvas.isNotEmpty) _construirDependencias();
+    
+    final grupoPrereqSalvo = dados['grupoPrereq'] as Map<String, dynamic>? ?? {};
+    grupoPrereqEscolhido.addAll(grupoPrereqSalvo.map((k, v) => MapEntry(k, v as int)));
+
+    if (escolhasSalvas.isNotEmpty || grupoPrereqSalvo.isNotEmpty) _construirDependencias();
   }
 
   void _construirDependencias() {
@@ -111,13 +128,64 @@ class EstadoGrafo extends ChangeNotifier {
     }
   }
 
-  Set<String> codigosRelevantes(Disciplina d) {
-    if (d.preRequisitos.isEmpty) return {};
+  List<Set<String>> _gruposValidos(Disciplina d) {
+  return d.preRequisitos
+      .map((g) => g.map((c) => c.trim()).toSet())
+      .where((g) => g.isNotEmpty && g.every((c) => porCodigo.containsKey(c)))
+      .toList();
+}
+
+// Grupos do pré-requisito original que existem por inteiro no currículo
+// atual — usado pra saber se há ambiguidade real a resolver.
+List<Set<String>> gruposPrereqValidos(String codigo) {
+  final d = porCodigoOriginal[codigo];
+  if (d == null) return [];
+  return _gruposValidos(d);
+}
+
+bool temMultiplosGruposPrereq(String codigo) => gruposPrereqValidos(codigo).length > 1;
+
+Set<String> escolherGrupoPrereq(String codigo, int indice) {
+  grupoPrereqEscolhido[codigo] = indice;
+  _construirDependencias();
+  final mudados = _reencaixarSlot(codigo);
+  notifyListeners();
+  return mudados;
+}
+
+Set<String> codigosRelevantes(Disciplina d) {
+  if (d.preRequisitos.isEmpty) return {};
+
+  final gruposValidos = _gruposValidos(d);
+
+  if (gruposValidos.isEmpty) {
+    // Nenhum grupo existe por inteiro (ex: só tem "118 créditos", ou só
+    // alternativas de currículo antigo) — rede de segurança: interseção,
+    // ou união de quem existir.
     final grupos = d.preRequisitos.map((g) => g.map((c) => c.trim()).toSet()).toList();
     final comuns = grupos.reduce((a, b) => a.intersection(b));
-    if (comuns.isNotEmpty) return comuns;
-    final uniao = grupos.expand((g) => g).toSet();
-    return uniao.where((c) => porCodigo.containsKey(c)).toSet();
+    if (comuns.isNotEmpty) return comuns.where((c) => porCodigo.containsKey(c)).toSet();
+    return grupos.expand((g) => g).where((c) => porCodigo.containsKey(c)).toSet();
+  }
+
+  if (gruposValidos.length == 1) return gruposValidos.first;
+
+  // Vários grupos possíveis: se o aluno não escolheu manualmente, prioriza
+  // o único grupo que já está de fato posicionado no grafo (tem semestre).
+  if (!grupoPrereqEscolhido.containsKey(d.codigo)) {
+    final gruposPosicionados =
+        gruposValidos.where((g) => g.every((c) => semestre.containsKey(c))).toList();
+    if (gruposPosicionados.length == 1) return gruposPosicionados.first;
+  }
+
+  final indice = (grupoPrereqEscolhido[d.codigo] ?? 0).clamp(0, gruposValidos.length - 1);
+  return gruposValidos[indice];
+ }
+
+  Set<String>? grupoPrereqAtivo(String codigo) {
+    final d = porCodigoOriginal[codigo];
+    if (d == null) return null;
+    return codigosRelevantes(d);
   }
 
   bool podeSoltarEm(String codigo, SemestreAcademico destino) {
@@ -144,6 +212,7 @@ class EstadoGrafo extends ChangeNotifier {
   Set<String> moverDisciplina(String codigo, SemestreAcademico destino) {
     concluidas.remove(codigo);
     semestre[codigo] = destino;
+    _construirDependencias();
     final mudados = {codigo, ..._propagarAPartirDe(codigo)};
     notifyListeners();
     return mudados;
@@ -207,12 +276,14 @@ class EstadoGrafo extends ChangeNotifier {
   void marcarConcluida(String codigo) {
     concluidas.add(codigo);
     semestre.remove(codigo);
+    _construirDependencias();
     notifyListeners();
   }
 
   void removerDoGrafo(String codigo) {
     concluidas.remove(codigo);
     semestre.remove(codigo);
+    _construirDependencias();
     notifyListeners();
   }
 
@@ -272,6 +343,7 @@ class EstadoGrafo extends ChangeNotifier {
       'concluidas': concluidas.toList(),
       'colunasExtras': colunasExtras.map((s) => {'ano': s.ano, 'semestre': s.semestre}).toList(),
       'escolhas': escolhaOptativa,
+      'grupoPrereq': grupoPrereqEscolhido,
     };
   }
 }

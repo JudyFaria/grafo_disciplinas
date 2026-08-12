@@ -14,6 +14,9 @@ class CardArrastavel extends StatelessWidget {
   final VoidCallback? onTap;
   final ValueChanged<bool>? onHover;
 
+  final bool temAlternativasPrereq;
+  final VoidCallback? onTapAlternativasPrereq;
+
   const CardArrastavel({
     super.key,
     required this.disciplina,
@@ -27,6 +30,8 @@ class CardArrastavel extends StatelessWidget {
     this.onTapOptativa,
     this.onTap,
     this.onHover,
+    this.temAlternativasPrereq = false,
+    this.onTapAlternativasPrereq,
   });
 
   @override
@@ -109,6 +114,22 @@ class CardArrastavel extends StatelessWidget {
                   ),
                 ),
               ],
+
+              if(temAlternativasPrereq) ...[
+                const SizedBox(width: 4),
+                GestureDetector(
+                  onTap: onTapAlternativasPrereq,
+                  child: Tooltip(
+                    message: 'Pré-requisitos alternativos',
+                    
+                    child: Icon(
+                      Icons.alt_route,
+                      size: 14,
+                      color: corTexto,
+                    )
+                  ),
+                )
+              ]
             ],
           ),
           Text(disciplina.nome,
