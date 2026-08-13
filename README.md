@@ -1,4 +1,4 @@
-# GrafoFlow
+# GradeFlow
 
 Um planejador visual de matérias para estudantes da PUC-Rio. Mostra suas disciplinas organizadas por período, com as dependências (pré-requisitos e co-requisitos) desenhadas como setas — dá pra arrastar matérias entre semestres e o app ajusta tudo automaticamente, respeitando as dependências.
 
@@ -6,7 +6,7 @@ Um planejador visual de matérias para estudantes da PUC-Rio. Mostra suas discip
 
 Não precisa instalar nada. Acessa direto pelo navegador (funciona em celular, tablet ou computador):
 
-**👉 https://grafoflow.vercel.app/**
+**👉 https://gradeflow.vercel.app/**
 
 Cria uma conta (e-mail/usuário + senha), escolhe seu curso, e já dá pra começar. Depois de logado, tem uma tela de "Como usar" no menu (ícone ☰ no canto superior esquerdo) explicando cada funcionalidade — vale muito a pena dar uma olhada nela antes de mexer.
 
@@ -26,8 +26,8 @@ Isso só é necessário se você quiser mexer no código-fonte, não pra usar o 
 
 ```bash
 # 1. Clona o repositório
-git clone https://github.com/SEU-USUARIO/grafoflow.git
-cd grafoflow
+git clone https://github.com/SEU-USUARIO/gradeflow.git
+cd GradeFlow
 
 # 2. Baixa as dependências do projeto
 flutter pub get
