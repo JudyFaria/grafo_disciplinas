@@ -9,6 +9,10 @@ import '../services/auth_service.dart';
 import '../services/usuario_service.dart';
 import 'tela_ajuda.dart';
 
+import '../models/estado_grafo.dart';
+import '../services/momento_service.dart';
+import 'tela_momentos.dart';
+
 class TelaPrincipal extends StatefulWidget {
   const TelaPrincipal({super.key});
 
@@ -21,7 +25,10 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
   final PlanilhaService _planilhaService = PlanilhaService();
   final ProgressoService _progressoService = ProgressoService();
   final UsuarioService _usuarioService = UsuarioService();
-
+  
+  final MomentoService _momentoService = MomentoService();
+  EstadoGrafo? _estadoAtual;
+  
   Future<List<Disciplina>>? _futureDisciplinas;
   PerfilUsuario? _perfil;
   bool _carregandoPerfil = true;
@@ -159,6 +166,64 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     );
   }
 
+  Future<void> _abrirSalvarMomento() async {
+    if (_estadoAtual == null) return;
+    final nomeController = TextEditingController();
+    final nome = await showDialog<String>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Salvar momento'),
+        content: TextField(
+          controller: nomeController,
+          autofocus: true,
+          decoration: const InputDecoration(labelText: 'Nome (ex: Plano A — foco em IA)'),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancelar')),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, nomeController.text.trim()),
+            child: const Text('Salvar'),
+          ),
+        ],
+      ),
+    );
+    if (nome == null || nome.isEmpty) return;
+
+    try {
+      await _momentoService.salvar(_uid, nome, _estadoAtual!.paraSalvar());
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Momento "$nome" salvo!')));
+    } catch (e) {
+      debugPrint('Erro ao salvar momento: $e');
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Erro ao salvar: $e')));
+    }
+  }
+
+  Future<void> _recarregarAposRestaurar() async {
+    final dados = await _progressoService.carregar(_uid);
+    if (!mounted) return;
+    setState(() {
+      _progressoSalvo = dados;
+      _periodosDaPlanilha = null;
+      _faltantesSemPeriodo = {};
+      _matricula = null;
+      _resetKey++;
+    });
+  }
+
+  Future<void> _abrirMeusMomentos() async {
+    if (_futureDisciplinas == null) return;
+    final disciplinas = await _futureDisciplinas!;
+    if (!mounted) return;
+    final precisaRecarregar = await Navigator.push<bool>(
+      context,
+      MaterialPageRoute(builder: (_) => TelaMomentos(disciplinas: disciplinas, uid: _uid)),
+    );
+    if (precisaRecarregar == true) _recarregarAposRestaurar();
+  }
+  
+
   Widget _construirMenu() {
     return Drawer(
       child: SafeArea(
@@ -203,8 +268,18 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
             ListTile(
               leading: const Icon(Icons.save_outlined),
               title: const Text('Salvar momento'),
-              subtitle: const Text('em breve'),
-              enabled: false,
+              onTap: () {
+                Navigator.pop(context);
+                _abrirSalvarMomento();
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.history),
+              title: const Text('Meus momentos'),
+              onTap: () {
+                Navigator.pop(context);
+                _abrirMeusMomentos();
+              },
             ),
             ListTile(
               leading: const Icon(Icons.help_outline),
@@ -267,6 +342,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     uid: _uid,
                     estadoSalvo: _progressoSalvo,
                     matricula: _progressoSalvo!['matricula'] as String?,
+                    onEstadoCriado: (estado) => _estadoAtual = estado,
                   );
                 }
 
@@ -275,6 +351,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     key: ValueKey('grade-geral-$_resetKey'),
                     disciplinas: disciplinas,
                     uid: _uid,
+                    onEstadoCriado: (estado) => _estadoAtual = estado,
                   );
                 }
 
@@ -290,6 +367,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   faltantesSemPeriodo: _faltantesSemPeriodo,
                   concluidasIniciais: concluidasIniciais,
                   matricula: _matricula,
+                  onEstadoCriado: (estado) => _estadoAtual = estado,
                 );
               },
       ),

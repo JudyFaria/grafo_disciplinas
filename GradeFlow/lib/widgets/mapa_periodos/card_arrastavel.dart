@@ -17,6 +17,8 @@ class CardArrastavel extends StatelessWidget {
   final bool temAlternativasPrereq;
   final VoidCallback? onTapAlternativasPrereq;
 
+  final bool arrastavel;
+
   const CardArrastavel({
     super.key,
     required this.disciplina,
@@ -32,10 +34,18 @@ class CardArrastavel extends StatelessWidget {
     this.onHover,
     this.temAlternativasPrereq = false,
     this.onTapAlternativasPrereq,
+    this.arrastavel = true,
   });
 
   @override
   Widget build(BuildContext context) {
+    if (!arrastavel) {
+      return MouseRegion(
+        onEnter: onHover == null ? null : (_) => onHover!(true),
+        onExit: onHover == null ? null : (_) => onHover!(false),
+        child: GestureDetector(onTap: onTap, child: _card()),
+      );
+    }
     return MouseRegion(
       onEnter: onHover == null ? null : (_) => onHover!(true),
       onExit: onHover == null ? null : (_) => onHover!(false),

@@ -19,6 +19,9 @@ class MapaPeriodosWidget extends StatefulWidget {
   final String? matricula;
   final Map<String, dynamic>? estadoSalvo;
 
+  final bool somenteLeitura;
+  final ValueChanged<EstadoGrafo>? onEstadoCriado;
+
   const MapaPeriodosWidget({
     super.key,
     required this.disciplinas,
@@ -28,6 +31,8 @@ class MapaPeriodosWidget extends StatefulWidget {
     this.faltantesSemPeriodo = const {},
     this.matricula,
     this.estadoSalvo,
+    this.somenteLeitura = false,
+    this.onEstadoCriado,
   });
 
   @override
@@ -74,8 +79,11 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
       faltantesSemPeriodo: widget.faltantesSemPeriodo,
       estadoSalvo: widget.estadoSalvo,
     );
-    _estado.addListener(_salvarProgresso);
-    _salvarProgresso();
+    widget.onEstadoCriado?.call(_estado);
+    if (!widget.somenteLeitura) {
+      _estado.addListener(_salvarProgresso);
+      _salvarProgresso();
+    }
   }
 
   void _salvarProgresso() {
@@ -97,7 +105,9 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
 
   @override
   void dispose() {
-    _estado.removeListener(_salvarProgresso);
+    if (!widget.somenteLeitura) {
+      _estado.removeListener(_salvarProgresso);
+    }
     _timerDestaque?.cancel();
     _dropInvalido.dispose();
     super.dispose();
@@ -198,6 +208,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
         onHover: (entrou) => _setHover(d.codigo, entrou),
         
         onTapAlternativasPrereq: () => _abrirEscolhaGrupoPrereq(d.codigo),
+        arrastavel: !widget.somenteLeitura,
       ),
     );
   }
@@ -390,6 +401,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
 
                               temAlternativasPrereq: _estado.temMultiplosGruposPrereq(d.codigo),
                               onTapAlternativasPrereq: () => _abrirEscolhaGrupoPrereq(d.codigo),
+                              arrastavel: !widget.somenteLeitura,
                             ),
                           ),
                       ],
@@ -397,13 +409,20 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
                         left: colunas.length * (_larguraColuna + _espacoColuna),
                         top: 0,
                         width: _larguraColuna,
-                        height: _alturaCabecalho,
-                        child: Center(
-                          child: OutlinedButton.icon(
-                            onPressed: _estado.adicionarProximoPeriodo,
-                            icon: const Icon(Icons.add, size: 16),
-                            label: const Text('Período'),
-                          ),
+                        child: widget.somenteLeitura
+                          ? const SizedBox.shrink()
+                          : Column(
+                            children:[
+                              SizedBox(
+                                height: _alturaCabecalho,
+                                child: OutlinedButton.icon(
+                                  onPressed: _estado.adicionarProximoPeriodo,
+                                  icon: const Icon(Icons.add, size: 16),
+                                  label: const Text('Período'),
+                                ),
+                              )
+                            ]
+                          
                         ),
                       ),
                       IgnorePointer(
