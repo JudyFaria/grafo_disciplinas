@@ -28,6 +28,8 @@ class EstadoGrafo extends ChangeNotifier {
     this.concluidasIniciais = const {},
     this.faltantesSemPeriodo = const {},
     Map<String, dynamic>? estadoSalvo,
+
+    this.concluidas = const {},
   }) {
     // Códigos de currículos antigos: sem período no currículo atual, e não
     // são opção de nenhuma optativa/extensão — só existiam como alternativa
@@ -153,34 +155,46 @@ Set<String> escolherGrupoPrereq(String codigo, int indice) {
   return mudados;
 }
 
-Set<String> codigosRelevantes(Disciplina d) {
-  if (d.preRequisitos.isEmpty) return {};
+  Set<String> codigosRelevantes(Disciplina d) {
+    if (d.preRequisitos.isEmpty) return {};
 
-  final gruposValidos = _gruposValidos(d);
+    final gruposValidos = _gruposValidos(d);
 
-  if (gruposValidos.isEmpty) {
-    // Nenhum grupo existe por inteiro (ex: só tem "118 créditos", ou só
-    // alternativas de currículo antigo) — rede de segurança: interseção,
-    // ou união de quem existir.
-    final grupos = d.preRequisitos.map((g) => g.map((c) => c.trim()).toSet()).toList();
-    final comuns = grupos.reduce((a, b) => a.intersection(b));
-    if (comuns.isNotEmpty) return comuns.where((c) => porCodigo.containsKey(c)).toSet();
-    return grupos.expand((g) => g).where((c) => porCodigo.containsKey(c)).toSet();
+    if (gruposValidos.isEmpty) {
+      final grupos = d.preRequisitos.map((g) => g.map((c) => c.trim()).toSet()).toList();
+      final comuns = grupos.reduce((a, b) => a.intersection(b));
+      if (comuns.isNotEmpty) return comuns.where((c) => porCodigo.containsKey(c)).toSet();
+      return grupos.expand((g) => g).where((c) => porCodigo.containsKey(c)).toSet();
+    }
+
+    if (gruposValidos.length == 1) return gruposValidos.first;
+
+    if (!grupoPrereqEscolhido.containsKey(d.codigo)) {
+      // "satisfeito" = já está posicionado no grafo OU já foi concluído
+      bool satisfeito(String c) => semestre.containsKey(c) || concluidas.contains(c);
+
+      final gruposSatisfeitos = gruposValidos.where((g) => g.every(satisfeito)).toList();
+      if (gruposSatisfeitos.length == 1) return gruposSatisfeitos.first;
+
+      if (gruposSatisfeitos.isEmpty) {
+        // Nenhum grupo 100% satisfeito ainda -- usa o que já tem mais
+        // peças batendo como palpite, até ficar completo ou ser escolhido.
+        var melhor = gruposValidos.first;
+        var melhorContagem = -1;
+        for (var g in gruposValidos) {
+          final contagem = g.where(satisfeito).length;
+          if (contagem > melhorContagem) {
+            melhorContagem = contagem;
+            melhor = g;
+          }
+        }
+        return melhor;
+      }
+    }
+
+    final indice = (grupoPrereqEscolhido[d.codigo] ?? 0).clamp(0, gruposValidos.length - 1);
+    return gruposValidos[indice];
   }
-
-  if (gruposValidos.length == 1) return gruposValidos.first;
-
-  // Vários grupos possíveis: se o aluno não escolheu manualmente, prioriza
-  // o único grupo que já está de fato posicionado no grafo (tem semestre).
-  if (!grupoPrereqEscolhido.containsKey(d.codigo)) {
-    final gruposPosicionados =
-        gruposValidos.where((g) => g.every((c) => semestre.containsKey(c))).toList();
-    if (gruposPosicionados.length == 1) return gruposPosicionados.first;
-  }
-
-  final indice = (grupoPrereqEscolhido[d.codigo] ?? 0).clamp(0, gruposValidos.length - 1);
-  return gruposValidos[indice];
- }
 
   Set<String>? grupoPrereqAtivo(String codigo) {
     final d = porCodigoOriginal[codigo];
