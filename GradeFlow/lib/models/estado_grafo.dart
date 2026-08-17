@@ -3,10 +3,12 @@ import 'disciplina_model.dart';
 import 'semestre_academico.dart';
 
 class EstadoGrafo extends ChangeNotifier {
+  static const int limiteCreditosPorPeriodo = 30;
+
   final List<Disciplina> disciplinas;
   final Map<String, int>? periodosPersonalizados;
   final Set<String> concluidasIniciais;
-  final Set<String> faltantesSemPeriodo; // códigos com período >10 na planilha (ex: 20)
+  final Set<String> faltantesSemPeriodo;
 
   late final Map<String, Disciplina> porCodigoOriginal;
   late Map<String, Disciplina> porCodigo;
@@ -14,9 +16,7 @@ class EstadoGrafo extends ChangeNotifier {
   late Map<String, List<String>> dependentesDiretos;
   late Map<String, Set<String>> coRequisitosDiretos;
 
-//   late Set<String> codigosComAlternativasDePrereq;
   final Map<String, int> grupoPrereqEscolhido = {};
-
   final Map<String, SemestreAcademico> semestre = {};
   final Set<SemestreAcademico> colunasExtras = {};
   final Map<String, String> escolhaOptativa = {};
@@ -28,12 +28,8 @@ class EstadoGrafo extends ChangeNotifier {
     this.concluidasIniciais = const {},
     this.faltantesSemPeriodo = const {},
     Map<String, dynamic>? estadoSalvo,
-
     this.concluidas = const {},
   }) {
-    // Códigos de currículos antigos: sem período no currículo atual, e não
-    // são opção de nenhuma optativa/extensão — só existiam como alternativa
-    // (OU) de pré-requisito em versões antigas da grade. Dispensados de vez.
     final opcoesDeAlgumGrupo = disciplinas.expand((d) => d.grupoDisciplinas).toSet();
     final foraDoCurriculoAtual = disciplinas
         .where((d) =>
@@ -50,20 +46,10 @@ class EstadoGrafo extends ChangeNotifier {
     _construirDependencias();
 
     if (estadoSalvo != null) {
-        _restaurarDeEstadoSalvo(estadoSalvo);
+      _restaurarDeEstadoSalvo(estadoSalvo);
     } else {
-        _inicializarPadrao();
+      _inicializarPadrao();
     }
-  }
-
-  // Tem alternativa quando existe algum código que varia entre os grupos
-  // (ou seja, a interseção não cobre tudo que aparece no total).
-  bool _temAlternativasDePrerequisito(Disciplina d) {
-    if (d.preRequisitos.length <= 1) return false;
-    final grupos = d.preRequisitos.map((g) => g.map((c) => c.trim()).toSet()).toList();
-    final comuns = grupos.reduce((a, b) => a.intersection(b));
-    final uniao = grupos.expand((g) => g).toSet();
-    return uniao.length > comuns.length;
   }
 
   Set<String> _calcularCodigosDeOpcaoApenas() {
@@ -80,13 +66,13 @@ class EstadoGrafo extends ChangeNotifier {
     concluidas = {...concluidasIniciais}..removeAll(codigosDeOpcaoApenas);
     final base = SemestreAcademico.deData(DateTime.now());
     for (var d in porCodigo.values) {
-        if (concluidas.contains(d.codigo)) continue;
-        if (codigosDeOpcaoApenas.contains(d.codigo)) continue;
-        if (faltantesSemPeriodo.contains(d.codigo)) continue;
-        final periodo = periodosPersonalizados?[d.codigo] ?? d.periodo;
-        if (periodo != null) {
+      if (concluidas.contains(d.codigo)) continue;
+      if (codigosDeOpcaoApenas.contains(d.codigo)) continue;
+      if (faltantesSemPeriodo.contains(d.codigo)) continue;
+      final periodo = periodosPersonalizados?[d.codigo] ?? d.periodo;
+      if (periodo != null) {
         semestre[d.codigo] = base.avancar(periodo - 1);
-        }
+      }
     }
   }
 
@@ -107,7 +93,7 @@ class EstadoGrafo extends ChangeNotifier {
     for (var entry in escolhasSalvas.entries) {
       _aplicarEscolha(entry.key, entry.value as String);
     }
-    
+
     final grupoPrereqSalvo = dados['grupoPrereq'] as Map<String, dynamic>? ?? {};
     grupoPrereqEscolhido.addAll(grupoPrereqSalvo.map((k, v) => MapEntry(k, v as int)));
 
@@ -131,29 +117,27 @@ class EstadoGrafo extends ChangeNotifier {
   }
 
   List<Set<String>> _gruposValidos(Disciplina d) {
-  return d.preRequisitos
-      .map((g) => g.map((c) => c.trim()).toSet())
-      .where((g) => g.isNotEmpty && g.every((c) => porCodigo.containsKey(c)))
-      .toList();
-}
+    return d.preRequisitos
+        .map((g) => g.map((c) => c.trim()).toSet())
+        .where((g) => g.isNotEmpty && g.every((c) => porCodigo.containsKey(c)))
+        .toList();
+  }
 
-// Grupos do pré-requisito original que existem por inteiro no currículo
-// atual — usado pra saber se há ambiguidade real a resolver.
-List<Set<String>> gruposPrereqValidos(String codigo) {
-  final d = porCodigoOriginal[codigo];
-  if (d == null) return [];
-  return _gruposValidos(d);
-}
+  List<Set<String>> gruposPrereqValidos(String codigo) {
+    final d = porCodigoOriginal[codigo];
+    if (d == null) return [];
+    return _gruposValidos(d);
+  }
 
-bool temMultiplosGruposPrereq(String codigo) => gruposPrereqValidos(codigo).length > 1;
+  bool temMultiplosGruposPrereq(String codigo) => gruposPrereqValidos(codigo).length > 1;
 
-Set<String> escolherGrupoPrereq(String codigo, int indice) {
-  grupoPrereqEscolhido[codigo] = indice;
-  _construirDependencias();
-  final mudados = _reencaixarSlot(codigo);
-  notifyListeners();
-  return mudados;
-}
+  Set<String> escolherGrupoPrereq(String codigo, int indice) {
+    grupoPrereqEscolhido[codigo] = indice;
+    _construirDependencias();
+    final mudados = _reencaixarSlot(codigo);
+    notifyListeners();
+    return mudados;
+  }
 
   Set<String> codigosRelevantes(Disciplina d) {
     if (d.preRequisitos.isEmpty) return {};
@@ -170,15 +154,12 @@ Set<String> escolherGrupoPrereq(String codigo, int indice) {
     if (gruposValidos.length == 1) return gruposValidos.first;
 
     if (!grupoPrereqEscolhido.containsKey(d.codigo)) {
-      // "satisfeito" = já está posicionado no grafo OU já foi concluído
       bool satisfeito(String c) => semestre.containsKey(c) || concluidas.contains(c);
 
       final gruposSatisfeitos = gruposValidos.where((g) => g.every(satisfeito)).toList();
       if (gruposSatisfeitos.length == 1) return gruposSatisfeitos.first;
 
       if (gruposSatisfeitos.isEmpty) {
-        // Nenhum grupo 100% satisfeito ainda -- usa o que já tem mais
-        // peças batendo como palpite, até ficar completo ou ser escolhido.
         var melhor = gruposValidos.first;
         var melhorContagem = -1;
         for (var g in gruposValidos) {
@@ -202,18 +183,36 @@ Set<String> escolherGrupoPrereq(String codigo, int indice) {
     return codigosRelevantes(d);
   }
 
-  bool podeSoltarEm(String codigo, SemestreAcademico destino) {
+  int creditosNoPeriodo(SemestreAcademico periodo, {String? ignorando}) {
+    var total = 0;
+    for (var d in porCodigo.values) {
+      if (d.codigo == ignorando) continue;
+      if (semestre[d.codigo] == periodo) total += d.creditos ?? 0;
+    }
+    return total;
+  }
+
+  String? motivoBloqueio(String codigo, SemestreAcademico destino) {
     final disciplina = porCodigo[codigo];
-    if (disciplina == null) return true;
+    if (disciplina == null) return null;
+
     for (var prereq in codigosRelevantes(disciplina)) {
       if (concluidas.contains(prereq)) continue;
       final semestrePrereq = semestre[prereq];
       if (semestrePrereq != null && destino.compareTo(semestrePrereq) <= 0) {
-        return false;
+        return 'Precisa vir depois de $prereq';
       }
     }
-    return true;
+
+    final creditosDepois = creditosNoPeriodo(destino, ignorando: codigo) + (disciplina.creditos ?? 0);
+    if (creditosDepois > limiteCreditosPorPeriodo) {
+      return 'Passaria de $limiteCreditosPorPeriodo créditos nesse período ($creditosDepois)';
+    }
+
+    return null;
   }
+
+  bool podeSoltarEm(String codigo, SemestreAcademico destino) => motivoBloqueio(codigo, destino) == null;
 
   bool naoTemPeriodoDefinido(String codigo) {
     if (faltantesSemPeriodo.contains(codigo)) return true;
@@ -314,6 +313,7 @@ Set<String> escolherGrupoPrereq(String codigo, int indice) {
       coRequisitos: escolhida.coRequisitos,
       periodo: original.periodo,
       grupoDisciplinas: original.grupoDisciplinas,
+      creditos: escolhida.creditos,
     );
   }
 

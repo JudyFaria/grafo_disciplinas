@@ -5,6 +5,7 @@ class Disciplina {
   final List<String> coRequisitos;
   final int? periodo;
   final List<String> grupoDisciplinas; // códigos das opções, se for optativa/eletiva
+  final int? creditos; 
 
   Disciplina({
     required this.codigo,
@@ -13,6 +14,7 @@ class Disciplina {
     required this.coRequisitos,
     this.periodo,
     this.grupoDisciplinas = const [],
+    this.creditos,
   });
 
   factory Disciplina.fromJson(Map<String, dynamic> json) {
@@ -32,6 +34,7 @@ class Disciplina {
               ?.map((item) => (item as Map<String, dynamic>)['codigo'] as String)
               .toList() ??
           [],
+      creditos: json['creditos'] as int?,
     );
   }
 }

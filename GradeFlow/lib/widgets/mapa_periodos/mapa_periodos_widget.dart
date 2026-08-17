@@ -52,7 +52,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
 
   late final EstadoGrafo _estado;
   final ProgressoService _progressoService = ProgressoService();
-  final ValueNotifier<bool> _dropInvalido = ValueNotifier(false);
+  final ValueNotifier<String?> _motivoInvalido = ValueNotifier(null);
   Set<String> _destacados = {};
   Timer? _timerDestaque;
 
@@ -109,7 +109,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
       _estado.removeListener(_salvarProgresso);
     }
     _timerDestaque?.cancel();
-    _dropInvalido.dispose();
+    _motivoInvalido.dispose();
     super.dispose();
   }
 
@@ -198,7 +198,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
       child: CardArrastavel(
         disciplina: d,
         cor: cor,
-        dropInvalido: _dropInvalido,
+        motivoInvalido: _motivoInvalido,
         emFoco: d.codigo == foco,
         conectado: relacionados.contains(d.codigo),
         ehOptativa: ehOptativa,
@@ -206,7 +206,6 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
         onTapOptativa: ehOptativa ? () => _abrirEscolhaOptativa(d.codigo) : null,
         onTap: () => _alternarSelecao(d.codigo),
         onHover: (entrou) => _setHover(d.codigo, entrou),
-        
         onTapAlternativasPrereq: () => _abrirEscolhaGrupoPrereq(d.codigo),
         arrastavel: !widget.somenteLeitura,
       ),
@@ -239,6 +238,10 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
       final s = _estado.semestre[d.codigo];
       if (s != null) porColuna[s]!.add(d);
     }
+
+    final creditosPorColuna = <SemestreAcademico, int>{
+      for (var s in colunas) s: porColuna[s]!.fold(0, (soma, d) => soma + (d.creditos ?? 0)),
+    };
 
     final posicoes = <String, Offset>{};
     var maiorAltura = _alturaCabecalho;
@@ -324,13 +327,13 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
                           height: maiorAltura,
                           child: DragTarget<String>(
                             onWillAcceptWithDetails: (details) {
-                              final pode = _estado.podeSoltarEm(details.data, colunas[col]);
-                              _dropInvalido.value = !pode;
-                              return pode;
+                              final motivo = _estado.motivoBloqueio(details.data, colunas[col]);
+                              _motivoInvalido.value = motivo;
+                              return motivo == null;
                             },
-                            onLeave: (_) => _dropInvalido.value = false,
+                            onLeave: (_) => _motivoInvalido.value = null,
                             onAcceptWithDetails: (details) {
-                              _dropInvalido.value = false;
+                              _motivoInvalido.value = null;
                               _destacar(_estado.moverDisciplina(details.data, colunas[col]));
                             },
                             builder: (context, candidate, rejected) => Container(
@@ -355,13 +358,26 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
                             child: Stack(
                               alignment: Alignment.center,
                               children: [
-                                Text(
-                                  colunas[col].toString(),
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                    color: _paleta[col % _paleta.length].shade900,
-                                  ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      colunas[col].toString(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                        color: _paleta[col % _paleta.length].shade900,
+                                      ),
+                                    ),
+                                    Text(
+                                      '${creditosPorColuna[colunas[col]]} créditos',
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        color: _paleta[col % _paleta.length].shade900,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 if (porColuna[colunas[col]]!.isEmpty &&
                                     (col == 0 || col == colunas.length - 1))
@@ -388,7 +404,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
                             child: CardArrastavel(
                               disciplina: d,
                               cor: _paleta[col % _paleta.length],
-                              dropInvalido: _dropInvalido,
+                              motivoInvalido: _motivoInvalido,
                               destacado: _destacados.contains(d.codigo),
                               emFoco: d.codigo == foco,
                               conectado: relacionados.contains(d.codigo),
@@ -398,7 +414,6 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
                               onTapOptativa: () => _abrirEscolhaOptativa(d.codigo),
                               onTap: () => _alternarSelecao(d.codigo),
                               onHover: (entrou) => _setHover(d.codigo, entrou),
-
                               temAlternativasPrereq: _estado.temMultiplosGruposPrereq(d.codigo),
                               onTapAlternativasPrereq: () => _abrirEscolhaGrupoPrereq(d.codigo),
                               arrastavel: !widget.somenteLeitura,
@@ -410,20 +425,19 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
                         top: 0,
                         width: _larguraColuna,
                         child: widget.somenteLeitura
-                          ? const SizedBox.shrink()
-                          : Column(
-                            children:[
-                              SizedBox(
-                                height: _alturaCabecalho,
-                                child: OutlinedButton.icon(
-                                  onPressed: _estado.adicionarProximoPeriodo,
-                                  icon: const Icon(Icons.add, size: 16),
-                                  label: const Text('Período'),
-                                ),
-                              )
-                            ]
-                          
-                        ),
+                            ? const SizedBox.shrink()
+                            : Column(
+                                children: [
+                                  SizedBox(
+                                    height: _alturaCabecalho,
+                                    child: OutlinedButton.icon(
+                                      onPressed: _estado.adicionarProximoPeriodo,
+                                      icon: const Icon(Icons.add, size: 16),
+                                      label: const Text('Período'),
+                                    ),
+                                  ),
+                                ],
+                              ),
                       ),
                       IgnorePointer(
                         child: CustomPaint(

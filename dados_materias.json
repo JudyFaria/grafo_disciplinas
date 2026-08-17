@@ -3,7 +3,8 @@
         "nome": "ATIVIDADES COMPLEMENTARES",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 0
     },
     "CRE0710": {
         "nome": "OPTATIVAS DE CRISTIANISMO",
@@ -58,7 +59,8 @@
                 "codigo": "CRE1227",
                 "nome": "CRE1227"
             }
-        ]
+        ],
+        "creditos": null
     },
     "CRE0712": {
         "nome": "OPTATIVAS DE CRISTIANISMO",
@@ -89,13 +91,15 @@
                 "codigo": "CRE1227",
                 "nome": "CRE1227"
             }
-        ]
+        ],
+        "creditos": null
     },
     "CRE1100": {
         "nome": "O HUMANO E O FENOM RELIGIOSO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1141": {
         "nome": "ETICA CRISTA",
@@ -138,7 +142,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "CRE1175": {
         "nome": "ETICA SOCIOAMBIENT DIR HUMANOS",
@@ -148,13 +153,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "CRE1200": {
         "nome": "O HUMANO E O FENOM RELIGIOSO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1241": {
         "nome": "ÉTICA CRISTÃ",
@@ -215,7 +222,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "CRE1275": {
         "nome": "ETICA SOCIOAMBIENT DIR HUMANOS",
@@ -228,25 +236,29 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "CTC4002": {
         "nome": "MODELAGEM E PROGRAMAÇÃO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 6
     },
     "ELL0900": {
         "nome": "ELETIVAS LIVRES-DENTRO/FORA DEPT",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 0
     },
     "ELO0900": {
         "nome": "ELETIVAS DE ORIENTACAO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 0
     },
     "EXT0100": {
         "nome": "OPTATIVAS DE EXTENSAO",
@@ -401,7 +413,8 @@
                 "codigo": "QUI1958",
                 "nome": "QUI1958"
             }
-        ]
+        ],
+        "creditos": null
     },
     "FIL0300": {
         "nome": "OPTATIVAS FILOSOFIA-CB/CTC",
@@ -512,7 +525,8 @@
                 "codigo": "FIL1814",
                 "nome": "FIL1814"
             }
-        ]
+        ],
+        "creditos": null
     },
     "INF0308": {
         "nome": "OPTATIVAS DE PROGRAMACAO AVANCADA",
@@ -539,7 +553,8 @@
                 "codigo": "INF1407",
                 "nome": "INF1407"
             }
-        ]
+        ],
+        "creditos": null
     },
     "INF0377": {
         "nome": "OPTATIVAS DE PROBABILIDADE E ESTATISTICA",
@@ -554,7 +569,8 @@
                 "codigo": "INF1036",
                 "nome": "INF1036"
             }
-        ]
+        ],
+        "creditos": null
     },
     "INF0378": {
         "nome": "OPTATIVAS DE FORMACAO EM COMPUTACAO",
@@ -593,7 +609,8 @@
                 "codigo": "INF1771",
                 "nome": "INF1771"
             }
-        ]
+        ],
+        "creditos": null
     },
     "INF0379": {
         "nome": "OPTATIVAS DE COMPUTACAO",
@@ -776,7 +793,8 @@
                 "codigo": "INF1824",
                 "nome": "INF1824"
             }
-        ]
+        ],
+        "creditos": null
     },
     "INF0380": {
         "nome": "OPTATIVAS COMP E PRODUCAO DE TEXTO",
@@ -791,7 +809,8 @@
                 "codigo": "LET1910",
                 "nome": "LET1910"
             }
-        ]
+        ],
+        "creditos": null
     },
     "INF0381": {
         "nome": "OPTATIVAS DIREITO P/ COMPUTACAO",
@@ -810,7 +829,8 @@
                 "codigo": "JUR1855",
                 "nome": "JUR1855"
             }
-        ]
+        ],
+        "creditos": null
     },
     "INF0400": {
         "nome": "OPTATIVAS DE CIÊNCIAS DA COMPUTAÇÃO I",
@@ -845,7 +865,8 @@
                 "codigo": "INF1761",
                 "nome": "INF1761"
             }
-        ]
+        ],
+        "creditos": null
     },
     "INF0401": {
         "nome": "OPTATIVAS DE CIÊNCIAS DA COMPUTAÇÃO II",
@@ -884,7 +905,8 @@
                 "codigo": "INF1608",
                 "nome": "INF1608"
             }
-        ]
+        ],
+        "creditos": null
     },
     "INF1007": {
         "nome": "PROGRAMACAO II",
@@ -897,13 +919,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1009": {
         "nome": "LOGICA PARA COMPUTACAO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1010": {
         "nome": "ESTRUTURAS DE DADOS AVANCADAS",
@@ -925,19 +949,22 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1012": {
         "nome": "MODELAGEM DE DADOS",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "INF1014": {
         "nome": "SEMINARIOS",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 1
     },
     "INF1015": {
         "nome": "COMPUTABILIDADE",
@@ -952,7 +979,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1018": {
         "nome": "SOFTWARE BASICO",
@@ -968,7 +996,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1022": {
         "nome": "ANALIS LEXICOS E SINTATICOS",
@@ -983,13 +1012,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1025": {
         "nome": "INTRODUCAO A PROGRAMACAO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1027": {
         "nome": "TESTE E MEDICAO DE SOFTWARE",
@@ -1002,7 +1033,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1028": {
         "nome": "PROJETO E CONSTRUCAO SISTEMAS",
@@ -1019,7 +1051,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 6
     },
     "INF1029": {
         "nome": "INT ARQUITETURA COMPUTADORES",
@@ -1029,13 +1062,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1031": {
         "nome": "INTRODUCAO A COMPUTACAO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1032": {
         "nome": "INTRODUCAO A CIENCIA DOS DADOS",
@@ -1114,7 +1149,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1033": {
         "nome": "ESTAGIO SUPERV EM COMPUTACAO",
@@ -1127,13 +1163,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 16
     },
     "INF1034": {
         "nome": "PRÁTICAS DE PROGRAMAÇÃO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1037": {
         "nome": "PROGRAMACAO EM C",
@@ -1146,7 +1184,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1039": {
         "nome": "PROJETOS: APLICA INTERATIVAS",
@@ -1164,7 +1203,8 @@
             "INF1037",
             "INF1403"
         ],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1040": {
         "nome": "PROJ PROG MODULAR",
@@ -1180,7 +1220,8 @@
             "INF1010",
             "INF1018"
         ],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1041": {
         "nome": "ENGENHARIA DE SOFTWARE",
@@ -1200,7 +1241,8 @@
             "INF1027",
             "INF1636"
         ],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1045": {
         "nome": "PROJETO E CONSTRUÇÃO SISTEMAS",
@@ -1212,7 +1254,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 6
     },
     "INF1301": {
         "nome": "PROGRAMACAO MODULAR",
@@ -1240,7 +1283,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1316": {
         "nome": "SISTEMAS OPERACIONAIS",
@@ -1256,7 +1300,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1317": {
         "nome": "REDES DE COMPUTADORES",
@@ -1269,7 +1314,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1383": {
         "nome": "BANCOS DE DADOS",
@@ -1292,13 +1338,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1403": {
         "nome": "INTR INT HUMANO-COMPUTADOR",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1416": {
         "nome": "SEGURANCA DA INFORMACAO",
@@ -1329,7 +1377,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1629": {
         "nome": "PRINCIPIOS ENG DE SOFTWARE",
@@ -1346,7 +1395,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1631": {
         "nome": "ESTRUTURAS DISCRETAS",
@@ -1369,7 +1419,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1636": {
         "nome": "PROGRAMACAO ORIENTADA OBJETOS",
@@ -1385,7 +1436,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1643": {
         "nome": "REDES DE COMUNICAÇÃO DE DADOS",
@@ -1401,7 +1453,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1721": {
         "nome": "ANALISE DE ALGORITMOS",
@@ -1440,7 +1493,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1771": {
         "nome": "INTELIGENCIA ARTIFICIAL",
@@ -1475,7 +1529,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1920": {
         "nome": "ESTAGIO SUPERVISIONADO",
@@ -1485,7 +1540,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 1
     },
     "INF1950": {
         "nome": "PROJETO FINAL I",
@@ -1495,7 +1551,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "INF1951": {
         "nome": "PROJETO FINAL II",
@@ -1518,7 +1575,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "JUR0205": {
         "nome": "OPTATIVAS DE DIREITO PARA CTC",
@@ -1561,13 +1619,15 @@
                 "codigo": "JUR1855",
                 "nome": "JUR1855"
             }
-        ]
+        ],
+        "creditos": null
     },
     "LET1920": {
         "nome": "COMPREENSAO PROD TEXTO TECNICO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "MAT0211": {
         "nome": "OPTATIVAS DE ALGEBRA LINEAR I",
@@ -1602,13 +1662,15 @@
                 "codigo": "MAT4280",
                 "nome": "MAT4280"
             }
-        ]
+        ],
+        "creditos": null
     },
     "MAT1157": {
         "nome": "CALCULO A UMA VARIAVEL A",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 6
     },
     "MAT1158": {
         "nome": "CALCULO A UMA VARIAVEL B",
@@ -1618,13 +1680,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 6
     },
     "MAT1161": {
         "nome": "CALCULO DE UMA VARIAVEL",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 6
     },
     "MAT1162": {
         "nome": "CALCULO A VARIAS VARIAVEIS I",
@@ -1643,19 +1707,22 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "MAT1250": {
         "nome": "ALGEBRA LINEAR A",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "MAT1320": {
         "nome": "INTRODUCAO MATEMATICA DISCRETA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "MAT4161": {
         "nome": "CÁLCULO A UMA VARIÁVEL",
@@ -1668,7 +1735,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 6
     },
     "MAT4162": {
         "nome": "CÁLCULO A VÁRIAS VARIÁVEIS I",
@@ -1690,7 +1758,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "MAT4200": {
         "nome": "ÁLGEBRA LINEAR I",
@@ -1703,7 +1772,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "MAT4202": {
         "nome": "ÁLGEBRA LINEAR II",
@@ -1728,7 +1798,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1112": {
         "nome": "O CRIST E AS GRANDES RELIGIOES",
@@ -1738,7 +1809,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1115": {
         "nome": "CRISTIANISMO E JUDAISMO",
@@ -1748,7 +1820,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1116": {
         "nome": "BIBLIA E CRISTIANISMO",
@@ -1758,7 +1831,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1117": {
         "nome": "CRIST E DIAL COM O MUNDO MODER",
@@ -1768,7 +1842,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1118": {
         "nome": "CRISTIANISMO E PROBL SOCIAIS",
@@ -1778,7 +1853,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1127": {
         "nome": "O CRISTIANISMO",
@@ -1788,7 +1864,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1212": {
         "nome": "O CRIST E AS GRANDES RELIGIÕES",
@@ -1801,7 +1878,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1215": {
         "nome": "CRISTIANISMO E JUDAÍSMO",
@@ -1814,7 +1892,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1216": {
         "nome": "BÍBLIA E CRISTIANISMO",
@@ -1827,7 +1906,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1217": {
         "nome": "CRIST E DIAL COM O MUNDO MODER",
@@ -1840,7 +1920,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1218": {
         "nome": "CRISTIANISMO E PROBL SOCIAIS",
@@ -1853,7 +1934,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "CRE1227": {
         "nome": "O CRISTIANISMO",
@@ -1866,91 +1948,106 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ACN1038": {
         "nome": "CURADORIA E PROD EM ART E CULT",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ARQ1501": {
         "nome": "EXTENSÃO EM PROJ AMBIENTAIS",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "ARQ1502": {
         "nome": "GRÁFICA DIGITAL EM URBANISMO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ARQ1503": {
         "nome": "CANTEIRO EXPERIMENTAL",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ARQ1504": {
         "nome": "FAVLAB",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ARQ1505": {
         "nome": "ASS INTERDISC EM HAB SOCIAL",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "DSG1013": {
         "nome": "DEXPO DESIGN EXTENSÃO/POLÍTICA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "DSG1014": {
         "nome": "PIUES DESIGN",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "DSG1015": {
         "nome": "DESIGN OBJETOS DE APRENDIZAGEM",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "DSG1016": {
         "nome": "PROJ GRÁFICO PUBLICA CRIATIVAS",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "DSG1017": {
         "nome": "AEIOU: ART EDU INCLU E ORI UNI",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "DSG1018": {
         "nome": "DESIGN FOR PEACE: DSG ECO PAZ",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "DSG1019": {
         "nome": "DESIGN EMOCIONAL",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "EDU1828": {
         "nome": "APOIO NOAP",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EDU1829": {
         "nome": "APOIO PED. EJA E EP",
@@ -1960,247 +2057,288 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EDU1830": {
         "nome": "OFIC PEDAG DIR HUM E MULTIC",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EDU1831": {
         "nome": "EDUC DIFERENTES ESPAÇOS II",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1100": {
         "nome": "TÓPICOS ESPECIAIS DE EXTENSÃO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 1
     },
     "EXT1200": {
         "nome": "TÓPICOS ESPECIAIS DE EXTENSÃO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "EXT1300": {
         "nome": "TÓPICOS ESPECIAIS DE EXTENSÃO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "EXT1307": {
         "nome": "TOP ESP EXT 3 TEC INOVAÇÃO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "EXT1308": {
         "nome": "TOP ESP EXT 3 LIN EX AR CULT",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "EXT1400": {
         "nome": "TÓPICOS ESPECIAIS DE EXTENSÃO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1401": {
         "nome": "EXT PRÉ-VEST COMUNITÁRIO I",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1402": {
         "nome": "EXT PRÉ-VEST COMUNITÁRIO II",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1403": {
         "nome": "TOP ESPECIAIS PROJETO RONDON",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1404": {
         "nome": "TOP ESP POL TEORIA PRÁTICA EXT",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1405": {
         "nome": "TOP ESP CIDAD E PATRIM CULT",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1406": {
         "nome": "TOP ESP EXT 4 DIAL SOC CID ATI",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1407": {
         "nome": "TOP ESP EXT 4 TEC INOVAÇÃO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1408": {
         "nome": "TOP ESP EXT 4 LIN EX AR CULT",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1410": {
         "nome": "TOP ESP EXT 4 CID SUST RESI",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1414": {
         "nome": "TOP ESP IV: SUSTENTAB E ASG",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1415": {
         "nome": "TOP ESP EXT 4 DIR HUM JUS SOC",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "EXT1416": {
         "nome": "TOP ESP EXT 4 EMP ECO CRIATIV",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "LET1333": {
         "nome": "LING. E INTERV. NA SOCIEDADE",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "QUI1958": {
         "nome": "TÓP ESP EXTENSÃO EM QUÍMICA I",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1000": {
         "nome": "INTRODUCAO A FILOSOFIA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1002": {
         "nome": "FILOSOFIA DA CIENCIA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1005": {
         "nome": "FILOSOFIA DA CIENCIA(PARA CTC)",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1006": {
         "nome": "HISTORIA DO PENSAMENTO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1200": {
         "nome": "HISTORIA DA FILOSOFIA I",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 6
     },
     "FIL1210": {
         "nome": "CORR DO PENS CONTEMPORANEO I",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1211": {
         "nome": "CORR DO PENS CONTEMPORANEO II",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1212": {
         "nome": "CORR DO PENS CONTEMPORANEO III",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1251": {
         "nome": "SEMINARIO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1252": {
         "nome": "SEMINARIO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1253": {
         "nome": "SEMINARIO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1254": {
         "nome": "SEMINARIO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1255": {
         "nome": "SEMINARIO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1256": {
         "nome": "SEMINARIO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1304": {
         "nome": "LOGICA I (INTR FIL A LOGICA)",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1310": {
         "nome": "LOGICA II(INTR A LOG MODERNA)",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1315": {
         "nome": "LOGICA MATEMATICA I",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1318": {
         "nome": "FUNDAMENTOS DA MATEMATICA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1400": {
         "nome": "FILOSOFIA GERAL I",
@@ -2210,49 +2348,57 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1500": {
         "nome": "FILOSOFIA DA NATUREZA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1800": {
         "nome": "FILOSOFIA DA CULTURA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1801": {
         "nome": "FILOSOFIA DA HISTORIA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1802": {
         "nome": "FILOSOFIA DA LINGUAGEM",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1803": {
         "nome": "FILOSOFIA DA ARTE",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1813": {
         "nome": "FILOSOFIA SOCIAL",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "FIL1814": {
         "nome": "FILOSOFIA POLITICA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ENG1419": {
         "nome": "PROGRAM DE MICROCONTROLADORES",
@@ -2299,7 +2445,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ENG4033": {
         "nome": "PROJ PROG MICROCONTROLADORES",
@@ -2312,7 +2459,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1304": {
         "nome": "DISTRIBUICAO E CONCORRENCIA",
@@ -2322,7 +2470,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1406": {
         "nome": "PROGR DISTRIBUIDA CONCORRENTE",
@@ -2338,7 +2487,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1407": {
         "nome": "PROGRAMACAO PARA A WEB",
@@ -2354,7 +2504,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ENG1029": {
         "nome": "PROBABILIDADE E ESTATISTICA",
@@ -2382,7 +2533,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1036": {
         "nome": "PROBABILIDADE COMPUTACIONAL",
@@ -2417,13 +2569,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ADM1019": {
         "nome": "INTRODUCAO A FINANCAS",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1011": {
         "nome": "SEMANTICA DE LINGUAGENS",
@@ -2442,7 +2596,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1410": {
         "nome": "GERENC PROJ EM INFORMATICA",
@@ -2452,7 +2607,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1608": {
         "nome": "ANALISE NUMERICA I",
@@ -2507,7 +2663,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1013": {
         "nome": "MODELAGEM DE SOFTWARE",
@@ -2522,7 +2679,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1016": {
         "nome": "ESP/ANALISE FORMAL DE SISTEMAS",
@@ -2537,7 +2695,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1038": {
         "nome": "APRENDIZADO AUTOMATICO",
@@ -2784,19 +2943,22 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1190": {
         "nome": "TOPICOS AVANCADOS COMPUTACAO",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "INF1300": {
         "nome": "TOP EM COMPUTACAO I",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1305": {
         "nome": "TOP EM COMPUTACAO II",
@@ -2809,55 +2971,64 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1307": {
         "nome": "TOP EM COMPUTACAO IV",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1310": {
         "nome": "TOP EM COMPUTACAO V",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1324": {
         "nome": "TOP EM COMPUTACAO IX",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1328": {
         "nome": "TOP EM COMPUTACAO X",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1331": {
         "nome": "TOP EM COMPUTACAO XII",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1335": {
         "nome": "TOP ESPECIAIS EM INFORMATICA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1336": {
         "nome": "TOP ESPECIAIS EM INFORMATICA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1338": {
         "nome": "TOP ESPECIAIS EM INFORMATICA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1339": {
         "nome": "COMPUTACAO GRAF TRIDIMENSIONAL",
@@ -2876,7 +3047,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1340": {
         "nome": "BANCO DE DADOS II",
@@ -2889,7 +3061,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1341": {
         "nome": "BANCO DE DADOS III",
@@ -2902,7 +3075,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1350": {
         "nome": "PROG DE SISTEMAS REATIVOS",
@@ -2915,7 +3089,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1371": {
         "nome": "PROGRAMACAO EM UNIX",
@@ -2931,7 +3106,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1374": {
         "nome": "BANCO DE DADOS IV",
@@ -2944,7 +3120,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1377": {
         "nome": "ENGENHARIA DE REQUISITOS",
@@ -2954,7 +3131,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1408": {
         "nome": "ANALISE DE PROCESSOS",
@@ -2964,7 +3142,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1715": {
         "nome": "COMPILADORES",
@@ -3011,7 +3190,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1761": {
         "nome": "COMPUTACAO GRAFICA",
@@ -3090,37 +3270,43 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1801": {
         "nome": "TOPICOS EM ENG COMPUTACAO I",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1802": {
         "nome": "TOP EM ENG DE COMPUTACAO II",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1803": {
         "nome": "TOPICOS EM ENG COMPUTACAO III",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1804": {
         "nome": "TOPICOS EM ENG COMPUTACAO IV",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1810": {
         "nome": "TOPICOS EM ENG COMPUTACAO X",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "INF1811": {
         "nome": "SEMINARIO I",
@@ -3130,13 +3316,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 1
     },
     "INF1812": {
         "nome": "SEMINARIO II",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "INF1821": {
         "nome": "PROJETO ORIENTADO I",
@@ -3146,13 +3334,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 1
     },
     "INF1822": {
         "nome": "PROJETO ORIENTADO II",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "INF1823": {
         "nome": "PROJETO ORIENTADO III",
@@ -3162,7 +3352,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 3
     },
     "INF1824": {
         "nome": "PROJETO ORIENTADO IV",
@@ -3172,25 +3363,29 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "LET1090": {
         "nome": "COM EXPRESSAO I (PARA COM SOC)",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "LET1910": {
         "nome": "ANAL E PROD DO TEXTO ACAD",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "JUR1016": {
         "nome": "LEGISLACAO SOCIAL",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "JUR1809": {
         "nome": "DIREITO DO AUTOR",
@@ -3212,13 +3407,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "JUR1855": {
         "nome": "DIREITO DA INFORMATICA",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "INF1370": {
         "nome": "FERRAMENTAS DO UNIX",
@@ -3234,7 +3431,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ENG1456": {
         "nome": "INTELIGENCIA COMPUT APLICADA",
@@ -3250,7 +3448,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "ENG4456": {
         "nome": "INTELIGÊNCIA COMPUTACIONAL",
@@ -3270,7 +3469,8 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "JUR1022": {
         "nome": "NOCOES DE DIREITO P/ EMPREEND",
@@ -3280,13 +3480,15 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "JUR1111": {
         "nome": "DIREITO AMBIENTAL",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "JUR1240": {
         "nome": "NEGOCIAC,MEDIACAO/ARBITRAGEM",
@@ -3296,49 +3498,57 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "JUR1250": {
         "nome": "MERCADO DE CAPITAIS",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "JUR1251": {
         "nome": "PROPRIEDADE INTELECTUAL",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "JUR1653": {
         "nome": "CONTRATOS INTERNACIONAIS",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 2
     },
     "MAT1200": {
         "nome": "ALGEBRA LINEAR I",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "MAT1210": {
         "nome": "ALGEBRA LINEAR P/ INF I",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "MAT1260": {
         "nome": "ALGEBRA LINEAR 1",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "MAT1280": {
         "nome": "ALGEBRA LINEAR 1 ESPECIAL",
         "pre_requisitos": [],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     },
     "MAT4280": {
         "nome": "ÁLGEBRA LINEAR I ESPECIAL",
@@ -3351,6 +3561,7 @@
             ]
         ],
         "co_requisitos": [],
-        "grupo_disciplinas": []
+        "grupo_disciplinas": [],
+        "creditos": 4
     }
 }

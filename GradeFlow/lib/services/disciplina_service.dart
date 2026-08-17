@@ -28,6 +28,7 @@ class DisciplinaService {
           'coRequisitos': dados['co_requisitos'],
           'periodo': periodos[entry.key],
           'grupoDisciplinas': dados['grupo_disciplinas'],
+          'creditos': dados['creditos'],
         });
       }).toList();
     } catch (e) {

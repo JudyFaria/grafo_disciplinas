@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 import json
 import time
+import re
 
 from pathlib import Path
 
@@ -82,11 +83,18 @@ def get_subject_data(code):
                     nome_opcao = nome_opcao.strip() if nome_opcao else ''
                     grupo_disciplinas.append({'codigo': codigo_opcao, 'nome': nome_opcao})
 
+        # Créditos: aparece como "N créditos" logo abaixo do título
+        creditos = None
+        match_creditos = re.search(r'(\d+)\s*cr[ée]dito', soup.get_text())
+        if match_creditos:
+            creditos = int(match_creditos.group(1)) 
+            
         return{
             "nome": nome,
             "pre_requisitos": pre_requisitos,
             "co_requisitos": co_requisitos,
             "grupo_disciplinas": grupo_disciplinas,
+            "creditos": creditos,
         }
     
     except requests.exceptions.RequestException as e:

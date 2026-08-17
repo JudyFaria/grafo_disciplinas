@@ -4,7 +4,7 @@ import '../../models/disciplina_model.dart';
 class CardArrastavel extends StatelessWidget {
   final Disciplina disciplina;
   final MaterialColor cor;
-  final ValueNotifier<bool> dropInvalido;
+  final ValueNotifier<String?> motivoInvalido;
   final bool destacado;
   final bool emFoco;
   final bool conectado;
@@ -13,17 +13,15 @@ class CardArrastavel extends StatelessWidget {
   final VoidCallback? onTapOptativa;
   final VoidCallback? onTap;
   final ValueChanged<bool>? onHover;
-
   final bool temAlternativasPrereq;
   final VoidCallback? onTapAlternativasPrereq;
-
   final bool arrastavel;
 
   const CardArrastavel({
     super.key,
     required this.disciplina,
     required this.cor,
-    required this.dropInvalido,
+    required this.motivoInvalido,
     this.destacado = false,
     this.emFoco = false,
     this.conectado = false,
@@ -39,26 +37,46 @@ class CardArrastavel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (!arrastavel) {
-      return MouseRegion(
-        onEnter: onHover == null ? null : (_) => onHover!(true),
-        onExit: onHover == null ? null : (_) => onHover!(false),
-        child: GestureDetector(onTap: onTap, child: _card()),
-      );
-    }
+    final conteudo = MouseRegion(
+      onEnter: onHover == null ? null : (_) => onHover!(true),
+      onExit: onHover == null ? null : (_) => onHover!(false),
+      child: GestureDetector(onTap: onTap, child: _card()),
+    );
+
+    if (!arrastavel) return conteudo;
+
     return MouseRegion(
       onEnter: onHover == null ? null : (_) => onHover!(true),
       onExit: onHover == null ? null : (_) => onHover!(false),
       child: LongPressDraggable<String>(
         data: disciplina.codigo,
-        onDragEnd: (_) => dropInvalido.value = false,
+        onDragEnd: (_) => motivoInvalido.value = null,
         feedback: Material(
           color: Colors.transparent,
           child: SizedBox(
             width: 196,
-            child: ValueListenableBuilder<bool>(
-              valueListenable: dropInvalido,
-              builder: (context, invalido, _) => _card(elevado: true, invalido: invalido),
+            child: ValueListenableBuilder<String?>(
+              valueListenable: motivoInvalido,
+              builder: (context, motivo, _) => Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _card(elevado: true, invalido: motivo != null),
+                  if (motivo != null)
+                    Container(
+                      margin: const EdgeInsets.only(top: 2),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.red.shade700,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(
+                        motivo,
+                        style: const TextStyle(color: Colors.white, fontSize: 11),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                ],
+              ),
             ),
           ),
         ),
@@ -124,26 +142,20 @@ class CardArrastavel extends StatelessWidget {
                   ),
                 ),
               ],
-
-              if(temAlternativasPrereq) ...[
+              if (temAlternativasPrereq) ...[
                 const SizedBox(width: 4),
                 GestureDetector(
                   onTap: onTapAlternativasPrereq,
-                  child: Tooltip(
-                    message: 'Pré-requisitos alternativos',
-                    
-                    child: Icon(
-                      Icons.alt_route,
-                      size: 14,
-                      color: corTexto,
-                    )
-                  ),
-                )
-              ]
+                  child: Icon(Icons.alt_route, size: 14, color: corTexto),
+                ),
+              ],
             ],
           ),
           Text(disciplina.nome,
               maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 10)),
+          // if (disciplina.creditos != null)
+          //   Text('${disciplina.creditos} cr.',
+          //       style: TextStyle(fontSize: 9, color: corTexto.withOpacity(0.7))),
         ],
       ),
     );
