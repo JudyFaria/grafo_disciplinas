@@ -124,7 +124,7 @@ class EstadoGrafo extends ChangeNotifier {
   }
 
   List<Set<String>> gruposPrereqValidos(String codigo) {
-    final d = porCodigoOriginal[codigo];
+    final d = porCodigo[codigo];
     if (d == null) return [];
     return _gruposValidos(d);
   }
@@ -139,7 +139,20 @@ class EstadoGrafo extends ChangeNotifier {
     return mudados;
   }
 
-  Set<String> codigosRelevantes(Disciplina d) {
+  // Se 'codigo' é o código real de uma optativa já escolhida, devolve o
+  // código do SLOT correspondente — é o slot que de fato tem posição no
+  // grafo (semestre/concluídas), não o código real da matéria escolhida.
+  String _resolverCodigoEfetivo(String codigo) {
+    for (var entry in escolhaOptativa.entries) {
+      if (entry.value == codigo) return entry.key;
+    }
+    return codigo;
+  }
+
+  // Versão "crua": os códigos tal como aparecem no currículo (ex: INF1036),
+  // sem resolver pra slot de optativa. Usada pra exibir no diálogo de
+  // escolha, onde faz mais sentido mostrar o código real e reconhecível.
+  Set<String> _codigosRelevantesBrutos(Disciplina d) {
     if (d.preRequisitos.isEmpty) return {};
 
     final gruposValidos = _gruposValidos(d);
@@ -154,7 +167,10 @@ class EstadoGrafo extends ChangeNotifier {
     if (gruposValidos.length == 1) return gruposValidos.first;
 
     if (!grupoPrereqEscolhido.containsKey(d.codigo)) {
-      bool satisfeito(String c) => semestre.containsKey(c) || concluidas.contains(c);
+      bool satisfeito(String c) {
+        final efetivo = _resolverCodigoEfetivo(c);
+        return semestre.containsKey(efetivo) || concluidas.contains(efetivo);
+      }
 
       final gruposSatisfeitos = gruposValidos.where((g) => g.every(satisfeito)).toList();
       if (gruposSatisfeitos.length == 1) return gruposSatisfeitos.first;
@@ -177,10 +193,18 @@ class EstadoGrafo extends ChangeNotifier {
     return gruposValidos[indice];
   }
 
+  // Versão "resolvida": usada pra tudo que precisa bater com quem de fato
+  // está posicionado no grafo (setas, cascata, validação de arrasto).
+  Set<String> codigosRelevantes(Disciplina d) {
+    return _codigosRelevantesBrutos(d).map(_resolverCodigoEfetivo).toSet();
+  }
+
+  // Usado pelo diálogo de escolha de grupo — precisa dos códigos crus,
+  // pra bater com o que é exibido na lista (ex: "INF1036 + INF1037 + ...").
   Set<String>? grupoPrereqAtivo(String codigo) {
-    final d = porCodigoOriginal[codigo];
+    final d = porCodigo[codigo];
     if (d == null) return null;
-    return codigosRelevantes(d);
+    return _codigosRelevantesBrutos(d);
   }
 
   int creditosNoPeriodo(SemestreAcademico periodo, {String? ignorando}) {

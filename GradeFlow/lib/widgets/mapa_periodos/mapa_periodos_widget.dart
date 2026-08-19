@@ -154,7 +154,7 @@ class _MapaPeriodosWidgetState extends State<MapaPeriodosWidget> {
   }
 
   void _abrirEscolhaGrupoPrereq(String codigo) {
-    final disciplina = _estado.porCodigoOriginal[codigo]!;
+    final disciplina = _estado.porCodigo[codigo]!;
     final grupos = _estado.gruposPrereqValidos(codigo);
     final grupoAtivo = _estado.grupoPrereqAtivo(codigo);
     showDialog(
