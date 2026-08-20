@@ -23,6 +23,7 @@ class _TelaHorariosState extends State<TelaHorarios> {
   final _horarioService = HorarioService();
   List<BlocoHorario> _blocos = [];
   bool _carregando = true;
+  bool _colunaAberta = true;
 
   static const _dias = ['SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB'];
   static const _blocosDeHora = [7, 9, 11, 13, 15, 17, 19]; // início de cada bloco de 2h
@@ -221,69 +222,95 @@ class _TelaHorariosState extends State<TelaHorarios> {
                   style: TextStyle(color: Colors.grey)),
             )
           : Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _listaDisciplinas(disciplinasDisponiveis),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+                if (disciplinasDisponiveis.isNotEmpty) _listaDisciplinas(disciplinasDisponiveis),
                 Expanded(
-                  child: _carregando
-                      ? const Center(child: CircularProgressIndicator())
-                      : LayoutBuilder(
-                          builder: (context, constraints) {
+                child: _carregando
+                    ? const Center(child: CircularProgressIndicator())
+                    : LayoutBuilder(
+                        builder: (context, constraints) {
                             final conteudo = SizedBox(
-                              width: larguraGrade,
-                              height: alturaGrade,
-                              child: _grade(),
+                            width: larguraGrade,
+                            height: alturaGrade,
+                            child: _grade(),
                             );
                             if (larguraGrade <= constraints.maxWidth) {
-                              return SingleChildScrollView(
+                            return SingleChildScrollView(
                                 child: Padding(
-                                  padding: const EdgeInsets.all(16),
-                                  child: Center(child: conteudo),
+                                padding: const EdgeInsets.all(16),
+                                child: Center(child: conteudo),
                                 ),
-                              );
+                            );
                             }
                             return SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Padding(padding: const EdgeInsets.all(16), child: conteudo),
+                            scrollDirection: Axis.horizontal,
+                            child: Padding(padding: const EdgeInsets.all(16), child: conteudo),
                             );
-                          },
-                        ),
+                        },
+                    ),
                 ),
-              ],
-            ),
+            ],
+        ),
     );
   }
 
   Widget _listaDisciplinas(List<Disciplina> disciplinas) {
+    if (!_colunaAberta) {
+        return Container(
+        width: 40,
+        decoration: BoxDecoration(border: Border(right: BorderSide(color: Colors.grey.shade300))),
+        child: Column(
+            children: [
+            const SizedBox(height: 4),
+            IconButton(
+                icon: const Icon(Icons.chevron_right),
+                tooltip: 'Mostrar matérias',
+                onPressed: () => setState(() => _colunaAberta = true),
+            ),
+            ],
+        ),
+        );
+    }
+
     return Container(
-      width: _larguraListaDisciplinas,
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(border: Border(right: BorderSide(color: Colors.grey.shade300))),
-      child: Column(
+        width: _larguraListaDisciplinas,
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(border: Border(right: BorderSide(color: Colors.grey.shade300))),
+        child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Toque pra adicionar', style: TextStyle(fontWeight: FontWeight.bold)),
-          const SizedBox(height: 8),
-          Expanded(
-            child: disciplinas.isEmpty
-                ? const Text('Todas as matérias já estão na grade.',
-                    style: TextStyle(color: Colors.grey, fontSize: 12))
-                : ListView(
-                    children: [
-                      for (var d in disciplinas)
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8),
-                          child: InkWell(
-                            borderRadius: BorderRadius.circular(8),
-                            onTap: () => _abrirAdicionarNaGrade(d),
-                            child: _cardDisciplina(d),
-                          ),
-                        ),
-                    ],
-                  ),
-          ),
+            Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+                const Text('Toque pra adicionar', style: TextStyle(fontWeight: FontWeight.bold)),
+                IconButton(
+                icon: const Icon(Icons.chevron_left),
+                tooltip: 'Esconder',
+                onPressed: () => setState(() => _colunaAberta = false),
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(),
+                ),
+            ],
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+            child: ListView(
+                children: [
+                for (var d in disciplinas)
+                    Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: InkWell(
+                        borderRadius: BorderRadius.circular(8),
+                        onTap: () => _abrirAdicionarNaGrade(d),
+                        child: _cardDisciplina(d),
+                    ),
+                    ),
+                ],
+            ),
+            ),
         ],
-      ),
+        ),
     );
   }
 
