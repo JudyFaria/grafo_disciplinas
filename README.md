@@ -6,7 +6,7 @@ Um planejador visual de matérias para estudantes da PUC-Rio. Mostra suas discip
 
 Não precisa instalar nada. Acessa direto pelo navegador (funciona em celular, tablet ou computador):
 
-**👉 https://gradeflow.vercel.app/**
+**👉 https://gradeflow-puc.vercel.app/**
 
 Cria uma conta (e-mail/usuário + senha), escolhe seu curso, e já dá pra começar. Depois de logado, tem uma tela de "Como usar" no menu (ícone ☰ no canto superior esquerdo) explicando cada funcionalidade — vale muito a pena dar uma olhada nela antes de mexer.
 
