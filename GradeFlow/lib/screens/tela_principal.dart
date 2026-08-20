@@ -12,6 +12,8 @@ import 'tela_ajuda.dart';
 import '../models/estado_grafo.dart';
 import '../services/momento_service.dart';
 import 'tela_momentos.dart';
+import '../models/semestre_academico.dart';
+import 'tela_horarios.dart';
 
 class TelaPrincipal extends StatefulWidget {
   const TelaPrincipal({super.key});
@@ -223,6 +225,24 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     if (precisaRecarregar == true) _recarregarAposRestaurar();
   }
   
+  void _abrirHorarios() {
+    if (_estadoAtual == null) return;
+    final atual = SemestreAcademico.deData(DateTime.now());
+    final disciplinasDoPeriodo = _estadoAtual!.porCodigo.values
+        .where((d) => _estadoAtual!.semestre[d.codigo] == atual)
+        .toList();
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => TelaHorarios(
+          disciplinas: disciplinasDoPeriodo,
+          uid: _uid,
+          semestreChave: atual.toString(),
+        ),
+      ),
+    );
+  }
 
   Widget _construirMenu() {
     return Drawer(
@@ -312,6 +332,13 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
       appBar: AppBar(
         title: const Text('GradeFlow'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.calendar_month),
+            tooltip: 'Horários de aulas',
+            onPressed: _abrirHorarios,
+          ),
+        ],
       ),
       drawer: _construirMenu(),
       body: _carregandoProgresso
